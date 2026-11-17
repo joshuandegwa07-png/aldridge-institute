@@ -3,24 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Short guided courses for college students. Five lessons, a final assessment and a certificate.">
+<meta name="description" content="Short guided courses for college students and working professionals. Five lessons, a final assessment and a verifiable certificate.">
 <style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>
 <title>Aldridge Institute</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=EB+Garamond:ital,wght@0,400;1,400&family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Instrument+Serif:ital@0;1&family=Space+Grotesk:wght@500;600;700&display=swap">
 <style>
 /* Layout: one centred column (max 1080px) of stacked sections; the course view splits into a lesson rail and a reading column that stack on phones. */
 :root {
-  --bg: #FFFFFF; --surface: #F4F6FA; --ink: #0E1320; --muted: #556070; --line: #D5DAE3;
-  --accent: #1F3FFF; --on-accent: #FFFFFF; --gold: #F5B82E; --good-bg: #E7F6EE; --good: #0B6B53; --warn-bg: #FFF4E5; --warn: #7A4700;
-  --display: 'Space Grotesk', 'Segoe UI', system-ui, sans-serif;
-  --body: Inter, 'Segoe UI', system-ui, sans-serif;
+  --bg: #FFFDF7; --surface: #F3EFE2; --ink: #1A1A1A; --muted: #4A4A4A; --line: #E4DFCF;
+  --accent: #1A1A1A; --on-accent: #FFFDF7; --sun: #F4C542; --sage: #DCE8DC; --gold: #F4C542; --good-bg: #E3F0E3; --good: #1E5B32; --warn-bg: #FFF1D6; --warn: #6B4A00;
+  --display: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  --body: 'Plus Jakarta Sans', 'Segoe UI', system-ui, sans-serif;
+  --serif: 'Instrument Serif', Georgia, serif;
+  color-scheme: light;
 }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
-  --bg: #0C1018; --surface: #161C28; --ink: #EEF1F7; --muted: #A3ADBF; --line: #2C3546;
-  --accent: #8FA2FF; --on-accent: #0C1018; --gold: #F5B82E; --good-bg: #10301F; --good: #7FD8B0; --warn-bg: #3A2A0C; --warn: #FFD08A; color-scheme: dark } }
-:root[data-theme="dark"] {
-  --bg: #0C1018; --surface: #161C28; --ink: #EEF1F7; --muted: #A3ADBF; --line: #2C3546;
-  --accent: #8FA2FF; --on-accent: #0C1018; --gold: #F5B82E; --good-bg: #10301F; --good: #7FD8B0; --warn-bg: #3A2A0C; --warn: #FFD08A; color-scheme: dark }
 * { box-sizing: border-box }
 body { background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 16px; line-height: 1.55 }
 .wrap { max-width: 1080px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)) }
@@ -28,15 +24,15 @@ h1, h2, h3 { font-family: var(--display); margin: 0; text-wrap: balance; letter-
 h1 { font-size: clamp(34px, 5vw, 58px) } h2 { font-size: clamp(26px, 3.2vw, 36px) } h3 { font-size: 20px; letter-spacing: -0.01em }
 h1.sm { font-size: clamp(28px, 3.8vw, 42px) }
 p { margin: 0 }
-a { color: var(--accent) }
+a { color: var(--ink); text-decoration-color: #C9A227; text-underline-offset: 3px }
 :focus-visible { outline: 3px solid var(--accent); outline-offset: 2px }
 .top { border-bottom: 1px solid var(--line) }
 .top .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px 24px; padding-block: 14px }
-.brand { font-family: var(--display); font-weight: 700; font-size: 22px; color: var(--ink); text-decoration: none }
+.brand { font-family: var(--display); font-weight: 800; font-size: 20px; color: var(--ink); text-decoration: none }
 .nav { display: flex; flex-wrap: wrap; gap: 4px 20px }
 .nav a { color: var(--ink); text-decoration: none; font-weight: 500; font-size: 15px; padding: 10px 0; border-bottom: 2px solid transparent }
-.nav a[aria-current="page"] { border-bottom-color: var(--accent); color: var(--accent) }
-.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border-radius: 8px; border: 1.5px solid var(--accent); background: var(--accent); color: var(--on-accent); font: 600 16px var(--body); text-decoration: none; cursor: pointer }
+.nav a[aria-current="page"] { border-bottom-color: var(--sun); border-bottom-width: 3px }
+.btn { display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 12px 24px; border-radius: 12px; border: 1.5px solid var(--accent); background: var(--accent); color: var(--on-accent); font: 700 15px var(--body); text-decoration: none; cursor: pointer }
 .btn.ghost { background: transparent; color: var(--ink); border-color: var(--ink) }
 .btn[disabled] { opacity: .45; cursor: not-allowed }
 .eyebrow { font-size: 13px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted) }
@@ -47,13 +43,13 @@ section.view { padding-block: 48px 80px }
 .hero { display: flex; flex-direction: column; gap: 22px; max-width: 760px }
 .hero p { font-size: 19px; color: var(--muted) }
 .grid3 { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 20px }
-.card { border: 1px solid var(--line); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 10px; min-width: 0 }
+.card { background: #FFFFFF; border: 1.5px solid var(--line); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; gap: 10px; min-width: 0 }
 .card.fill { background: var(--surface); border-color: transparent }
 .card .grow { flex-grow: 1 }
 .pill { align-self: flex-start; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 20px; background: var(--surface); color: var(--ink) }
 .pill.ok { background: var(--good-bg); color: var(--good) }
-.num { font-family: var(--display); font-weight: 700; color: var(--accent) }
-.price { font-family: var(--display); font-weight: 700; font-size: 52px; line-height: 1; letter-spacing: -0.03em }
+.num { font-family: var(--serif); font-weight: 400; font-size: 48px; line-height: 1; color: var(--ink) }
+.price { font-family: var(--display); font-weight: 800; font-size: 52px; line-height: 1; letter-spacing: -0.03em }
 .block { margin-top: 64px; display: flex; flex-direction: column; gap: 24px }
 .field { display: flex; flex-direction: column; gap: 8px; max-width: 420px }
 .field label { font-weight: 600; font-size: 14px }
@@ -84,11 +80,11 @@ ul.tasks { margin: 0; padding-left: 20px; display: flex; flex-direction: column;
 .fb { font-size: 15px; border-radius: 10px; padding: 12px 16px } .fb.ok { background: var(--good-bg); color: var(--good) } .fb.no { background: var(--warn-bg); color: var(--warn) }
 .exam .q:first-of-type { border-top: none; padding-top: 0 }
 .search { display: flex; flex-direction: column; gap: 8px; max-width: 640px }
-.search input { font: 16px var(--body); min-height: 52px; padding: 12px 16px; border-radius: 12px; border: 1.5px solid var(--muted); background: var(--bg); color: var(--ink); width: 100% }
+.search input { font: 500 16px var(--body); min-height: 52px; padding: 12px 16px; border-radius: 14px; border: 1.5px solid var(--ink); background: var(--bg); color: var(--ink); width: 100% }
 .hero-search .row { flex-wrap: nowrap; gap: 10px } .hero-search input { flex: 1 1 auto; min-width: 0 }
 .chips { display: flex; flex-wrap: wrap; gap: 8px }
-.chip { min-height: 36px; padding: 6px 14px; border-radius: 20px; border: 1px solid var(--line); background: var(--bg); color: var(--ink); font: 500 14px var(--body); cursor: pointer }
-.chip[aria-pressed="true"] { border-color: var(--accent); background: var(--surface); color: var(--accent) }
+.chip { min-height: 36px; padding: 6px 14px; border-radius: 20px; border: 1px solid #D6CFBA; background: #FFFFFF; color: var(--ink); font: 500 14px var(--body); cursor: pointer }
+.chip[aria-pressed="true"] { border-color: var(--ink); background: var(--sun); color: var(--ink) }
 .plans { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; max-width: 640px }
 .plans legend { font-weight: 600; font-size: 14px; margin-bottom: 8px; padding: 0 }
 .plan { display: flex; gap: 12px; align-items: flex-start; border: 1.5px solid var(--line); border-radius: 12px; padding: 16px; cursor: pointer }
@@ -96,6 +92,26 @@ ul.tasks { margin: 0; padding-left: 20px; display: flex; flex-direction: column;
 .plan input { margin-top: 4px; accent-color: var(--accent); width: 18px; height: 18px; flex: none }
 .plan > span { display: flex; flex-direction: column; gap: 4px }
 .plan .amt { font-family: var(--display); font-weight: 700; font-size: 22px }
+.home-hero { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 22px; max-width: 900px; margin: 0 auto; padding-top: 24px }
+.home-hero h1 { font-size: clamp(38px, 6vw, 68px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.03 }
+.home-hero p.lede { font-size: 19px; color: var(--muted); max-width: 640px }
+.hl { font-family: var(--serif); font-weight: 400; font-style: italic; background: var(--sun); padding: 0 10px; border-radius: 10px; letter-spacing: 0 }
+.who-toggle { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 6px; background: var(--surface); padding: 6px; border-radius: 14px }
+.who-toggle button { min-height: 44px; padding: 8px 18px; border: 0; border-radius: 10px; background: transparent; color: var(--muted); font: 600 15px var(--body); cursor: pointer }
+.who-toggle button[aria-pressed="true"] { background: #FFFFFF; color: var(--ink); font-weight: 700; box-shadow: 0 1px 2px rgba(0,0,0,.08) }
+.big-search { width: 100%; max-width: 620px; display: flex; gap: 8px; background: #FFFFFF; border: 1.5px solid var(--ink); border-radius: 16px; padding: 6px }
+.big-search input { flex: 1 1 auto; min-width: 0; min-height: 48px; padding: 0 14px; border: 0; background: transparent; font: 500 16px var(--body); color: var(--ink) }
+.big-search .btn { white-space: nowrap; padding: 12px 18px } .big-search input:focus { outline: none } .big-search:focus-within { outline: 3px solid var(--sun); outline-offset: 2px }
+.popular { font-size: 14px; color: var(--muted) } .popular button { border: 0; background: none; padding: 4px 2px; font: 600 14px var(--body); color: var(--ink); text-decoration: underline; text-decoration-color: #C9A227; text-underline-offset: 3px; cursor: pointer }
+.tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px }
+.tile { text-align: left; border: 0; border-radius: 18px; padding: 22px; display: flex; flex-direction: column; gap: 6px; min-height: 110px; cursor: pointer; font: inherit; color: var(--ink) }
+.tile b { font-size: 17px } .tile span { font-size: 14px; color: #3D3D3D }
+.tile.all { background: #FFFFFF; border: 1.5px dashed #BDB6A1 }
+.band { background: var(--surface); border-radius: 24px; padding: clamp(28px, 5vw, 56px) }
+.plan-card { border-radius: 22px; padding: 32px; display: flex; flex-direction: column; gap: 12px }
+.plan-card.sun { background: var(--sun); color: var(--ink) }
+.badge { align-self: flex-start; background: var(--ink); color: var(--bg); font-size: 12px; font-weight: 700; padding: 5px 10px; border-radius: 999px }
+.cband { height: 88px; margin: -24px -24px 6px; border-radius: 16px 16px 0 0; display: flex; align-items: flex-end; padding: 14px 18px; font-weight: 700; font-size: 13px; color: #2B2B2B }
 .result { background: var(--surface); border-radius: 14px; padding: 24px; display: flex; flex-direction: column; gap: 12px }
 /* Certificate: a fixed-palette object in both themes, sized in container units so it scales as one piece.
    Layout: a navy crest panel on the left (identity and verification), a guilloche-patterned paper panel on the right (the award). */
@@ -169,7 +185,7 @@ ul.tasks { margin: 0; padding-left: 20px; display: flex; flex-direction: column;
 </head>
 <body>
 <header class="top"><div class="wrap">
-  <a class="brand" href="#home"><svg viewBox="0 0 64 72" aria-hidden="true"><path d="M4 4h56v38c0 15-12 24-28 29C16 66 4 57 4 42V4z" fill="#14213D" stroke="#B08D3C" stroke-width="3"></path><path d="M20 53L32 23L44 53M25.2 42H38.8" fill="none" stroke="#D4B160" stroke-width="4.6" stroke-linecap="round" stroke-linejoin="round"></path><path d="M32 8l1.9 3.9 4.3.6-3.1 3 .7 4.3-3.8-2-3.8 2 .7-4.3-3.1-3 4.3-.6z" fill="#D4B160"></path></svg>Aldridge Institute</a>
+  <a class="brand" href="#home"><span aria-hidden="true" style="width: 34px; height: 34px; border-radius: 10px; background: var(--sun); display: inline-flex; align-items: center; justify-content: center; font-family: var(--serif); font-weight: 400; font-size: 24px">A</span>Aldridge Institute</a>
   <nav class="nav" aria-label="Main">
     <a href="#home" data-nav="home">Home</a>
     <a href="#courses" data-nav="courses">Courses</a>
@@ -182,28 +198,36 @@ ul.tasks { margin: 0; padding-left: 20px; display: flex; flex-direction: column;
 <div id="flash" hidden style="padding-top: 24px"></div>
 
 <section class="view" id="v-home">
-  <div class="hero">
-    <div class="eyebrow">For college students everywhere</div>
-    <h1>Learn one real skill in 30 minutes. Leave with a certificate.</h1>
-    <p>Short guided courses built for college students. Work through five lessons, pass the final assessment and earn a certificate you can put on your resume and LinkedIn.</p>
-    <form id="home-search" class="search hero-search" role="search"><label for="home-q" class="eyebrow">Find courses for your major</label><div class="row"><input id="home-q" type="search" placeholder="e.g. nursing, finance" autocomplete="off"><button class="btn" type="submit">Search</button></div></form>
-    <div class="row"><a class="btn ghost" href="#courses">Browse all courses</a><a class="btn ghost" href="#verify">Verify a certificate</a></div>
+  <div class="home-hero">
+    <div class="who-toggle" role="group" aria-label="Show courses for">
+      <button type="button" data-who="student" aria-pressed="true">I am in college</button>
+      <button type="button" data-who="pro" aria-pressed="false">I am working</button>
+    </div>
+    <h1 id="hero-h">Land the internship with skills you can <span class="hl">prove</span>.</h1>
+    <p class="lede" id="hero-p">30-minute courses in what recruiters ask about, each ending with a certificate and a link anyone can check.</p>
+    <form id="home-search" class="big-search" role="search"><label for="home-q" style="position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0)">Search courses by major or skill</label><input id="home-q" type="search" placeholder="What is your major?" autocomplete="off"><button class="btn" type="submit">Find courses</button></form>
+    <div class="popular" id="popular"></div>
+    <p class="muted" id="home-stats" style="font-size: 14px"></p>
   </div>
 
   <div class="block">
-    <h2>How it works</h2>
+    <h2>Browse by major</h2>
+    <div class="tiles" id="home-tiles"></div>
+  </div>
+
+  <div class="block band">
     <div class="grid3">
-      <div class="card"><div class="num">01</div><h3>Pick a course</h3><p class="muted">Choose by major or by the skill a recruiter keeps asking about.</p></div>
-      <div class="card"><div class="num">02</div><h3>Work through five lessons</h3><p class="muted">Each lesson explains one idea, shows a worked example and checks you understood it.</p></div>
-      <div class="card"><div class="num">03</div><h3>Pass the assessment</h3><p class="muted">Score 8 out of 10 or better and your certificate is issued with a unique number.</p></div>
+      <div class="stack" style="gap: 10px"><div class="num">01</div><h3>Pick a course</h3><p class="muted">By major, by skill, or by the question that keeps coming up in interviews.</p></div>
+      <div class="stack" style="gap: 10px"><div class="num">02</div><h3>Learn it in 30 minutes</h3><p class="muted">Five short lessons, each with a worked example and a quick check.</p></div>
+      <div class="stack" style="gap: 10px"><div class="num">03</div><h3>Earn the certificate</h3><p class="muted">Score 8 out of 10. Add it to LinkedIn with a link employers can verify.</p></div>
     </div>
   </div>
 
-  <div class="block">
-    <h2>Two ways to pay</h2>
-    <div class="grid3">
-      <div class="card"><div class="eyebrow">Single course</div><div class="price">$10</div><p class="muted">One course and its certificate. Pay once.</p><div><a class="btn ghost" href="#courses">Choose a course</a></div></div>
-      <div class="card fill"><div class="eyebrow">Unlimited</div><div class="price">$25<span style="font-size: 18px; letter-spacing: 0"> a month</span></div><p class="muted">Every course and a certificate for each one you pass. Cancel any time.</p><div><button class="btn" type="button" id="join-unlimited">Get Unlimited</button></div></div>
+  <div class="block" style="align-items: center; text-align: center">
+    <h2>Pay per course, or <span style="font-family: var(--serif); font-weight: 400; font-style: italic; letter-spacing: 0">take them all</span>.</h2>
+    <div class="grid3" style="width: 100%; max-width: 820px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); text-align: left">
+      <div class="plan-card card"><b>Single course</b><div class="price">$10</div><p class="muted">One course and its certificate, yours to keep.</p><div><a class="btn ghost" href="#courses">Choose a course</a></div></div>
+      <div class="plan-card sun"><div class="row" style="justify-content: space-between"><b>Unlimited</b><span class="badge">Best value</span></div><div class="price">$25<span style="font-size: 17px; font-weight: 600; letter-spacing: 0"> / month</span></div><p>Every course and certificate. Costs less than three single courses. Cancel any time.</p><div><button class="btn" type="button" id="join-unlimited">Get Unlimited</button></div></div>
     </div>
   </div>
 </section>
@@ -7768,7 +7792,1257 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     ['What are Housing Choice Vouchers often called?', ['Section 8', 'LIHTC', 'HOME', 'CDBG'], 0],
     ['What does a community land trust do?', ['Keeps land permanently affordable', 'Builds highways', 'Collects taxes', 'Sells land to the highest bidder'], 0],
     ['Which is a risk of gentrification?', ['Displacement of long-time residents', 'Lower rents for all', 'Less investment', 'No change'], 0],
-    ['When was Arnstein’s ladder of citizen participation published?', ['1929', '1969', '1999', '2019'], 1]] }
+    ['When was Arnstein’s ladder of citizen participation published?', ['1929', '1969', '1999', '2019'], 1]] },
+
+  { id: 'networking', section: 'Career and Data Skills', title: 'Networking and Cold Outreach', level: 'Starter',
+    blurb: 'Build the relationships that lead to interviews: who to contact, writing cold emails that get answers, coffee chats and follow-up.',
+    lessons: [
+    { t: 'Why networking works', p: [
+      'Many roles, especially at small firms and in competitive fields such as banking and consulting, are filled with help from referrals and personal connections.',
+      'Networking is not asking strangers for jobs. It is learning from people who do the work you want, so that when a role opens they know who you are and why you fit.',
+      'Start with warm contacts, such as alumni from your school, former colleagues and friends of family, before reaching out to strangers.'],
+      tb: ['Who to contact first', [['Warm', 'Alumni, former colleagues, family friends'], ['Lukewarm', 'People in clubs or groups you share'], ['Cold', 'Strangers whose work interests you'], ['Goal', 'Learn, then be remembered'], ['Not the goal', 'Asking for a job on the first message']]],
+      todo: ['List ten alumni in roles you want using LinkedIn.', 'Mark each warm, lukewarm or cold.', 'Pick three to contact this week.'],
+      ck: ['What is the main goal of a first networking message?', ['To ask for a job immediately', 'To learn from the person and start a relationship', 'To send your resume to as many people as possible'], 1, 'Relationships come before referrals.'] },
+    { t: 'Writing the cold email', p: [
+      'Keep it short: four or five sentences a reader can finish on a phone. Use a clear subject line, such as Howard student interested in private credit.',
+      'Say who you are, why you chose them specifically, and one small, specific request: a 15-minute call in the next two weeks.',
+      'Make it easy to say yes. Offer flexibility, thank them, and never attach a resume to a first email unless asked.'],
+      tb: ['Cold email structure', [['Subject', 'Who you are and the topic'], ['Line 1', 'Who you are'], ['Line 2', 'Why them, specifically'], ['Line 3', 'One small request: a 15-minute call'], ['Close', 'Thanks and flexibility']]],
+      todo: ['Write a five-sentence cold email to one alum.', 'Cut every word that does not help.', 'Read it on your phone before sending.'],
+      ck: ['What is a good first request in a cold email?', ['A job offer', 'A 15-minute call', 'A reference letter'], 1, 'Small requests get more yeses.'] },
+    { t: 'The coffee chat', p: [
+      'Prepare: read the person’s profile, their firm’s recent news and anything they have written. Write five or six questions.',
+      'Ask about their path, what their work involves day to day, what they wish they had known, and what skills matter most. Listen more than you talk.',
+      'End on time. Near the close, ask: Is there anyone else you think I should speak with? That question grows your network.'],
+      tb: ['Good coffee chat questions', [['Path', 'How did you get to this role?'], ['The work', 'What does a typical week look like?'], ['Hindsight', 'What do you wish you had known?'], ['Skills', 'What separates strong analysts?'], ['Referral', 'Who else should I speak with?']]],
+      todo: ['Write six questions for your next call.', 'Prepare a 30-second introduction of yourself.', 'Practise ending a call on time.'],
+      ck: ['Which question helps grow your network at the end of a call?', ['Can you get me a job?', 'Is there anyone else you think I should speak with?', 'What is your salary?'], 1, 'Introductions multiply contacts.'] },
+    { t: 'Follow-up', p: [
+      'Send a thank-you note within 24 hours. Mention one specific thing you learned so it is clearly personal.',
+      'If someone does not reply to a cold email, one polite follow-up after about a week is normal. After that, move on.',
+      'Stay in touch every couple of months with a short update: a course you finished, an article you liked, or how their advice helped.'],
+      tb: ['Follow-up timing', [['Thank-you note', 'Within 24 hours'], ['No reply', 'One follow-up after about a week'], ['Staying in touch', 'Every couple of months'], ['Content', 'Specific and short'], ['Before applying', 'Let contacts know']]],
+      todo: ['Write a thank-you note for a recent conversation.', 'Set reminders for follow-ups.', 'Draft a short update message.'],
+      ck: ['When should a thank-you note be sent after a coffee chat?', ['Within 24 hours', 'After a month', 'Only if you get a job'], 0, 'Prompt thanks shows professionalism.'] },
+    { t: 'Tracking and LinkedIn', p: [
+      'Keep a simple tracker: name, firm, role, how you met, date contacted, date of call, notes and next step. It prevents double emails and missed follow-ups.',
+      'Make your LinkedIn profile match your resume: a clear headline, a professional photo, a short About section and certificates in Licences and certifications.',
+      'When sending a connection request to someone you have not met, add a short personal note explaining why you are connecting.'],
+      tb: ['Networking tracker columns', [['Name and firm', 'Who'], ['How you met', 'Context'], ['Dates', 'Contacted, spoke'], ['Notes', 'What you learned'], ['Next step', 'Follow-up date']]],
+      todo: ['Build a networking tracker in a spreadsheet.', 'Update your LinkedIn headline and About section.', 'Add a certificate to Licences and certifications.'],
+      ck: ['Why keep a networking tracker?', ['To prevent double emails and missed follow-ups', 'To sell contacts', 'It is required by employers'], 0, 'Organisation keeps relationships warm.'] }],
+    exam: [
+    ['Which contacts are warmest?', ['Alumni and former colleagues', 'Random executives', 'Celebrities', 'Recruiters you never met'], 0],
+    ['About how long should a cold email be?', ['Four or five sentences', 'Two pages', 'One word', 'A full cover letter'], 0],
+    ['Should you attach a resume to a first cold email?', ['Usually not, unless asked', 'Always', 'Only as a PDF', 'Only on weekends'], 0],
+    ['What should a cold email explain?', ['Why you chose that person specifically', 'Your entire life story', 'Your salary expectations', 'Nothing personal'], 0],
+    ['What should you do before a coffee chat?', ['Research the person and prepare questions', 'Nothing', 'Prepare a sales pitch', 'Bring your transcript'], 0],
+    ['Who should talk more in a coffee chat?', ['The professional', 'You', 'Neither', 'A recruiter'], 0],
+    ['After no reply, when is one follow-up normal?', ['After about a week', 'The next hour', 'Every day', 'Never'], 0],
+    ['What makes a thank-you note personal?', ['Mentioning one specific thing you learned', 'Using a template unchanged', 'Attaching a resume', 'Asking for a job'], 0],
+    ['Where on LinkedIn should certificates go?', ['Licences and certifications', 'Profile photo', 'Headline only', 'Nowhere'], 0],
+    ['What should a connection request to a stranger include?', ['A short personal note', 'A job request', 'Nothing', 'A resume'], 0]] },
+
+  { id: 'exercise-physiology', section: 'Kinesiology', title: 'Exercise Physiology', level: 'Starter',
+    blurb: 'How the body fuels and adapts to exercise: energy systems, muscle fibre types, the cardiorespiratory response and training adaptations.',
+    lessons: [
+    { t: 'ATP and energy systems', p: [
+      'Muscles run on ATP, adenosine triphosphate. The body stores very little, so it constantly regenerates ATP through three energy systems.',
+      'The phosphagen system, using creatine phosphate, powers all-out efforts lasting up to about 10 seconds. Anaerobic glycolysis dominates intense efforts from roughly 30 seconds to 2 minutes. The oxidative system, using oxygen, powers longer, steadier work.',
+      'All three work at once; the intensity and duration decide which contributes most.'],
+      tb: ['Energy systems', [['Phosphagen', 'Up to about 10 seconds; sprints, lifts'], ['Glycolytic', 'About 30 seconds to 2 minutes'], ['Oxidative', 'Longer, steadier work'], ['Fuel for oxidative', 'Carbohydrate and fat'], ['Key point', 'All three always contribute']]],
+      todo: ['Classify five sports moments by main energy system.', 'Time a 10-second sprint and a 2-minute effort.', 'Note how each feels.'],
+      ck: ['Which system mainly powers a 100-metre sprint?', ['Oxidative', 'Phosphagen', 'Fat oxidation only'], 1, 'Short, maximal efforts rely on phosphagens.'] },
+    { t: 'Muscle fibre types', p: [
+      'Type I fibres are slow-twitch: fatigue-resistant and rich in mitochondria, suited to endurance. Type II fibres are fast-twitch and produce more force and power but tire sooner.',
+      'Type IIa fibres are intermediate; Type IIx are the most powerful and fatigable.',
+      'Most muscles contain a mix. Genetics influence the proportions, and training shifts fibre characteristics.'],
+      tb: ['Fibre types', [['Type I', 'Slow, fatigue-resistant, endurance'], ['Type IIa', 'Fast, moderately fatigue-resistant'], ['Type IIx', 'Fastest, most powerful, fatigue quickly'], ['Mitochondria', 'Most in Type I'], ['Training', 'Shifts fibre characteristics']]],
+      todo: ['Compare a marathoner’s and a sprinter’s likely fibre mix.', 'Explain why posture muscles are often Type I rich.', 'Find one study on training and fibre type.'],
+      ck: ['Which fibre type is most fatigue-resistant?', ['Type I', 'Type IIa', 'Type IIx'], 0, 'Type I fibres rely on oxidative metabolism.'] },
+    { t: 'The cardiorespiratory response', p: [
+      'During exercise, heart rate and stroke volume rise, increasing cardiac output, the amount of blood pumped each minute: cardiac output = heart rate × stroke volume.',
+      'Breathing rate and depth increase to bring in oxygen and remove carbon dioxide. Blood flow shifts toward working muscles.',
+      'VO₂ max is the maximum rate at which the body can take up and use oxygen. It is a common measure of aerobic fitness.'],
+      tb: ['Cardiac output', [['Formula', 'Heart rate × stroke volume'], ['Rest example', '70 bpm × 70 mL = 4.9 L/min'], ['Exercise example', '170 bpm × 110 mL = 18.7 L/min', 1], ['VO₂ max', 'Maximum oxygen uptake'], ['Measured in', 'mL/kg/min']]],
+      todo: ['Calculate cardiac output at 120 bpm and 90 mL stroke volume.', 'Measure your resting heart rate.', 'Measure it after two minutes of stair climbing.'],
+      ck: ['Heart rate 150 bpm and stroke volume 100 mL give what cardiac output?', ['1.5 L/min', '15 L/min', '150 L/min'], 1, '150 × 0.1 L = 15 L/min.'] },
+    { t: 'Training adaptations', p: [
+      'Endurance training increases stroke volume, mitochondrial density and capillaries, lowering resting heart rate and improving VO₂ max.',
+      'Resistance training increases muscle size, called hypertrophy, and improves the nervous system’s ability to recruit muscle, which explains early strength gains before size changes.',
+      'Adaptations require progressive overload, gradually increasing the demand, and recovery. Detraining reverses many gains within weeks.'],
+      tb: ['Adaptations', [['Endurance', 'Higher stroke volume, more mitochondria'], ['Resting heart rate', 'Often falls'], ['Resistance', 'Hypertrophy and neural gains'], ['Early strength gains', 'Mainly neural'], ['Principle', 'Progressive overload plus recovery']]],
+      todo: ['Track your resting heart rate for two weeks.', 'Explain why beginners gain strength quickly.', 'Design a four-week progressive overload plan for one exercise.'],
+      ck: ['Why do beginners gain strength before muscles grow much?', ['Neural adaptations improve muscle recruitment', 'Bones lengthen', 'Heart rate drops'], 0, 'The nervous system adapts first.'] },
+    { t: 'Fatigue and recovery', p: [
+      'Fatigue comes from several sources: depleted fuel stores, accumulated metabolites, changes in muscle chemistry and central nervous system factors.',
+      'Recovery includes sleep, nutrition, hydration and rest days. Glycogen stores are replenished with carbohydrate after exercise.',
+      'Overtraining, too much training with too little recovery, can reduce performance and cause persistent fatigue. Varying hard and easy days helps prevent it.'],
+      tb: ['Recovery essentials', [['Sleep', 'Supports repair and adaptation'], ['Carbohydrate', 'Replenishes glycogen'], ['Protein', 'Supports muscle repair'], ['Hydration', 'Replaces fluid losses'], ['Rest days', 'Prevent overtraining']]],
+      todo: ['Plan a week alternating hard and easy days.', 'Track sleep for a week.', 'List signs of overtraining.'],
+      ck: ['What is overtraining?', ['Too much training with too little recovery', 'Training once a week', 'Stretching'], 0, 'Recovery is part of training.'] }],
+    exam: [
+    ['What molecule directly powers muscle contraction?', ['ATP', 'Glucose', 'Oxygen', 'Lactate'], 0],
+    ['Which energy system dominates efforts of about 30 seconds to 2 minutes?', ['Glycolytic', 'Phosphagen', 'Oxidative only', 'None'], 0],
+    ['Which energy system dominates a marathon?', ['Oxidative', 'Phosphagen', 'Glycolytic only', 'None'], 0],
+    ['Which fibres produce the most power?', ['Type IIx', 'Type I', 'Type IIa', 'Cardiac'], 0],
+    ['Cardiac output equals heart rate times what?', ['Stroke volume', 'Blood pressure', 'Breathing rate', 'VO₂ max'], 0],
+    ['What does VO₂ max measure?', ['Maximum oxygen uptake', 'Maximum heart rate', 'Muscle size', 'Flexibility'], 0],
+    ['Which is an endurance training adaptation?', ['More mitochondria', 'Fewer capillaries', 'Higher resting heart rate', 'Smaller stroke volume'], 0],
+    ['What is hypertrophy?', ['Increase in muscle size', 'Loss of muscle', 'Fat gain', 'Bone loss'], 0],
+    ['What principle drives continued adaptation?', ['Progressive overload', 'Constant identical workouts', 'No rest', 'Random training'], 0],
+    ['What replenishes glycogen after exercise?', ['Carbohydrate', 'Only water', 'Only protein', 'Caffeine'], 0]] },
+
+  { id: 'biomechanics', section: 'Kinesiology', title: 'Biomechanics of Human Movement', level: 'Core',
+    blurb: 'Apply physics to the body: planes and axes, levers, force and torque, balance and stability, and analysing a movement.',
+    lessons: [
+    { t: 'Planes and axes', p: [
+      'Movement is described in three planes. The sagittal plane divides the body into left and right; flexion and extension happen here, as in a squat. The frontal plane divides front and back; abduction and adduction happen here, as in a jumping jack. The transverse plane divides top and bottom; rotation happens here.',
+      'Each plane has a perpendicular axis of rotation.',
+      'Most sports movements combine planes. Training in all three helps prepare the body for real tasks.'],
+      tb: ['Planes of motion', [['Sagittal', 'Flexion, extension; squat, walking'], ['Frontal', 'Abduction, adduction; jumping jack'], ['Transverse', 'Rotation; golf swing'], ['Axis', 'Perpendicular to the plane'], ['Real movement', 'Usually combines planes']]],
+      todo: ['Classify ten exercises by main plane.', 'Find one exercise for each plane.', 'Analyse a tennis serve by plane.'],
+      ck: ['In which plane does a squat mainly occur?', ['Sagittal', 'Frontal', 'Transverse'], 0, 'Flexion and extension are sagittal.'] },
+    { t: 'Levers', p: [
+      'Bones act as levers, joints as fulcrums and muscles provide the effort. In a first-class lever the fulcrum is between effort and load, as when nodding the head.',
+      'In a second-class lever the load is between fulcrum and effort, often illustrated by rising onto the toes. In a third-class lever the effort is between fulcrum and load, as in the biceps flexing the elbow.',
+      'Most body levers are third-class: they favour speed and range of motion over force.'],
+      tb: ['Lever classes', [['First class', 'Fulcrum in the middle; nodding'], ['Second class', 'Load in the middle; calf raise'], ['Third class', 'Effort in the middle; biceps curl'], ['Most common in body', 'Third class'], ['Trade-off', 'Speed and range over force']]],
+      todo: ['Identify the lever class in three movements.', 'Explain why third-class levers favour speed.', 'Sketch the biceps curl lever.'],
+      ck: ['Which lever class is most common in the human body?', ['First', 'Second', 'Third'], 2, 'Effort usually sits between joint and load.'] },
+    { t: 'Force and torque', p: [
+      'Torque is the turning effect of a force: force times the perpendicular distance from the joint, called the moment arm.',
+      'Holding a 10 kg dumbbell with the forearm horizontal, about 0.35 m from the elbow, creates roughly 10 × 9.8 × 0.35 ≈ 34 N·m of torque the elbow flexors must resist.',
+      'Changing body position changes moment arms, which is why a squat feels different with a more upright or a more forward-leaning torso.'],
+      tb: ['Torque at the elbow', [['Load', '10 kg (≈ 98 N)'], ['Moment arm', '0.35 m'], ['Torque', '≈ 34 N·m', 1], ['Shorter moment arm', 'Less torque'], ['Position matters', 'Changes moment arms']]],
+      todo: ['Calculate torque for a 5 kg load at 0.3 m.', 'Feel the difference holding a bag close versus at arm’s length.', 'Explain why lifting close to the body is safer.'],
+      ck: ['Why is lifting a box close to the body easier?', ['It shortens the moment arm and reduces torque', 'It makes the box lighter', 'It increases gravity'], 0, 'Shorter moment arms mean less torque.'] },
+    { t: 'Balance and stability', p: [
+      'Stability depends on the base of support, the area under and between the points of contact, and the position of the centre of mass.',
+      'A wider base and a lower centre of mass increase stability. Balance is lost when the centre of mass moves outside the base of support.',
+      'Athletes widen their stance to resist contact and narrow it to move quickly. Fall prevention for older adults often trains balance and widens the effective base with aids.'],
+      tb: ['Stability factors', [['Base of support', 'Wider is more stable'], ['Centre of mass', 'Lower is more stable'], ['Loss of balance', 'Centre of mass outside base'], ['Athletes', 'Wide to resist, narrow to move'], ['Fall prevention', 'Balance training, aids']]],
+      todo: ['Stand on one leg, then two, and compare stability.', 'Explain a defensive stance in basketball.', 'List two balance exercises.'],
+      ck: ['What increases stability?', ['A wider base and lower centre of mass', 'A narrow base and higher centre of mass', 'Standing on toes'], 0, 'Both lower the chance of tipping.'] },
+    { t: 'Analysing a movement', p: [
+      'Movement analysis breaks a skill into phases, such as preparation, execution and follow-through, and examines joint actions, planes, forces and timing in each.',
+      'Slow-motion video on a phone is a powerful tool. Compare the movement with a skilled model and look for one key error at a time.',
+      'The kinetic chain describes how force transfers from the ground through linked segments. In a throw, energy flows from legs to hips, trunk, shoulder, elbow and wrist.'],
+      tb: ['Analysis steps', [['Phases', 'Preparation, execution, follow-through'], ['Joint actions', 'Which joints, which planes'], ['Forces', 'Ground reaction, torque'], ['Tool', 'Slow-motion video'], ['Kinetic chain', 'Force flows through linked segments']]],
+      todo: ['Film a jump in slow motion.', 'Break it into phases.', 'Identify one change to improve it.'],
+      ck: ['In a throw, where does the kinetic chain usually begin?', ['The wrist', 'The legs and ground', 'The head'], 1, 'Force builds from the ground up.'] }],
+    exam: [
+    ['Which plane divides the body into left and right?', ['Sagittal', 'Frontal', 'Transverse', 'Coronal only'], 0],
+    ['A jumping jack mainly occurs in which plane?', ['Frontal', 'Sagittal', 'Transverse', 'None'], 0],
+    ['A golf swing mainly involves which plane?', ['Transverse', 'Sagittal', 'Frontal', 'None'], 0],
+    ['Nodding the head is which lever class?', ['First', 'Second', 'Third', 'None'], 0],
+    ['A biceps curl is which lever class?', ['Third', 'First', 'Second', 'None'], 0],
+    ['What is torque?', ['Force times perpendicular distance from the axis', 'Mass times velocity', 'Speed', 'Energy'], 0],
+    ['Holding a load farther from a joint does what to torque?', ['Increases it', 'Decreases it', 'No change', 'Makes it zero'], 0],
+    ['When is balance lost?', ['When the centre of mass moves outside the base of support', 'When standing still', 'When the base is wide', 'Never'], 0],
+    ['What does the kinetic chain describe?', ['Force transfer through linked body segments', 'A bicycle chain', 'Muscle fibre type', 'Heart rate'], 0],
+    ['Which tool helps movement analysis most simply?', ['Slow-motion video', 'A thermometer', 'A calculator only', 'A stopwatch only'], 0]] },
+
+  { id: 'exercise-prescription', section: 'Kinesiology', title: 'Exercise Prescription', level: 'Core',
+    blurb: 'Design safe, effective programmes: screening, the FITT principle, intensity and heart rate zones, activity guidelines and progression.',
+    lessons: [
+    { t: 'Screening first', p: [
+      'Before prescribing exercise, screen clients for health risks. Tools such as the PAR-Q+ questionnaire help identify people who should get medical clearance first.',
+      'Gather goals, activity history, injuries and preferences. A programme someone enjoys is one they continue.',
+      'This course teaches principles for study. Working with clients requires appropriate certification and following professional guidelines.'],
+      tb: ['Before you start', [['Screening tool', 'PAR-Q+'], ['Purpose', 'Identify who needs clearance'], ['Gather', 'Goals, history, injuries, preferences'], ['Adherence', 'Enjoyment matters'], ['Professional practice', 'Requires certification']]],
+      todo: ['Read the PAR-Q+ questionnaire online.', 'Write five intake questions.', 'Interview a friend about their goals.'],
+      ck: ['What is the PAR-Q+ used for?', ['Screening readiness for physical activity', 'Measuring strength', 'Counting calories'], 0, 'It flags who needs clearance.'] },
+    { t: 'The FITT principle', p: [
+      'FITT structures any programme: frequency (how often), intensity (how hard), time (how long) and type (what kind of activity).',
+      'Change one variable at a time when progressing, so you can see what works and limit injury risk.',
+      'Add volume, the total amount of work, and progression to complete the picture.'],
+      tb: ['FITT', [['Frequency', 'Sessions per week'], ['Intensity', 'How hard'], ['Time', 'Duration'], ['Type', 'Mode of exercise'], ['Progression', 'Change one variable at a time']]],
+      todo: ['Write a FITT plan for a beginner runner.', 'Write one for strength training.', 'Choose one variable to progress next week.'],
+      ck: ['What does the T for time mean in FITT?', ['Type of exercise', 'Duration of exercise', 'Temperature'], 1, 'There are two Ts: time and type.'] },
+    { t: 'Intensity and heart rate', p: [
+      'A rough estimate of maximum heart rate is 220 minus age. It varies widely between individuals, so treat it as a guide.',
+      'The Karvonen method uses heart rate reserve: target = (max HR − resting HR) × intensity + resting HR. For a 20-year-old with a resting rate of 60 at 60% intensity: (200 − 60) × 0.6 + 60 = 144 bpm.',
+      'The Borg rating of perceived exertion, from 6 to 20, and the talk test offer simple alternatives.'],
+      tb: ['Karvonen example', [['Age', '20'], ['Estimated max HR', '200'], ['Resting HR', '60'], ['Intensity', '60%'], ['Target HR', '144 bpm', 1]]],
+      todo: ['Calculate your 60% and 80% targets.', 'Try the talk test during a brisk walk.', 'Compare RPE with your heart rate.'],
+      ck: ['Using 220 minus age, what is the estimated maximum heart rate for a 30-year-old?', ['170', '190', '210'], 1, '220 − 30 = 190.'] },
+    { t: 'Activity guidelines', p: [
+      'The Physical Activity Guidelines for Americans, second edition, recommend that adults do at least 150 to 300 minutes a week of moderate-intensity aerobic activity, or 75 to 150 minutes of vigorous activity, or a combination.',
+      'They also recommend muscle-strengthening activities involving all major muscle groups on two or more days a week.',
+      'Some activity is better than none, and more brings additional benefits.'],
+      tb: ['Adult guidelines (2nd edition)', [['Moderate aerobic', '150–300 minutes a week'], ['Or vigorous aerobic', '75–150 minutes a week'], ['Muscle strengthening', '2 or more days a week'], ['Key message', 'Some is better than none'], ['Moderate example', 'Brisk walking']]],
+      todo: ['Log your activity for a week.', 'Compare it with the guidelines.', 'Plan one change to meet them.'],
+      ck: ['How many days a week of muscle strengthening do the guidelines recommend for adults?', ['At least 2', 'At least 5', 'None'], 0, 'Two or more days, all major muscle groups.'] },
+    { t: 'Progression and specificity', p: [
+      'Specificity means the body adapts to the demands placed on it. A sprinter trains differently from a marathoner.',
+      'Progress gradually. A common rule of thumb in running is to increase weekly volume by no more than about 10%, though needs vary.',
+      'Build in deload or recovery weeks, and adjust based on how the client responds rather than following the plan blindly.'],
+      tb: ['Programming principles', [['Specificity', 'Train for the goal'], ['Overload', 'Gradually increase demand'], ['Running rule of thumb', 'About 10% weekly increase at most'], ['Recovery weeks', 'Planned lighter weeks'], ['Individualise', 'Adjust to response']]],
+      todo: ['Write a six-week progression for a 5 km goal.', 'Include one recovery week.', 'Note how you would adjust if the client is sore.'],
+      ck: ['What does specificity mean?', ['The body adapts to the demands placed on it', 'Every programme is the same', 'Only strength matters'], 0, 'Train for the goal.'] }],
+    exam: [
+    ['What should happen before prescribing exercise?', ['Health screening', 'A race', 'A maximal lift', 'Nothing'], 0],
+    ['What does FITT stand for?', ['Frequency, intensity, time, type', 'Fitness, intensity, tempo, training', 'Fast, intense, tough, tiring', 'None'], 0],
+    ['Why change one variable at a time?', ['To see what works and limit injury risk', 'It is faster', 'It is required by law', 'No reason'], 0],
+    ['Estimated max HR for a 40-year-old using 220 minus age?', ['160', '180', '200', '220'], 1],
+    ['Karvonen: max 190, rest 70, 50% intensity. Target?', ['130', '120', '95', '160'], 0],
+    ['What scale runs from 6 to 20?', ['Borg RPE', 'BMI', 'VO₂ max', 'Karvonen'], 0],
+    ['How much moderate aerobic activity per week do adult guidelines recommend?', ['150–300 minutes', '30 minutes', '1,000 minutes', 'None'], 0],
+    ['How much vigorous activity is an alternative?', ['75–150 minutes', '10 minutes', '500 minutes', 'None'], 0],
+    ['What is a common running rule of thumb for weekly increases?', ['About 10% at most', '50%', '100%', 'No limit'], 0],
+    ['What are recovery weeks?', ['Planned lighter weeks', 'Weeks of maximum effort', 'Weeks with no planning', 'Competitions'], 0]] },
+
+  { id: 'spanish-intro', section: 'Spanish for Professionals', title: 'Workplace Spanish: Greetings and Formality', level: 'Starter',
+    blurb: 'Start professional conversations in Spanish: greetings by time of day, tú versus usted, introductions and polite phrases.',
+    lessons: [
+    { t: 'Greetings by time of day', p: [
+      'Spanish greetings change with the time of day. Buenos días is used in the morning, buenas tardes from roughly midday into the evening, and buenas noches at night, both as hello and goodbye.',
+      'Hola is friendly and works in most settings, often followed by the formal greeting: Hola, buenos días.',
+      'Closing a conversation: hasta luego (see you later), hasta mañana (see you tomorrow) and que tenga un buen día (have a good day, formal).'],
+      tb: ['Greetings', [['Buenos días', 'Good morning'], ['Buenas tardes', 'Good afternoon / early evening'], ['Buenas noches', 'Good evening / good night'], ['Hasta luego', 'See you later'], ['Que tenga un buen día', 'Have a good day (formal)']]],
+      todo: ['Say the right greeting for 9 a.m., 3 p.m. and 9 p.m.', 'Practise a polite goodbye.', 'Greet a Spanish-speaking colleague tomorrow.'],
+      ck: ['Which greeting suits a 3 p.m. meeting?', ['Buenos días', 'Buenas tardes', 'Buenas noches'], 1, 'Tardes covers the afternoon.'] },
+    { t: 'Tú or usted', p: [
+      'Spanish has two forms of you. Tú is informal, used with friends, family and peers. Usted is formal, used with clients, senior colleagues, older people and people you do not know.',
+      'Verbs change with the form: ¿Cómo estás? uses tú; ¿Cómo está? uses usted.',
+      'Norms vary by country and company. When unsure in a professional setting, start with usted and switch if the other person invites you to use tú. In Argentina and parts of Central America, vos often replaces tú.'],
+      tb: ['Two forms of you', [['Tú', 'Informal: friends, peers'], ['Usted', 'Formal: clients, seniors, strangers'], ['¿Cómo estás?', 'How are you? (tú)'], ['¿Cómo está?', 'How are you? (usted)'], ['When unsure', 'Start with usted']]],
+      todo: ['List five workplace people you would address with usted.', 'Practise ¿Cómo está? and ¿Cómo estás?', 'Note the norm at a company you know.'],
+      ck: ['Which form should you use when first meeting a client?', ['Tú', 'Usted', 'Neither'], 1, 'Usted is the safe professional default.'] },
+    { t: 'Introductions', p: [
+      'Introduce yourself with me llamo (my name is) or soy (I am): Me llamo Ana. Soy analista en el equipo de finanzas.',
+      'When meeting someone, say mucho gusto (nice to meet you) or encantado if you are male and encantada if you are female.',
+      'To introduce a colleague formally: Le presento a mi colega, Carlos Ruiz (May I introduce my colleague, Carlos Ruiz).'],
+      tb: ['Introduction phrases', [['Me llamo...', 'My name is...'], ['Soy analista', 'I am an analyst'], ['Trabajo en...', 'I work at/in...'], ['Mucho gusto', 'Nice to meet you'], ['Le presento a...', 'May I introduce... (formal)']]],
+      todo: ['Write a two-sentence introduction about yourself.', 'Practise introducing a colleague formally.', 'Record yourself saying both.'],
+      ck: ['What does mucho gusto mean?', ['Thank you very much', 'Nice to meet you', 'Good morning'], 1, 'It is said when meeting someone.'] },
+    { t: 'Polite phrases', p: [
+      'Courtesy matters in Spanish-speaking workplaces. Por favor (please) and gracias (thank you) are essential; de nada (you are welcome) answers thanks.',
+      'Soften requests with conditional forms: ¿Podría enviarme el informe? (Could you send me the report?) is more polite than ¡Envíeme el informe!',
+      'Disculpe (excuse me, to get attention) and perdón (sorry, pardon) help in meetings.'],
+      tb: ['Courtesy', [['Por favor', 'Please'], ['Gracias / de nada', 'Thank you / you are welcome'], ['¿Podría...?', 'Could you...? (polite)'], ['Disculpe', 'Excuse me'], ['Perdón', 'Sorry, pardon']]],
+      todo: ['Rewrite three direct requests with ¿Podría...?', 'Practise disculpe to interrupt politely.', 'Use gracias and de nada in a role-play.'],
+      ck: ['Which request is most polite?', ['Envíe el informe', '¿Podría enviarme el informe?', 'Informe'], 1, 'The conditional softens the request.'] },
+    { t: 'Small talk', p: [
+      'Small talk builds rapport before business. Common topics include the weather, travel, family in general terms, food and the city.',
+      'Useful phrases: ¿Qué tal el viaje? (How was the trip?), ¿De dónde es usted? (Where are you from?), ¡Qué bien! (How nice!).',
+      'Business cultures in many Spanish-speaking countries value relationship-building; rushing straight to business can seem cold.'],
+      tb: ['Small talk phrases', [['¿Qué tal el viaje?', 'How was the trip?'], ['¿De dónde es usted?', 'Where are you from? (formal)'], ['¡Qué bien!', 'How nice!'], ['Hace buen tiempo', 'The weather is nice'], ['Value', 'Relationship before business']]],
+      todo: ['Prepare three small-talk questions in Spanish.', 'Practise answering ¿De dónde es usted?', 'Role-play a two-minute conversation.'],
+      ck: ['Why does small talk matter in many Spanish-speaking business cultures?', ['It builds the relationship before business', 'It is required by law', 'It replaces the meeting'], 0, 'Rapport comes first.'] }],
+    exam: [
+    ['What does buenos días mean?', ['Good morning', 'Good night', 'Goodbye', 'Thank you'], 0],
+    ['When is buenas noches used?', ['At night, as hello or goodbye', 'Only in the morning', 'Only at lunch', 'Never at work'], 0],
+    ['Which form of you is formal?', ['Usted', 'Tú', 'Vos', 'Ellos'], 0],
+    ['Which question uses the usted form?', ['¿Cómo está?', '¿Cómo estás?', '¿Qué tal, tío?', '¿Cómo andás?'], 0],
+    ['In which country is vos especially common?', ['Argentina', 'Spain', 'Mexico', 'Peru'], 0],
+    ['How does a woman say pleased to meet you?', ['Encantada', 'Encantado', 'Gracias', 'De nada'], 0],
+    ['What does le presento a mean?', ['May I introduce (formal)', 'Thank you for', 'Excuse me', 'Goodbye to'], 0],
+    ['What is the usual reply to gracias?', ['De nada', 'Por favor', 'Hola', 'Perdón'], 0],
+    ['What does disculpe do?', ['Politely gets someone’s attention', 'Says goodbye', 'Means thank you', 'Means hurry up'], 0],
+    ['What does ¿Qué tal el viaje? ask?', ['How was the trip?', 'What time is it?', 'Where is the office?', 'What is your name?'], 0]] },
+
+  { id: 'spanish-email', section: 'Spanish for Professionals', title: 'Professional Emails in Spanish', level: 'Core',
+    blurb: 'Write clear, polite work emails in Spanish: salutations, openings, requests, attachments, closings and common mistakes.',
+    lessons: [
+    { t: 'Salutations', p: [
+      'Formal emails often open with Estimado (to a man) or Estimada (to a woman), followed by the title and surname: Estimado Sr. García: or Estimada Dra. López:',
+      'In Spanish, a formal salutation is followed by a colon, not a comma.',
+      'For less formal emails between colleagues: Hola, Marta: or Buenos días, equipo:'],
+      tb: ['Salutations', [['Formal (man)', 'Estimado Sr. García:'], ['Formal (woman)', 'Estimada Sra. López:'], ['Group', 'Estimados señores: / Estimado equipo:'], ['Less formal', 'Hola, Marta:'], ['Punctuation', 'Colon after the salutation']]],
+      todo: ['Write formal salutations for three people.', 'Write one informal salutation.', 'Check each ends with a colon.'],
+      ck: ['What punctuation follows a formal Spanish salutation?', ['A comma', 'A colon', 'A full stop'], 1, 'Spanish uses a colon: Estimado Sr. García:'] },
+    { t: 'Opening lines', p: [
+      'Common openings: Le escribo para... (I am writing to...), En relación con... (Regarding...), Gracias por su correo (Thank you for your email).',
+      'State the purpose in the first sentence, just as in English business email.',
+      'Le escribo para confirmar la reunión del martes. (I am writing to confirm Tuesday’s meeting.)'],
+      tb: ['Openings', [['Le escribo para...', 'I am writing to...'], ['En relación con...', 'Regarding...'], ['Gracias por su correo', 'Thank you for your email'], ['Me pongo en contacto con usted...', 'I am contacting you...'], ['Rule', 'Purpose in the first sentence']]],
+      todo: ['Write an opening to confirm a meeting.', 'Write one replying to a client’s question.', 'Translate a recent English email opening.'],
+      ck: ['What does le escribo para mean?', ['I am writing to', 'I am calling about', 'Please reply'], 0, 'It introduces the email’s purpose.'] },
+    { t: 'Requests and attachments', p: [
+      'Make requests politely with the conditional: ¿Podría enviarme...? (Could you send me...?) or Le agradecería que... (I would be grateful if...).',
+      'Mention attachments: Adjunto el informe (I attach the report) or Le envío adjunto el presupuesto (Attached is the budget).',
+      'Give deadlines clearly: antes del viernes 20 de noviembre (before Friday, 20 November).'],
+      tb: ['Useful phrases', [['¿Podría...?', 'Could you...?'], ['Le agradecería que...', 'I would be grateful if...'], ['Adjunto...', 'I attach...'], ['Antes del viernes', 'Before Friday'], ['Quedo a la espera', 'I await (your reply)']]],
+      todo: ['Write a request for a document with a deadline.', 'Add a line about an attachment.', 'Make it polite with the conditional.'],
+      ck: ['Which phrase introduces an attachment?', ['Adjunto el informe', 'Hasta luego', 'Mucho gusto'], 0, 'Adjunto means I attach.'] },
+    { t: 'Closings', p: [
+      'Common closings: Quedo atento (or atenta) a su respuesta (I look forward to your reply). Saludos cordiales (Kind regards) and Atentamente (Sincerely) are standard sign-offs.',
+      'Between colleagues: Un saludo or Saludos.',
+      'Add your full name, title and company below the sign-off.'],
+      tb: ['Closings', [['Quedo atento/a a su respuesta', 'I look forward to your reply'], ['Saludos cordiales', 'Kind regards'], ['Atentamente', 'Sincerely (formal)'], ['Un saludo', 'Best (informal)'], ['Signature', 'Name, title, company']]],
+      todo: ['Write a formal and an informal closing.', 'Build a Spanish email signature.', 'Choose the right closing for a client.'],
+      ck: ['Which closing is most formal?', ['Un saludo', 'Atentamente', 'Chao'], 1, 'Atentamente is the formal sign-off.'] },
+    { t: 'Common mistakes', p: [
+      'Watch false friends: actualmente means currently, not actually; asistir means to attend, not to assist; embarazada means pregnant, not embarrassed.',
+      'Accents change meaning: si means if, but sí means yes; el means the, but él means he.',
+      'Keep register consistent: if you start with usted, keep usted throughout the email.'],
+      tb: ['False friends and accents', [['Actualmente', 'Currently (not actually)'], ['Asistir', 'To attend'], ['Embarazada', 'Pregnant (not embarrassed)'], ['Si / sí', 'If / yes'], ['El / él', 'The / he']]],
+      todo: ['Write five sentences using actualmente and asistir correctly.', 'Check your accents in a draft.', 'Make sure the register is consistent.'],
+      ck: ['What does asistir a una reunión mean?', ['To assist a meeting', 'To attend a meeting', 'To cancel a meeting'], 1, 'Asistir is a false friend.'] }],
+    exam: [
+    ['How should a formal email to Mr. García begin?', ['Estimado Sr. García:', 'Hola García,', 'Querido García!', 'Hey García'], 0],
+    ['What follows a formal salutation in Spanish?', ['A colon', 'A comma', 'An exclamation mark', 'Nothing'], 0],
+    ['What does en relación con mean?', ['Regarding', 'Thank you', 'Attached', 'Goodbye'], 0],
+    ['Which phrase means I would be grateful if?', ['Le agradecería que', 'Adjunto', 'Atentamente', 'De nada'], 0],
+    ['What does adjunto mean?', ['I attach', 'I apologise', 'I attend', 'I agree'], 0],
+    ['Which is a standard formal sign-off?', ['Saludos cordiales', 'Chao', 'Besos', 'Nos vemos'], 0],
+    ['What does quedo atento a su respuesta mean?', ['I look forward to your reply', 'I am angry', 'I attach the file', 'Please call me'], 0],
+    ['What does actualmente mean?', ['Currently', 'Actually', 'Finally', 'Never'], 0],
+    ['What does sí (with an accent) mean?', ['Yes', 'If', 'Six', 'Sun'], 0],
+    ['If an email starts in usted, what should the rest use?', ['Usted throughout', 'Switch to tú', 'Mix both', 'English'], 0]] },
+
+  { id: 'spanish-numbers', section: 'Spanish for Professionals', title: 'Numbers, Dates and Meetings in Spanish', level: 'Core',
+    blurb: 'Handle the details: numbers and prices, dates and times, scheduling meetings and the formatting conventions that differ from English.',
+    lessons: [
+    { t: 'Numbers and prices', p: [
+      'Key numbers: uno, dos, tres... diez; veinte (20), treinta (30), cien (100), mil (1,000), un millón (1,000,000).',
+      'Many Spanish-speaking countries, including Spain and much of South America, write decimals with a comma and thousands with a full stop: 1.250,50. Mexico and much of Central America use the same style as the U.S.: 1,250.50.',
+      'When reading financial figures, confirm which convention the sender uses.'],
+      tb: ['Number formats', [['Spain, much of South America', '1.250,50'], ['Mexico, U.S. style', '1,250.50'], ['Cien', '100'], ['Mil', '1,000'], ['Un millón', '1,000,000']]],
+      todo: ['Write 3,450.75 in Spain’s format.', 'Say five prices aloud in Spanish.', 'Check which format a Spanish-language report uses.'],
+      ck: ['In Spain, how is two thousand and a half written?', ['2,000.5', '2.000,5', '2 000;5'], 1, 'Spain uses a full stop for thousands and a comma for decimals.'] },
+    { t: 'Dates', p: [
+      'Dates are written day, month, year: 17/11/2026 means 17 November 2026. This differs from the U.S. month-first format and can cause costly errors.',
+      'Months and days of the week are not capitalised in Spanish: martes, 17 de noviembre de 2026.',
+      'Days: lunes, martes, miércoles, jueves, viernes, sábado, domingo.'],
+      tb: ['Dates', [['Format', 'Day/month/year'], ['17/11/2026', '17 November 2026'], ['Written out', 'martes, 17 de noviembre de 2026'], ['Capitals', 'Months and days lowercase'], ['Week', 'lunes to domingo']]],
+      todo: ['Write today’s date in Spanish both ways.', 'Convert 03/04/2027 for a U.S. reader.', 'List the days of the week.'],
+      ck: ['In Spanish format, what date is 05/03/2027?', ['May 3, 2027', 'March 5, 2027', 'March 2027 only'], 1, 'Day comes first: 5 March 2027.'] },
+    { t: 'Telling time', p: [
+      'Ask the time with ¿Qué hora es? Answer with es la una (it is one o’clock) or son las tres (it is three o’clock).',
+      'For meeting times use a las: La reunión es a las diez y media (The meeting is at half past ten).',
+      'Written schedules often use the 24-hour clock: 15:00 for 3 p.m. Add de la mañana, de la tarde or de la noche to clarify in speech.'],
+      tb: ['Time phrases', [['¿Qué hora es?', 'What time is it?'], ['Son las tres', 'It is three o’clock'], ['A las diez y media', 'At half past ten'], ['Y cuarto / menos cuarto', 'Quarter past / quarter to'], ['15:00', '3 p.m. (24-hour)']]],
+      todo: ['Say five meeting times aloud.', 'Convert 7 p.m. and 9:30 a.m. to 24-hour format.', 'Write a meeting time in a sentence.'],
+      ck: ['What does a las dos y media mean?', ['At half past two', 'At two fifteen', 'At twelve'], 0, 'Y media means half past.'] },
+    { t: 'Scheduling meetings', p: [
+      'Propose times: ¿Le viene bien el jueves a las once? (Does Thursday at eleven suit you?). Offer alternatives: Si no, podemos el viernes por la mañana.',
+      'Confirm: Confirmo la reunión el jueves 19 a las 11:00 (hora de Ciudad de México). Always state the time zone across countries.',
+      'Reschedule politely: Lamentablemente tengo que cambiar la reunión. ¿Podríamos pasarla al lunes?'],
+      tb: ['Scheduling phrases', [['¿Le viene bien...?', 'Does ... suit you?'], ['Podemos...', 'We can...'], ['Confirmo la reunión', 'I confirm the meeting'], ['Hora de...', 'Time zone of...'], ['¿Podríamos pasarla al lunes?', 'Could we move it to Monday?']]],
+      todo: ['Write an email proposing two meeting times.', 'Confirm one with a time zone.', 'Write a polite reschedule request.'],
+      ck: ['Why state the time zone when confirming a meeting across countries?', ['To avoid confusion between locations', 'It is decoration', 'It is legally required'], 0, 'Time zones cause missed meetings.'] },
+    { t: 'In the meeting', p: [
+      'Useful phrases: Vamos a empezar (Let’s start), El primer punto es... (The first item is...), ¿Alguna pregunta? (Any questions?).',
+      'To ask for clarification: ¿Podría repetirlo, por favor? (Could you repeat that, please?) or ¿Qué quiere decir con...? (What do you mean by...?).',
+      'Close: Para resumir... (To summarise...), Los próximos pasos son... (The next steps are...).'],
+      tb: ['Meeting phrases', [['Vamos a empezar', 'Let’s start'], ['El primer punto es...', 'The first item is...'], ['¿Podría repetirlo?', 'Could you repeat that?'], ['Para resumir...', 'To summarise...'], ['Los próximos pasos...', 'The next steps...']]],
+      todo: ['Write an agenda in Spanish with three items.', 'Practise asking for repetition.', 'Summarise a meeting in two Spanish sentences.'],
+      ck: ['What does ¿Podría repetirlo, por favor? mean?', ['Could you repeat that, please?', 'Can we start?', 'Any questions?'], 0, 'A polite request to repeat.'] }],
+    exam: [
+    ['What is mil in English?', ['One thousand', 'One hundred', 'One million', 'Ten'], 0],
+    ['In Spain, what does 1.500,25 represent?', ['One thousand five hundred and 25 hundredths', '1.5', '150,025', '1,500,025'], 0],
+    ['Which country commonly uses the U.S.-style decimal point?', ['Mexico', 'Spain', 'Argentina', 'Chile'], 0],
+    ['What order do Spanish dates use?', ['Day, month, year', 'Month, day, year', 'Year, day, month', 'Any order'], 0],
+    ['Are Spanish month names capitalised?', ['No', 'Yes', 'Only in emails', 'Only noviembre'], 0],
+    ['What day is jueves?', ['Thursday', 'Tuesday', 'Saturday', 'Monday'], 0],
+    ['How do you say it is three o’clock?', ['Son las tres', 'Es la tres', 'Son tres horas', 'Tres es'], 0],
+    ['What is 15:00 on a 12-hour clock?', ['3 p.m.', '5 p.m.', '3 a.m.', '1 p.m.'], 0],
+    ['What does ¿Le viene bien el jueves? ask?', ['Does Thursday suit you?', 'Did you come Thursday?', 'Is it Thursday?', 'Who came Thursday?'], 0],
+    ['What does para resumir introduce?', ['A summary', 'A question', 'A greeting', 'A complaint'], 0]] },
+
+  { id: 'thermodynamics', section: 'Mechanical Engineering', title: 'Thermodynamics Fundamentals', level: 'Core',
+    blurb: 'Energy, heat and work: systems, the first and second laws, efficiency, heat engines and the three modes of heat transfer.',
+    lessons: [
+    { t: 'Systems and energy', p: [
+      'Thermodynamics studies energy and how it changes form. Engineers draw a boundary around the system they study: a closed system exchanges energy but not mass with its surroundings; an open system, such as a turbine, exchanges both.',
+      'Energy crosses a boundary as heat, driven by a temperature difference, or as work, such as a turning shaft or a moving piston.',
+      'Temperature in thermodynamic equations is measured on an absolute scale, kelvin: K = °C + 273.15.'],
+      tb: ['Key ideas', [['Closed system', 'Energy crosses, mass does not'], ['Open system', 'Energy and mass cross'], ['Heat', 'Energy driven by temperature difference'], ['Work', 'Energy by force through distance'], ['Kelvin', '°C + 273.15']]],
+      todo: ['Classify a sealed bottle, a car engine and a kettle as open or closed.', 'Convert 25 °C and 100 °C to kelvin.', 'Name the heat and work in one device.'],
+      ck: ['What is 27 °C in kelvin (approximately)?', ['246 K', '300 K', '327 K'], 1, '27 + 273 ≈ 300 K.'] },
+    { t: 'The first law', p: [
+      'The first law of thermodynamics is conservation of energy: the change in a system’s internal energy equals heat added minus work done by the system, ΔU = Q − W.',
+      'If a gas absorbs 500 J of heat and does 200 J of work pushing a piston, its internal energy rises by 300 J.',
+      'Sign conventions vary between textbooks. State yours and stick to it.'],
+      tb: ['First law example', [['Heat added (Q)', '500 J'], ['Work done by system (W)', '200 J'], ['Change in internal energy', '300 J', 1], ['Equation', 'ΔU = Q − W'], ['Principle', 'Energy is conserved']]],
+      todo: ['Solve: Q = 800 J, W = 300 J. Find ΔU.', 'Solve: ΔU = 0, W = 150 J. Find Q.', 'Write the sign convention you will use.'],
+      ck: ['A gas absorbs 400 J and does 100 J of work. What is the change in internal energy?', ['300 J', '500 J', '−300 J'], 0, '400 − 100 = 300 J.'] },
+    { t: 'Efficiency', p: [
+      'Efficiency is useful energy out divided by energy in. A motor that uses 1,000 J of electricity to deliver 850 J of mechanical work is 85% efficient.',
+      'No real device is 100% efficient; some energy always ends up as waste heat.',
+      'Power is the rate of energy transfer, in watts. Efficiency applies to power the same way: 8.5 kW out from 10 kW in is 85%.'],
+      tb: ['Efficiency', [['Formula', 'Useful out ÷ energy in'], ['Motor example', '850 J ÷ 1,000 J = 85%', 1], ['Losses', 'Mostly heat'], ['Power', 'Energy per second, watts'], ['100% efficiency', 'Not possible in practice']]],
+      todo: ['Find the efficiency of a 60 W bulb giving 6 W of light.', 'Compare with an LED of 10 W giving 4 W of light.', 'Explain where the rest goes.'],
+      ck: ['An engine takes in 2,000 J and delivers 600 J of work. What is its efficiency?', ['30%', '60%', '70%'], 0, '600 ÷ 2,000 = 30%.'] },
+    { t: 'The second law and heat engines', p: [
+      'The second law says heat flows naturally from hot to cold, and that no heat engine can convert all the heat it receives into work.',
+      'The best possible efficiency for an engine working between a hot source and a cold sink is the Carnot efficiency: 1 − Tc/Th, with temperatures in kelvin.',
+      'For Th = 600 K and Tc = 300 K, the maximum is 1 − 300/600 = 50%. Real engines achieve less.'],
+      tb: ['Carnot limit', [['Formula', '1 − Tc / Th (kelvin)'], ['Hot source', '600 K'], ['Cold sink', '300 K'], ['Maximum efficiency', '50%', 1], ['Real engines', 'Always below the limit']]],
+      todo: ['Find the Carnot limit for 800 K and 300 K.', 'Explain why raising source temperature helps.', 'Compare with typical car engine efficiency.'],
+      ck: ['A heat engine runs between 500 K and 300 K. What is the Carnot efficiency?', ['40%', '60%', '67%'], 0, '1 − 300/500 = 0.4.'] },
+    { t: 'Heat transfer', p: [
+      'Heat moves in three ways. Conduction passes through solids by direct contact, as along a metal spoon. Convection is carried by moving fluids, as in air from a fan. Radiation travels as electromagnetic waves, as from the sun.',
+      'Conduction rate depends on material: metals conduct well, while insulation such as foam conducts poorly.',
+      'Engineers use fins, fans and coolants to remove heat from engines and electronics, and insulation to keep it in buildings.'],
+      tb: ['Modes of heat transfer', [['Conduction', 'Through solids by contact'], ['Convection', 'By moving fluids'], ['Radiation', 'Electromagnetic waves'], ['Good conductors', 'Metals'], ['Poor conductors', 'Foam, air gaps']]],
+      todo: ['Identify all three modes in a laptop.', 'Explain why heat sinks have fins.', 'Name two insulating materials.'],
+      ck: ['How does heat from the sun reach Earth?', ['Conduction', 'Convection', 'Radiation'], 2, 'Space has no medium for the other two.'] }],
+    exam: [
+    ['Which system exchanges both energy and mass?', ['Open', 'Closed', 'Isolated', 'None'], 0],
+    ['What is 0 °C in kelvin?', ['0 K', '100 K', '273.15 K', '373.15 K'], 2],
+    ['What does the first law express?', ['Conservation of energy', 'Heat flows cold to hot', 'Entropy is constant', 'Efficiency is 100%'], 0],
+    ['Q = 1,000 J and W = 400 J. What is ΔU?', ['600 J', '1,400 J', '400 J', '−600 J'], 0],
+    ['A pump uses 5 kW and delivers 4 kW of useful power. What is its efficiency?', ['20%', '80%', '125%', '45%'], 1],
+    ['What does the second law say about heat engines?', ['They cannot convert all heat into work', 'They are 100% efficient', 'They need no cold sink', 'They create energy'], 0],
+    ['Carnot efficiency between 1,000 K and 250 K?', ['25%', '75%', '80%', '50%'], 1],
+    ['Why must Carnot temperatures be in kelvin?', ['The formula needs an absolute scale', 'Celsius is illegal', 'Kelvin is larger', 'No reason'], 0],
+    ['Which mode of heat transfer relies on moving fluids?', ['Convection', 'Conduction', 'Radiation', 'None'], 0],
+    ['Why do heat sinks have fins?', ['To increase surface area for heat transfer', 'To look modern', 'To add weight', 'To store heat'], 0]] },
+
+  { id: 'mech-materials', section: 'Mechanical Engineering', title: 'Mechanics of Materials', level: 'Core',
+    blurb: 'How parts stretch, bend and break: stress, strain, Young’s modulus, the stress-strain curve and designing against failure.',
+    lessons: [
+    { t: 'Stress', p: [
+      'Stress is internal force per unit area: σ = F/A, measured in pascals (N/m²), usually megapascals (MPa).',
+      'A 10,000 N pull on a rod with a 1 cm² (0.0001 m²) cross-section creates 100,000,000 Pa, or 100 MPa.',
+      'Tensile stress pulls; compressive stress pushes; shear stress acts parallel to a surface, as in a bolt loaded sideways.'],
+      tb: ['Stress', [['Formula', 'σ = F / A'], ['Unit', 'Pa = N/m²; often MPa'], ['10,000 N on 0.0001 m²', '100 MPa', 1], ['Tension', 'Pulling'], ['Shear', 'Parallel to a surface']]],
+      todo: ['Find the stress from 5,000 N on 50 mm².', 'Identify tension and compression in a bridge.', 'Find a shear example in your home.'],
+      ck: ['20,000 N acts on 0.0002 m². What is the stress?', ['10 MPa', '100 MPa', '4 MPa'], 1, '20,000 ÷ 0.0002 = 100,000,000 Pa.'] },
+    { t: 'Strain and Young’s modulus', p: [
+      'Strain is the change in length divided by the original length: ε = ΔL/L. It has no units.',
+      'In the elastic range, stress is proportional to strain: σ = Eε, where E is Young’s modulus, a measure of stiffness. Steel is about 200 GPa; aluminium about 70 GPa.',
+      'A stiffer material stretches less under the same stress. That is why aluminium parts are often made thicker than steel ones.'],
+      tb: ['Stiffness', [['Strain', 'ΔL / L'], ['Hooke’s law', 'σ = Eε'], ['Steel E', 'About 200 GPa'], ['Aluminium E', 'About 70 GPa'], ['Higher E', 'Stiffer']]],
+      todo: ['A 2 m rod stretches 1 mm. Find the strain.', 'Find the stress in steel at that strain.', 'Compare with aluminium.'],
+      ck: ['A 1 m bar stretches 0.5 mm. What is the strain?', ['0.0005', '0.5', '0.005'], 0, '0.0005 m ÷ 1 m = 0.0005.'] },
+    { t: 'The stress-strain curve', p: [
+      'A tensile test pulls a sample until it breaks and plots stress against strain. The straight early part is elastic: the sample returns to its length when unloaded.',
+      'The yield strength marks the start of permanent, plastic deformation. The ultimate tensile strength is the peak stress before necking and fracture.',
+      'Ductile materials, such as most steels, stretch a lot before breaking. Brittle materials, such as glass and cast iron, break with little warning.'],
+      tb: ['Curve landmarks', [['Elastic region', 'Returns to original shape'], ['Yield strength', 'Permanent deformation begins'], ['Ultimate tensile strength', 'Peak stress'], ['Ductile', 'Large stretch before failure'], ['Brittle', 'Little warning']]],
+      todo: ['Sketch curves for steel and glass.', 'Mark yield and ultimate strength.', 'Explain why ductility is valued in buildings.'],
+      ck: ['Which point marks the start of permanent deformation?', ['Ultimate tensile strength', 'Yield strength', 'Fracture'], 1, 'Beyond yield, deformation is plastic.'] },
+    { t: 'Bending', p: [
+      'Beams under load bend. The top of a simply supported beam carrying a downward load is in compression; the bottom is in tension.',
+      'Bending stress is highest at the surfaces farthest from the centre. That is why I-beams put material in the flanges, far from the centre, and little in the web.',
+      'Deflection, how far a beam sags, often governs design, not just strength. Floors that bounce feel unsafe even if they will not break.'],
+      tb: ['Beams', [['Top of simply supported beam', 'Compression'], ['Bottom', 'Tension'], ['Highest stress', 'Outer surfaces'], ['I-beam', 'Material in flanges'], ['Deflection', 'Often governs design']]],
+      todo: ['Bend a ruler flat and on edge; compare stiffness.', 'Explain the result using material distance from centre.', 'Identify I-beams in a building.'],
+      ck: ['Why are I-beams efficient?', ['They place material far from the centre where bending stress is highest', 'They are lighter than air', 'They have no web'], 0, 'Flanges resist bending best.'] },
+    { t: 'Designing against failure', p: [
+      'Engineers keep working stress well below the material’s strength by applying a factor of safety.',
+      'Allowable stress = yield strength ÷ factor of safety. Steel with a 250 MPa yield and a factor of 2 has an allowable stress of 125 MPa.',
+      'Parts can also fail by fatigue under repeated loading, even below yield, and by buckling when slender parts are compressed. Both need their own checks.'],
+      tb: ['Design checks', [['Allowable stress', 'Yield ÷ factor of safety'], ['250 MPa ÷ 2', '125 MPa', 1], ['Fatigue', 'Repeated loading below yield'], ['Buckling', 'Slender parts in compression'], ['Deflection', 'Stiffness limits']]],
+      todo: ['Find allowable stress for 350 MPa yield and factor 2.5.', 'Find a fatigue failure case online.', 'Explain why columns buckle.'],
+      ck: ['Yield 300 MPa, factor of safety 3. What is the allowable stress?', ['100 MPa', '900 MPa', '297 MPa'], 0, '300 ÷ 3 = 100 MPa.'] }],
+    exam: [
+    ['What is stress?', ['Force per unit area', 'Change in length', 'Mass per volume', 'Energy per second'], 0],
+    ['50,000 N on 0.0005 m² gives what stress?', ['10 MPa', '100 MPa', '25 MPa', '1,000 MPa'], 1],
+    ['What are the units of strain?', ['None', 'Pascals', 'Newtons', 'Metres'], 0],
+    ['What does Young’s modulus measure?', ['Stiffness', 'Strength at fracture', 'Density', 'Hardness only'], 0],
+    ['About what is Young’s modulus for steel?', ['2 GPa', '20 GPa', '200 GPa', '2,000 GPa'], 2],
+    ['Which material is typically brittle?', ['Glass', 'Mild steel', 'Copper', 'Aluminium'], 0],
+    ['Where is the bottom of a simply supported beam under downward load?', ['In tension', 'In compression', 'Unstressed', 'In torsion'], 0],
+    ['Where is bending stress highest?', ['At the surfaces farthest from the centre', 'At the centre', 'At the supports only', 'Nowhere'], 0],
+    ['What is fatigue?', ['Failure under repeated loading below yield', 'Failure at one large load', 'Corrosion', 'Melting'], 0],
+    ['Yield 400 MPa, factor 2. What is the allowable stress?', ['200 MPa', '800 MPa', '398 MPa', '400 MPa'], 0]] },
+
+  { id: 'cad-manufacturing', section: 'Mechanical Engineering', title: 'CAD and Manufacturing Processes', level: 'Starter',
+    blurb: 'From a 3D model to a real part: parametric CAD, engineering drawings and tolerances, and choosing a manufacturing process.',
+    lessons: [
+    { t: 'Parametric CAD', p: [
+      'Most mechanical design uses parametric CAD software such as SolidWorks, Fusion 360, Onshape or Creo.',
+      'You sketch a 2D profile, constrain it with dimensions and relationships, then turn it into 3D with features such as extrude, revolve, fillet and hole. Changing a dimension updates the model.',
+      'Fully constrain sketches so the design behaves predictably when edited.'],
+      tb: ['CAD workflow', [['Sketch', '2D profile'], ['Constraints', 'Dimensions and relationships'], ['Features', 'Extrude, revolve, fillet, hole'], ['Parametric', 'Change a dimension, model updates'], ['Good habit', 'Fully constrained sketches']]],
+      todo: ['Install a free CAD tool.', 'Model a simple bracket with a hole.', 'Change one dimension and watch the model update.'],
+      ck: ['What does parametric mean in CAD?', ['Changing a dimension updates the model', 'The model cannot change', 'It only works in 2D'], 0, 'Dimensions drive geometry.'] },
+    { t: 'Assemblies and drawings', p: [
+      'Parts combine into assemblies, positioned with mates or joints that mimic how they fit and move.',
+      'Engineering drawings communicate parts for manufacture: orthographic views, sections, dimensions, tolerances, material and finish, in a title block.',
+      'Even with 3D models, drawings remain the formal record for inspection in many companies.'],
+      tb: ['From model to drawing', [['Assembly', 'Parts with mates'], ['Mates', 'Mimic fit and motion'], ['Drawing views', 'Orthographic and sections'], ['Drawing content', 'Dimensions, tolerances, material, finish'], ['Role', 'Formal record for inspection']]],
+      todo: ['Assemble two parts with a mate.', 'Create a drawing with three views.', 'Add a title block.'],
+      ck: ['What do mates do in an assembly?', ['Position parts as they fit and move', 'Change material', 'Print the part'], 0, 'They define relationships between parts.'] },
+    { t: 'Tolerances and fits', p: [
+      'No part is made exactly to size. A tolerance states the allowed variation: 25.00 ± 0.05 mm allows 24.95 to 25.05 mm.',
+      'Fits describe how mating parts go together. A clearance fit always leaves a gap; an interference fit requires force because the shaft is larger than the hole; a transition fit may be either.',
+      'Tighter tolerances cost more to make and inspect. Specify only what the function needs. Geometric dimensioning and tolerancing, governed in the U.S. by ASME Y14.5, controls form and position too.'],
+      tb: ['Tolerances', [['25.00 ± 0.05 mm', '24.95 to 25.05 mm', 1], ['Clearance fit', 'Always a gap'], ['Interference fit', 'Press fit required'], ['Transition fit', 'Either'], ['Cost', 'Tighter is more expensive']]],
+      todo: ['Write a tolerance for a hole that a 10 mm pin must slide into.', 'Classify three everyday fits.', 'Explain why tolerances raise cost.'],
+      ck: ['A dimension is 40.0 ± 0.2 mm. What is the largest acceptable size?', ['40.0 mm', '40.2 mm', '40.4 mm'], 1, 'Upper limit is 40.2 mm.'] },
+    { t: 'Manufacturing processes', p: [
+      'Subtractive processes remove material: milling, turning on a lathe and drilling. They are precise and suit metals and low to medium volumes.',
+      'Forming processes shape material: casting pours molten metal into a mould, forging hammers it into shape, sheet metal is cut and bent, and injection moulding forces molten plastic into a mould for high volumes.',
+      'Additive manufacturing, or 3D printing, builds parts layer by layer. It suits prototypes and complex shapes but is usually slower per part.'],
+      tb: ['Process families', [['Subtractive', 'Milling, turning, drilling'], ['Casting', 'Molten metal into a mould'], ['Forging', 'Shaped by force'], ['Injection moulding', 'Plastic parts at high volume'], ['Additive', '3D printing, layer by layer']]],
+      todo: ['Pick five objects and guess how each was made.', 'Find visible clues such as parting lines.', 'Choose a process for 10 and for 100,000 parts.'],
+      ck: ['Which process suits 100,000 identical plastic parts?', ['Injection moulding', '3D printing', 'Hand carving'], 0, 'Moulding has high tooling cost but low unit cost.'] },
+    { t: 'Design for manufacture', p: [
+      'Design for manufacture means shaping parts so they are easy and cheap to make. Use standard hole sizes and fasteners, avoid unnecessary tight tolerances and keep wall thickness uniform in moulded parts.',
+      'Add draft angles to moulded parts so they release from the mould, and fillets to reduce stress concentrations.',
+      'Talk to the machinist or supplier early. A small design change can halve the cost.'],
+      tb: ['DFM habits', [['Standard sizes', 'Holes and fasteners'], ['Tolerances', 'Only where needed'], ['Moulded parts', 'Uniform walls, draft angles'], ['Fillets', 'Reduce stress concentrations'], ['Suppliers', 'Consult early']]],
+      todo: ['Review your bracket model for DFM.', 'Replace one custom feature with a standard one.', 'Add fillets to sharp internal corners.'],
+      ck: ['Why add draft angles to moulded parts?', ['So parts release from the mould', 'To add weight', 'For decoration'], 0, 'Draft prevents sticking.'] }],
+    exam: [
+    ['What is the first step in most parametric CAD features?', ['A 2D sketch', 'Printing', 'Painting', 'Assembly'], 0],
+    ['Why fully constrain a sketch?', ['So it behaves predictably when edited', 'To make it heavier', 'To print faster', 'No reason'], 0],
+    ['What does an engineering drawing communicate?', ['Dimensions, tolerances, material and finish', 'Marketing copy', 'Sales figures', 'Only colour'], 0],
+    ['30.0 ± 0.1 mm allows what range?', ['29.9–30.1 mm', '29.0–31.0 mm', '30.0–30.1 mm', '29.99–30.01 mm'], 0],
+    ['Which fit requires force to assemble?', ['Interference fit', 'Clearance fit', 'Loose fit', 'Slip fit'], 0],
+    ['Why avoid unnecessarily tight tolerances?', ['They raise cost', 'They improve all parts', 'They are illegal', 'They reduce quality'], 0],
+    ['Which process removes material?', ['Milling', 'Casting', 'Injection moulding', 'Forging'], 0],
+    ['Which process builds parts layer by layer?', ['Additive manufacturing', 'Turning', 'Forging', 'Stamping'], 0],
+    ['Which standard governs GD&T in the U.S.?', ['ASME Y14.5', 'ISO 9001', 'IEEE 802', 'OSHA 1910'], 0],
+    ['What do fillets help reduce?', ['Stress concentrations', 'Colour', 'Weight only', 'Cost of paint'], 0]] },
+
+  { id: 'soils-foundations', section: 'Civil Engineering', title: 'Soils and Foundations', level: 'Starter',
+    blurb: 'Why the ground matters: soil types, site investigation, bearing capacity, settlement and choosing shallow or deep foundations.',
+    lessons: [
+    { t: 'Soil types', p: [
+      'Soils are classified by particle size: gravel and sand are coarse; silt and clay are fine. Clay particles are tiny and plate-shaped, which gives clay its stickiness.',
+      'Coarse soils drain quickly and gain strength from friction between grains. Clays drain slowly, can be soft when wet, and some swell when wet and shrink when dry.',
+      'Engineers in the U.S. often classify soils with the Unified Soil Classification System.'],
+      tb: ['Soil types', [['Gravel, sand', 'Coarse; drain quickly'], ['Silt', 'Fine; moderate drainage'], ['Clay', 'Very fine; slow drainage, cohesive'], ['Expansive clay', 'Swells and shrinks'], ['Classification', 'Unified Soil Classification System']]],
+      todo: ['Rub a soil sample between your fingers: gritty, smooth or sticky?', 'Guess its type.', 'Look up common soils in your region.'],
+      ck: ['Which soil drains most slowly?', ['Gravel', 'Sand', 'Clay'], 2, 'Tiny clay particles leave tiny pores.'] },
+    { t: 'Site investigation', p: [
+      'Before design, geotechnical engineers investigate the site. Borings drill into the ground to collect samples and record layers, and groundwater depth is noted.',
+      'Field tests such as the standard penetration test count hammer blows needed to drive a sampler, giving an index of soil density or strength.',
+      'Laboratory tests measure moisture, strength and compressibility. The geotechnical report recommends foundation types and design values.'],
+      tb: ['Investigation steps', [['Borings', 'Samples and layer records'], ['Groundwater', 'Depth noted'], ['Field test', 'Standard penetration test'], ['Lab tests', 'Moisture, strength, compressibility'], ['Output', 'Geotechnical report']]],
+      todo: ['Find a public geotechnical report for a local project.', 'Note the soil layers and groundwater depth.', 'Note the recommended foundation.'],
+      ck: ['What do borings provide?', ['Soil samples and layer records', 'Concrete strength', 'Traffic counts'], 0, 'They reveal subsurface conditions.'] },
+    { t: 'Bearing capacity', p: [
+      'Bearing capacity is the pressure the soil can support without failing. Allowable bearing pressure includes a factor of safety.',
+      'Foundation pressure is load divided by footing area. A 400 kN column on a 2 m by 2 m footing applies 400 ÷ 4 = 100 kPa.',
+      'If allowable bearing pressure is 150 kPa, that footing works. If it were 80 kPa, the footing would need to be larger.'],
+      tb: ['Footing check', [['Column load', '400 kN'], ['Footing', '2 m × 2 m = 4 m²'], ['Applied pressure', '100 kPa', 1], ['Allowable', '150 kPa'], ['Result', 'Acceptable']]],
+      todo: ['Check a 600 kN load on a 2.5 m square footing at 120 kPa allowable.', 'Size a footing for 900 kN at 100 kPa.', 'Explain why a larger footing lowers pressure.'],
+      ck: ['A 300 kN load sits on a 3 m² footing. What pressure does it apply?', ['100 kPa', '900 kPa', '33 kPa'], 0, '300 ÷ 3 = 100 kPa.'] },
+    { t: 'Settlement', p: [
+      'All foundations settle as soil compresses under load. Uniform settlement is usually tolerable; differential settlement, where parts of a building settle by different amounts, causes cracking and damage.',
+      'Clays can settle slowly for years as water squeezes out, a process called consolidation. Sands settle mostly as load is applied.',
+      'Designers limit settlement by sizing foundations, improving the ground or going deeper to firmer layers.'],
+      tb: ['Settlement', [['Uniform', 'Usually tolerable'], ['Differential', 'Causes cracking'], ['Clay', 'Slow consolidation over years'], ['Sand', 'Mostly immediate'], ['Remedies', 'Bigger footings, ground improvement, deep foundations']]],
+      todo: ['Find a famous example of differential settlement.', 'Explain its cause.', 'Suggest how it could have been prevented.'],
+      ck: ['Which kind of settlement causes the most damage?', ['Uniform', 'Differential', 'None'], 1, 'Uneven movement cracks structures.'] },
+    { t: 'Shallow and deep foundations', p: [
+      'Shallow foundations, such as spread footings and mat slabs, spread load into soil near the surface. They are economical where good soil is near the top.',
+      'Deep foundations, such as driven piles and drilled shafts, carry load down to stronger layers or rock, through friction along their sides and bearing at their tips.',
+      'Choice depends on loads, soil profile, groundwater, neighbouring structures and cost.'],
+      tb: ['Foundation types', [['Spread footing', 'Shallow; under columns or walls'], ['Mat slab', 'Shallow; whole building footprint'], ['Driven pile', 'Deep; hammered in'], ['Drilled shaft', 'Deep; drilled and filled with concrete'], ['Choice depends on', 'Loads, soil, water, cost']]],
+      todo: ['Identify the foundation type of a building under construction near you.', 'Explain why tall buildings often use piles.', 'List three factors in foundation choice.'],
+      ck: ['When are deep foundations usually needed?', ['When strong soil is near the surface', 'When good soil or rock is far below weak layers', 'Never'], 1, 'Piles reach firmer layers.'] }],
+    exam: [
+    ['Which soil particles are smallest?', ['Clay', 'Silt', 'Sand', 'Gravel'], 0],
+    ['Which soils can swell when wet?', ['Expansive clays', 'Clean gravels', 'Dry sands', 'Rock'], 0],
+    ['What does the standard penetration test count?', ['Hammer blows to drive a sampler', 'Trucks per hour', 'Rainfall', 'Concrete cubes'], 0],
+    ['What document recommends foundation types?', ['Geotechnical report', 'Sales brochure', 'Tax return', 'Lease'], 0],
+    ['An 800 kN load on a 4 m² footing applies what pressure?', ['200 kPa', '3,200 kPa', '20 kPa', '400 kPa'], 0],
+    ['If applied pressure exceeds allowable bearing pressure, what should change?', ['Make the footing larger', 'Ignore it', 'Use less concrete', 'Remove the column'], 0],
+    ['What is consolidation?', ['Slow settlement as water squeezes out of clay', 'Concrete hardening', 'Soil freezing', 'Pile driving'], 0],
+    ['Which settlement is usually tolerable?', ['Uniform', 'Differential', 'Sudden collapse', 'Tilting'], 0],
+    ['Which is a deep foundation?', ['Driven pile', 'Spread footing', 'Mat slab', 'Strip footing'], 0],
+    ['How do piles carry load?', ['Side friction and tip bearing', 'Only by colour', 'By floating', 'By tension only'], 0]] },
+
+  { id: 'stormwater', section: 'Civil Engineering', title: 'Hydrology and Stormwater', level: 'Core',
+    blurb: 'Manage rain on the built environment: the water cycle, runoff and the rational method, return periods, detention and green infrastructure.',
+    lessons: [
+    { t: 'The water cycle and runoff', p: [
+      'Rain falling on a site either soaks into the ground, evaporates, is taken up by plants or runs off the surface. Runoff is what drainage systems must handle.',
+      'Paving and roofs are impervious: water cannot soak in, so development increases runoff volume and speed.',
+      'Faster runoff means higher peak flows in streams, more flooding and more erosion downstream.'],
+      tb: ['Where rain goes', [['Infiltration', 'Soaks into soil'], ['Evapotranspiration', 'Evaporates or plants use it'], ['Runoff', 'Flows over the surface'], ['Impervious surfaces', 'Increase runoff'], ['Effect of development', 'Higher, faster peak flows']]],
+      todo: ['Estimate the share of your campus that is paved or roofed.', 'Watch where water flows during rain.', 'Find a storm drain and trace where it leads.'],
+      ck: ['How does paving a field affect runoff?', ['Reduces it', 'Increases it', 'No effect'], 1, 'Impervious surfaces stop infiltration.'] },
+    { t: 'The rational method', p: [
+      'For small drainage areas, engineers estimate peak runoff with the rational method: Q = CiA. In U.S. units, Q is in cubic feet per second, C is the runoff coefficient, i is rainfall intensity in inches per hour and A is area in acres.',
+      'C ranges from about 0.1 for lawns on sandy soil to about 0.9 or more for pavement and roofs.',
+      'Example: a 5-acre parking lot with C = 0.9 under 2 inches per hour gives Q = 0.9 × 2 × 5 = 9 cubic feet per second.'],
+      tb: ['Rational method', [['Formula', 'Q = C × i × A'], ['C for pavement', 'About 0.9'], ['C for lawn', 'Much lower'], ['Example', '0.9 × 2 × 5'], ['Peak flow', '9 cfs', 1]]],
+      todo: ['Calculate Q for 3 acres of lawn, C = 0.2, i = 2.', 'Compare with the same area paved.', 'Explain the difference.'],
+      ck: ['C = 0.5, i = 3 in/hr, A = 4 acres. What is Q?', ['6 cfs', '12 cfs', '7.5 cfs'], 0, '0.5 × 3 × 4 = 6 cfs.'] },
+    { t: 'Return periods', p: [
+      'Storms are described by return period. A 100-year storm has a 1% chance of being equalled or exceeded in any given year; a 10-year storm has a 10% chance.',
+      'A 100-year storm can happen in consecutive years. Over 30 years, the chance of at least one 100-year event is about 1 − 0.99³⁰, or roughly 26%.',
+      'Designs choose a return period to match risk: a parking lot inlet might use a 10-year storm, while a major culvert under a highway uses a larger one.'],
+      tb: ['Return periods', [['10-year storm', '10% annual chance'], ['100-year storm', '1% annual chance'], ['Over 30 years', 'About 26% chance of a 100-year event', 1], ['Small inlets', 'Smaller design storms'], ['Critical structures', 'Larger design storms']]],
+      todo: ['Calculate the annual chance of a 25-year storm.', 'Look up your area’s flood maps.', 'Explain why 100-year floods can happen twice in a decade.'],
+      ck: ['What is the annual chance of a 50-year storm?', ['2%', '5%', '50%'], 0, '1 ÷ 50 = 2%.'] },
+    { t: 'Detention and conveyance', p: [
+      'Conveyance systems carry water away: gutters, inlets, pipes, ditches and culverts sized to carry the design flow.',
+      'Detention ponds store runoff temporarily and release it slowly, so the peak flow leaving a developed site is no higher than before development. Many local rules require this.',
+      'Retention ponds hold water permanently, allowing pollutants to settle.'],
+      tb: ['Stormwater systems', [['Conveyance', 'Gutters, pipes, culverts'], ['Detention pond', 'Stores and releases slowly'], ['Goal', 'Post-development peak ≤ pre-development'], ['Retention pond', 'Permanent pool'], ['Bonus', 'Pollutants settle']]],
+      todo: ['Find a detention pond near a shopping centre.', 'Identify its outlet structure.', 'Explain how it reduces peak flow.'],
+      ck: ['What does a detention pond do?', ['Stores runoff and releases it slowly', 'Pumps water uphill', 'Treats drinking water'], 0, 'It lowers peak flow downstream.'] },
+    { t: 'Green infrastructure', p: [
+      'Green infrastructure manages rain where it falls, mimicking natural hydrology: rain gardens, bioswales, permeable pavement, green roofs and street trees.',
+      'These features reduce runoff volume, filter pollutants and often cool urban areas.',
+      'Many cities combine green infrastructure with traditional pipes, especially where old combined sewer systems overflow during heavy rain.'],
+      tb: ['Green infrastructure', [['Rain garden', 'Planted depression that soaks up runoff'], ['Bioswale', 'Vegetated channel'], ['Permeable pavement', 'Lets water through'], ['Green roof', 'Plants on roofs'], ['Benefits', 'Less runoff, cleaner water, cooler streets']]],
+      todo: ['Find a rain garden or bioswale in your city.', 'Estimate the area it drains.', 'Propose one for your campus.'],
+      ck: ['Which is an example of green infrastructure?', ['A rain garden', 'A concrete channel', 'A larger pipe'], 0, 'It manages water where it falls.'] }],
+    exam: [
+    ['What happens to runoff when land is developed?', ['It increases', 'It disappears', 'It decreases', 'No change'], 0],
+    ['What is the rational method formula?', ['Q = CiA', 'F = ma', 'V = IR', 'P = VI'], 0],
+    ['Which surface has the highest runoff coefficient?', ['Pavement', 'Forest', 'Lawn on sand', 'Meadow'], 0],
+    ['C = 0.8, i = 2.5 in/hr, A = 2 acres. What is Q?', ['4 cfs', '5.3 cfs', '2 cfs', '8 cfs'], 0],
+    ['What is the annual chance of a 100-year storm?', ['1%', '10%', '100%', '0.1%'], 0],
+    ['Can a 100-year storm happen in two consecutive years?', ['Yes', 'No', 'Only in deserts', 'Only once a century'], 0],
+    ['What is a culvert?', ['A structure carrying water under a road', 'A pond', 'A pump', 'A rain gauge'], 0],
+    ['What is the usual goal of detention rules?', ['Post-development peak flow no higher than before', 'Remove all water', 'Increase flooding', 'Store water forever'], 0],
+    ['What does a retention pond have that a detention pond usually does not?', ['A permanent pool', 'An outlet', 'Grass', 'A fence'], 0],
+    ['Which is a benefit of green infrastructure?', ['Reduces runoff and filters pollutants', 'Increases peak flow', 'Removes trees', 'Raises temperatures'], 0]] },
+
+  { id: 'construction-management', section: 'Civil Engineering', title: 'Construction Project Management', level: 'Core',
+    blurb: 'Deliver projects on time and on budget: delivery methods, scheduling with the critical path, estimating, documents and site safety.',
+    lessons: [
+    { t: 'Project delivery methods', p: [
+      'In design-bid-build, the owner hires a designer, then puts the finished design out to bid and hires the lowest qualified contractor. It is common for public projects.',
+      'In design-build, one entity handles both design and construction, which can speed delivery. Construction manager at risk brings a contractor in during design, who later guarantees a maximum price.',
+      'Each method divides risk and responsibility differently between owner, designer and builder.'],
+      tb: ['Delivery methods', [['Design-bid-build', 'Design first, then low bid'], ['Design-build', 'One entity designs and builds'], ['CM at risk', 'Contractor joins during design; guaranteed maximum price'], ['Key difference', 'How risk is shared'], ['Public projects', 'Often design-bid-build']]],
+      todo: ['Find a local project and its delivery method.', 'List one advantage of each method.', 'Explain who carries design risk in design-build.'],
+      ck: ['In design-build, who handles design and construction?', ['Two separate firms hired at different times', 'One entity', 'The owner alone'], 1, 'Single-point responsibility.'] },
+    { t: 'Scheduling and the critical path', p: [
+      'The critical path method lists activities, their durations and dependencies, then finds the longest path through the network. That path sets the shortest possible project duration.',
+      'Example: A takes 3 days; B (after A) 5 days; C (after A) 2 days; D (after B and C) 4 days. Path A–B–D takes 12 days; A–C–D takes 9. The critical path is A–B–D.',
+      'Activities off the critical path have float, slack time they can slip without delaying the project. Here C has 3 days of float.'],
+      tb: ['Critical path example', [['A', '3 days'], ['B (after A)', '5 days'], ['C (after A)', '2 days'], ['D (after B, C)', '4 days'], ['Critical path', 'A–B–D, 12 days', 1], ['Float on C', '3 days']]],
+      todo: ['Draw the network for the example.', 'Add activity E (after D, 2 days) and find the new duration.', 'Find which activities have float.'],
+      ck: ['Which activities have zero float?', ['Those on the critical path', 'All activities', 'None'], 0, 'Any delay to them delays the project.'] },
+    { t: 'Estimating and budgets', p: [
+      'Cost estimates become more detailed as design progresses: from early estimates based on cost per square foot to detailed take-offs listing every quantity of material and labour.',
+      'Budgets include direct costs, such as materials, labour and equipment; indirect costs, such as site supervision and insurance; overhead and profit; and contingency for the unknown.',
+      'Track actual costs against budget throughout the project and investigate variances early.'],
+      tb: ['Budget components', [['Direct costs', 'Materials, labour, equipment'], ['Indirect costs', 'Supervision, insurance, temporary facilities'], ['Overhead and profit', 'Contractor’s business costs and margin'], ['Contingency', 'For unknowns'], ['Control', 'Compare actual to budget']]],
+      todo: ['Estimate a 2,000 sq ft building at $250 per sq ft.', 'Add 10% contingency.', 'List five direct cost items.'],
+      ck: ['A 4,000 sq ft building at $200 per sq ft with 10% contingency costs about what?', ['$800,000', '$880,000', '$720,000'], 1, '800,000 × 1.1 = $880,000.'] },
+    { t: 'Construction documents', p: [
+      'Requests for information, RFIs, let contractors ask designers to clarify the drawings. Submittals, such as shop drawings and product data, let designers confirm the contractor’s proposed materials meet the specification.',
+      'Change orders formally modify the contract’s scope, price or schedule. Unapproved changes are a common source of disputes.',
+      'Daily logs record weather, workers, work done and problems, creating a record that protects everyone.'],
+      tb: ['Key documents', [['RFI', 'Question to the designer'], ['Submittal', 'Proposed materials for approval'], ['Change order', 'Formal scope, price or time change'], ['Daily log', 'Record of each day'], ['Specifications', 'Required materials and methods']]],
+      todo: ['Write a sample RFI about an unclear dimension.', 'List items a daily log should include.', 'Explain why change orders must be in writing.'],
+      ck: ['What formally changes a construction contract’s price or scope?', ['An RFI', 'A change order', 'A daily log'], 1, 'Change orders modify the contract.'] },
+    { t: 'Safety', p: [
+      'Construction is one of the most hazardous industries. In the U.S., the Occupational Safety and Health Administration, OSHA, sets and enforces workplace safety rules.',
+      'OSHA highlights four leading causes of construction deaths, known as the Focus Four: falls, struck-by, caught-in or -between, and electrocution.',
+      'Good safety programmes include training, daily briefings, fall protection, inspections and a culture where anyone can stop unsafe work.'],
+      tb: ['OSHA Focus Four', [['Falls', 'Leading cause'], ['Struck-by', 'Vehicles, falling objects'], ['Caught-in or -between', 'Trenches, machinery'], ['Electrocution', 'Power lines, wiring'], ['Culture', 'Anyone can stop unsafe work']]],
+      todo: ['Watch a construction site from a safe distance and note protections.', 'List three fall protection methods.', 'Write a five-minute safety briefing.'],
+      ck: ['Which is one of OSHA’s Focus Four hazards?', ['Falls', 'Paperwork', 'Noise only'], 0, 'Falls are the leading cause.'] }],
+    exam: [
+    ['Which delivery method separates design from construction and often uses low bids?', ['Design-bid-build', 'Design-build', 'CM at risk', 'In-house'], 0],
+    ['What does CM at risk usually provide?', ['A guaranteed maximum price', 'Free design', 'No contractor input', 'No schedule'], 0],
+    ['What sets the shortest possible project duration in CPM?', ['The critical path', 'The shortest path', 'The first activity', 'The budget'], 0],
+    ['What is float?', ['Time an activity can slip without delaying the project', 'A boat', 'Extra budget', 'Overtime'], 0],
+    ['Paths of 10, 14 and 12 days. What is the project duration?', ['10 days', '12 days', '14 days', '36 days'], 2],
+    ['Which is a direct cost?', ['Concrete', 'Insurance', 'Office rent', 'Profit'], 0],
+    ['What is contingency for?', ['Unknown costs', 'Profit', 'Taxes only', 'Advertising'], 0],
+    ['What is an RFI?', ['A request for clarification from the designer', 'A payment', 'A safety violation', 'A bid'], 0],
+    ['What do submittals do?', ['Let designers review proposed materials', 'Pay workers', 'Close the project', 'Order lunch'], 0],
+    ['Which agency enforces U.S. workplace safety rules?', ['OSHA', 'EPA', 'FAA', 'SEC'], 0]] },
+
+  { id: 'ds-statistics', section: 'Data Science', title: 'Statistics for Data Science', level: 'Starter',
+    blurb: 'The statistics behind every analysis: summaries, distributions, sampling, confidence intervals, hypothesis tests and A/B tests.',
+    lessons: [
+    { t: 'Summarising data', p: [
+      'The mean is the average; the median is the middle value when sorted. When data are skewed, such as incomes, the median better represents a typical value.',
+      'Spread matters too. Standard deviation measures typical distance from the mean. The interquartile range covers the middle 50% of values and resists outliers.',
+      'Always look at the distribution with a histogram before relying on any single number.'],
+      tb: ['Summary statistics', [['Mean', 'Average'], ['Median', 'Middle value'], ['Skewed data', 'Prefer the median'], ['Standard deviation', 'Typical distance from mean'], ['Interquartile range', 'Middle 50%']]],
+      todo: ['Find the mean and median of 2, 3, 3, 4, 38.', 'Explain which better describes the data.', 'Plot a histogram of a dataset you have.'],
+      ck: ['For 1, 2, 3, 4, 100, which is the better typical value?', ['Mean of 22', 'Median of 3', 'Maximum of 100'], 1, 'The outlier distorts the mean.'] },
+    { t: 'The normal distribution', p: [
+      'Many measurements cluster around a mean in a bell-shaped normal distribution.',
+      'The 68–95–99.7 rule: about 68% of values fall within one standard deviation of the mean, 95% within two and 99.7% within three.',
+      'A z-score tells how many standard deviations a value is from the mean: (value − mean) ÷ standard deviation.'],
+      tb: ['Normal distribution', [['Within 1 SD', 'About 68%'], ['Within 2 SD', 'About 95%'], ['Within 3 SD', 'About 99.7%'], ['z-score', '(value − mean) ÷ SD'], ['Score 85, mean 70, SD 10', 'z = 1.5', 1]]],
+      todo: ['Compute z-scores for three exam results.', 'Estimate the share of values above z = 2.', 'Check whether a dataset looks normal.'],
+      ck: ['Mean 50, SD 5. About what share of values lie between 40 and 60?', ['68%', '95%', '99.7%'], 1, '40 to 60 is two SDs either side.'] },
+    { t: 'Sampling and confidence intervals', p: [
+      'We usually study samples, not whole populations. Random sampling reduces bias; larger samples reduce random error.',
+      'A confidence interval gives a range likely to contain the true value. A 95% interval means that if we repeated the sampling many times, about 95% of such intervals would contain the true value.',
+      'The margin of error shrinks with the square root of sample size: quadrupling the sample halves it.'],
+      tb: ['Sampling', [['Random sampling', 'Reduces bias'], ['Larger samples', 'Reduce random error'], ['95% confidence interval', 'Method captures true value 95% of the time'], ['Margin of error', 'Shrinks with √n'], ['4× sample', 'Half the margin']]],
+      todo: ['Find a survey result with a margin of error.', 'Calculate the sample needed to halve it.', 'Explain what the interval means in plain words.'],
+      ck: ['To halve the margin of error, how should the sample size change?', ['Double it', 'Quadruple it', 'Halve it'], 1, 'Margin scales with 1/√n.'] },
+    { t: 'Hypothesis tests', p: [
+      'A hypothesis test asks whether data are consistent with a default assumption, the null hypothesis, such as no difference between groups.',
+      'The p-value is the probability of seeing results at least as extreme as observed if the null hypothesis were true. A small p-value, commonly below 0.05, is taken as evidence against the null.',
+      'A p-value is not the probability that the null is true, and statistical significance does not mean the effect is large or important.'],
+      tb: ['Hypothesis testing', [['Null hypothesis', 'Default: no effect'], ['p-value', 'Chance of data this extreme if null is true'], ['Common threshold', '0.05'], ['Not', 'Probability the null is true'], ['Significance', 'Not the same as importance']]],
+      todo: ['Write a null hypothesis for a website change.', 'Explain a p-value of 0.03 in plain words.', 'Find a case where a significant effect was tiny.'],
+      ck: ['What does a p-value measure?', ['The probability the null is true', 'The probability of data this extreme if the null were true', 'The effect size'], 1, 'It is conditional on the null.'] },
+    { t: 'A/B testing', p: [
+      'An A/B test randomly splits users between two versions, such as two checkout pages, and compares an outcome like conversion rate.',
+      'Decide the metric, sample size and test length before starting. Stopping as soon as results look good inflates false positives.',
+      'Example: A converts 200 of 5,000 users (4.0%); B converts 250 of 5,000 (5.0%). A test then checks whether the one-point difference is larger than chance would explain.'],
+      tb: ['A/B example', [['Version A', '200 / 5,000 = 4.0%'], ['Version B', '250 / 5,000 = 5.0%'], ['Absolute lift', '1 percentage point'], ['Relative lift', '25%', 1], ['Rule', 'Fix sample size in advance']]],
+      todo: ['Design an A/B test for a sign-up button.', 'Choose the metric and sample size.', 'Explain why you should not peek and stop early.'],
+      ck: ['A converts at 2% and B at 3%. What is B’s relative lift?', ['1%', '33%', '50%'], 2, '(3 − 2) ÷ 2 = 50%.'] }],
+    exam: [
+    ['For skewed data like incomes, which is usually more representative?', ['Median', 'Mean', 'Maximum', 'Range'], 0],
+    ['What does standard deviation measure?', ['Spread around the mean', 'The middle value', 'The largest value', 'The count'], 0],
+    ['About what share of normal data lies within one SD of the mean?', ['50%', '68%', '95%', '99.7%'], 1],
+    ['Value 130, mean 100, SD 15. What is the z-score?', ['1', '2', '3', '30'], 1],
+    ['What reduces bias in sampling?', ['Random selection', 'Choosing friends', 'Small samples', 'Self-selection'], 0],
+    ['Quadrupling sample size does what to the margin of error?', ['Halves it', 'Quarters it', 'Doubles it', 'No change'], 0],
+    ['What is a null hypothesis?', ['The default assumption of no effect', 'The result you hope for', 'A sample', 'A chart'], 0],
+    ['Does statistical significance mean an effect is large?', ['No', 'Yes', 'Always', 'Only with p = 0.05'], 0],
+    ['Why fix an A/B test’s sample size in advance?', ['Stopping early inflates false positives', 'It saves money only', 'It is required by law', 'No reason'], 0],
+    ['A converts 100 of 4,000 and B 140 of 4,000. What is B’s rate?', ['2.5%', '3.5%', '4.0%', '14%'], 1]] },
+
+  { id: 'ml-concepts', section: 'Data Science', title: 'Machine Learning Concepts', level: 'Core',
+    blurb: 'Understand how models learn: supervised and unsupervised learning, training and testing, overfitting, common algorithms and evaluation metrics.',
+    lessons: [
+    { t: 'Types of learning', p: [
+      'Supervised learning trains on examples with known answers, called labels, to predict labels for new data. Regression predicts numbers, such as house prices; classification predicts categories, such as spam or not spam.',
+      'Unsupervised learning finds structure in unlabelled data, such as grouping customers into segments with clustering.',
+      'Reinforcement learning trains an agent through rewards and penalties, as in game-playing systems.'],
+      tb: ['Learning types', [['Supervised', 'Labelled examples'], ['Regression', 'Predict numbers'], ['Classification', 'Predict categories'], ['Unsupervised', 'Find structure without labels'], ['Reinforcement', 'Learn from rewards']]],
+      todo: ['Classify five business problems by learning type.', 'Name one regression and one classification problem.', 'Find a clustering example in marketing.'],
+      ck: ['Predicting whether an email is spam is which task?', ['Regression', 'Classification', 'Clustering'], 1, 'The output is a category.'] },
+    { t: 'Training and testing', p: [
+      'Split data into a training set to fit the model and a test set, held back, to measure performance on unseen data. A common split is 80/20.',
+      'A validation set, or cross-validation, helps choose model settings without touching the test set.',
+      'Never let information from the test set leak into training. Leakage produces models that look great and fail in production.'],
+      tb: ['Data splits', [['Training set', 'Fit the model'], ['Validation', 'Tune settings'], ['Test set', 'Final, unseen evaluation'], ['Common split', '80% train, 20% test'], ['Leakage', 'Test information in training']]],
+      todo: ['Split a 1,000-row dataset 80/20.', 'Describe one way leakage could happen.', 'Explain cross-validation in a sentence.'],
+      ck: ['Why hold back a test set?', ['To measure performance on unseen data', 'To make training faster', 'To store backups'], 0, 'It estimates real-world performance.'] },
+    { t: 'Overfitting', p: [
+      'An overfit model memorises noise in the training data. It scores well on training data but poorly on new data.',
+      'An underfit model is too simple to capture real patterns and does poorly on both.',
+      'Remedies for overfitting include more data, simpler models, regularisation, which penalises complexity, and early stopping.'],
+      tb: ['Fit problems', [['Overfitting', 'Great on training, poor on test'], ['Underfitting', 'Poor on both'], ['More data', 'Helps overfitting'], ['Regularisation', 'Penalises complexity'], ['Goal', 'Generalise to new data']]],
+      todo: ['Compare training and test scores for a model.', 'Diagnose overfitting or underfitting.', 'Suggest one remedy.'],
+      ck: ['Training accuracy 99%, test accuracy 70%. What is likely happening?', ['Underfitting', 'Overfitting', 'Perfect fit'], 1, 'A large gap signals memorisation.'] },
+    { t: 'Common algorithms', p: [
+      'Linear regression fits a straight-line relationship for numeric predictions. Logistic regression predicts probabilities for classification.',
+      'Decision trees split data with yes-or-no questions; random forests and gradient-boosted trees combine many trees for higher accuracy.',
+      'K-means clustering groups data into k clusters by distance to cluster centres. Neural networks stack layers of simple units and power modern image and language models.'],
+      tb: ['Algorithms', [['Linear regression', 'Numeric prediction'], ['Logistic regression', 'Probability of a class'], ['Decision tree', 'Yes/no splits'], ['Random forest / boosting', 'Many trees combined'], ['K-means', 'Clustering']]],
+      todo: ['Match each algorithm to a business problem.', 'Draw a three-level decision tree for loan approval.', 'Explain k in k-means.'],
+      ck: ['Which algorithm groups unlabelled data into clusters?', ['Linear regression', 'K-means', 'Logistic regression'], 1, 'K-means is unsupervised.'] },
+    { t: 'Evaluation metrics', p: [
+      'Accuracy is the share of correct predictions, but it misleads on imbalanced data: a fraud model that predicts no fraud every time can be 99% accurate and useless.',
+      'Precision is the share of predicted positives that are correct: TP ÷ (TP + FP). Recall is the share of actual positives found: TP ÷ (TP + FN).',
+      'Example: 40 true positives, 10 false positives and 20 false negatives give precision 80% and recall about 67%. For regression, use errors such as mean absolute error.'],
+      tb: ['Classification metrics', [['True positives', '40'], ['False positives', '10'], ['False negatives', '20'], ['Precision', '40 ÷ 50 = 80%', 1], ['Recall', '40 ÷ 60 ≈ 67%', 1]]],
+      todo: ['Compute precision and recall for TP 30, FP 20, FN 10.', 'Decide which matters more for cancer screening.', 'Explain why accuracy misleads for fraud.'],
+      ck: ['TP 45, FP 5. What is precision?', ['90%', '45%', '10%'], 0, '45 ÷ 50 = 90%.'] }],
+    exam: [
+    ['Which task predicts a number?', ['Regression', 'Classification', 'Clustering', 'Sorting'], 0],
+    ['What does unsupervised learning use?', ['Unlabelled data', 'Labelled data only', 'Rewards', 'Test sets only'], 0],
+    ['What is a common train/test split?', ['80/20', '50/50 always', '99/1', '10/90'], 0],
+    ['What is data leakage?', ['Test information reaching training', 'Lost files', 'A server crash', 'A privacy breach only'], 0],
+    ['What does overfitting look like?', ['High training score, low test score', 'Low on both', 'High on both', 'No difference'], 0],
+    ['Which helps reduce overfitting?', ['Regularisation', 'Adding noise to labels', 'Using the test set for training', 'A more complex model'], 0],
+    ['Which model outputs probabilities for classification?', ['Logistic regression', 'K-means', 'Linear regression', 'PCA'], 0],
+    ['What does a random forest combine?', ['Many decision trees', 'Many clusters', 'Many linear models only', 'Many test sets'], 0],
+    ['TP 60, FN 20. What is recall?', ['75%', '60%', '80%', '33%'], 0],
+    ['Why can accuracy mislead on imbalanced data?', ['Predicting the majority class can look accurate', 'It is always wrong', 'It ignores true positives', 'It requires labels'], 0]] },
+
+  { id: 'data-storytelling', section: 'Data Science', title: 'Data Visualisation and Storytelling', level: 'Starter',
+    blurb: 'Turn analysis into decisions: choose the right chart, design it clearly, avoid misleading visuals and present findings that persuade.',
+    lessons: [
+    { t: 'Choosing a chart', p: [
+      'Choose the chart by the question. Change over time: a line chart. Comparing categories: a bar chart, sorted. Relationship between two variables: a scatter plot. Distribution: a histogram.',
+      'Parts of a whole work best as a stacked bar or a simple bar chart; pie charts become hard to read beyond a few slices.',
+      'If a single number answers the question, show the number large rather than a chart.'],
+      tb: ['Question to chart', [['Change over time', 'Line chart'], ['Compare categories', 'Sorted bar chart'], ['Relationship', 'Scatter plot'], ['Distribution', 'Histogram'], ['Single key figure', 'Big number']]],
+      todo: ['Pick three questions about a dataset.', 'Choose a chart for each.', 'Sketch them by hand.'],
+      ck: ['Which chart best shows monthly revenue over two years?', ['Pie chart', 'Line chart', 'Scatter plot'], 1, 'Lines show change over time.'] },
+    { t: 'Designing for clarity', p: [
+      'Remove clutter: heavy gridlines, borders, 3D effects and unnecessary legends. Label lines directly instead of using a legend where possible.',
+      'Use colour with purpose. Keep most data grey and highlight what matters in one strong colour.',
+      'Write a title that states the takeaway, such as Sales grew 40% after the price change, rather than Sales by month.'],
+      tb: ['Clarity habits', [['Remove', 'Clutter, 3D, heavy gridlines'], ['Label', 'Directly on lines or bars'], ['Colour', 'Grey for context, one highlight'], ['Title', 'States the takeaway'], ['Sort', 'Bars by value']]],
+      todo: ['Take a default chart from a spreadsheet.', 'Remove three pieces of clutter.', 'Rewrite the title as a takeaway.'],
+      ck: ['Which title is most useful?', ['Revenue by region', 'The West region drove 60% of revenue growth', 'Chart 3'], 1, 'It states the insight.'] },
+    { t: 'Avoiding misleading charts', p: [
+      'Bar charts should start at zero, because bar length encodes value. A truncated axis can make a 2% difference look enormous.',
+      'Use consistent scales when comparing charts, show uncertainty where it matters and avoid dual axes that imply relationships that are not there.',
+      'Cherry-picked time windows can reverse a trend. Show enough history for context.'],
+      tb: ['Common distortions', [['Truncated bar axis', 'Exaggerates differences'], ['Inconsistent scales', 'False comparisons'], ['Dual axes', 'Implied relationships'], ['Cherry-picked window', 'Hides the trend'], ['Rule', 'Bars start at zero']]],
+      todo: ['Find a misleading chart online.', 'Identify the distortion.', 'Redraw it honestly.'],
+      ck: ['Why should bar charts start at zero?', ['Bar length encodes value', 'It looks nicer', 'Software requires it'], 0, 'Truncation exaggerates differences.'] },
+    { t: 'Structuring the story', p: [
+      'Start with the answer. Busy decision-makers want the conclusion and recommendation first, then the evidence.',
+      'A simple structure: context (what we looked at and why), finding (what the data shows), implication (what it means) and action (what we should do).',
+      'Use one chart per point. Each slide or section should make a single argument.'],
+      tb: ['Story structure', [['Context', 'What and why'], ['Finding', 'What the data shows'], ['Implication', 'What it means'], ['Action', 'What to do'], ['Rule', 'One chart, one point']]],
+      todo: ['Write a three-sentence summary of an analysis.', 'Order it: finding, implication, action.', 'Pick one chart to support each point.'],
+      ck: ['What should come first in a data presentation to executives?', ['The methodology', 'The conclusion and recommendation', 'The raw data'], 1, 'Lead with the answer.'] },
+    { t: 'Presenting and dashboards', p: [
+      'When presenting, tell the audience what to look at before revealing the chart, then explain what it shows. Pause on the key point.',
+      'Dashboards serve repeated monitoring. Put the most important metrics at the top left, show trends with comparisons to targets or past periods, and keep each dashboard focused on one audience.',
+      'Every number on a dashboard should have a clear definition and source.'],
+      tb: ['Presenting and dashboards', [['Presenting', 'Say what to look at first'], ['Dashboard top left', 'Most important metric'], ['Context', 'Targets and prior periods'], ['Audience', 'One per dashboard'], ['Trust', 'Definitions and sources']]],
+      todo: ['Sketch a dashboard with five metrics for a small business.', 'Add a comparison to each.', 'Define each metric in one line.'],
+      ck: ['What should accompany every dashboard number?', ['A clear definition and source', 'An emoji', 'A pie chart'], 0, 'Definitions build trust.'] }],
+    exam: [
+    ['Which chart compares categories best?', ['Sorted bar chart', 'Pie chart with 12 slices', 'Line chart', '3D cone chart'], 0],
+    ['Which chart shows the relationship between two numeric variables?', ['Scatter plot', 'Pie chart', 'Bar chart', 'Table only'], 0],
+    ['Which chart shows a distribution?', ['Histogram', 'Line chart', 'Pie chart', 'Gauge'], 0],
+    ['How should colour usually be used?', ['Grey for context, one highlight colour', 'A different colour for every bar', 'Rainbow gradients', 'Never'], 0],
+    ['What should a chart title do?', ['State the takeaway', 'Name the file', 'List every variable', 'Be left blank'], 0],
+    ['What does a truncated bar axis do?', ['Exaggerates differences', 'Improves accuracy', 'Nothing', 'Shows uncertainty'], 0],
+    ['Why can a cherry-picked time window mislead?', ['It can hide or reverse the real trend', 'It is too long', 'It uses bars', 'It shows all data'], 0],
+    ['What should come first when presenting to decision-makers?', ['The answer', 'The data cleaning steps', 'The appendix', 'Software used'], 0],
+    ['What is the guidance on charts per point?', ['One chart, one point', 'As many as possible', 'No charts', 'Three per point'], 0],
+    ['Where should the most important dashboard metric go?', ['Top left', 'Bottom right', 'Hidden tab', 'Footer'], 0]] },
+
+  { id: 'space-planning', section: 'Interior Design', title: 'Space Planning and Ergonomics', level: 'Starter',
+    blurb: 'Lay out rooms that work: programming, bubble diagrams, circulation and clearances, furniture planning and ergonomics.',
+    lessons: [
+    { t: 'Programming the space', p: [
+      'Interior projects begin with programming: understanding who will use the space, what they will do there, how many people, what equipment and storage they need, and how the space should feel.',
+      'Interview the client, observe current use and measure the existing space accurately, including windows, doors, outlets and structural elements.',
+      'The result is a written programme listing requirements, which guides every design decision.'],
+      tb: ['Programming questions', [['Who', 'Users and their needs'], ['What', 'Activities and equipment'], ['How many', 'Occupants'], ['Storage', 'What must be kept'], ['Feel', 'Mood and image']]],
+      todo: ['Interview a friend about their bedroom or workspace.', 'Measure the room and sketch it to scale.', 'Write a five-line programme.'],
+      ck: ['What is programming in interior design?', ['Writing software', 'Defining users, activities and requirements', 'Choosing paint colours first'], 1, 'It sets requirements before design.'] },
+    { t: 'Bubble diagrams and zoning', p: [
+      'Bubble diagrams sketch spaces as circles sized roughly by area, connected by lines showing how closely they relate. They help organise a plan before drawing walls.',
+      'Zone spaces by function and privacy: public areas near the entrance, private areas further in, noisy and quiet zones separated.',
+      'In offices, group teams that collaborate and place shared amenities centrally.'],
+      tb: ['Organising a plan', [['Bubble diagram', 'Spaces as circles, links as lines'], ['Public zone', 'Near the entrance'], ['Private zone', 'Further in'], ['Acoustic zoning', 'Separate noisy and quiet'], ['Shared amenities', 'Central']]],
+      todo: ['Draw a bubble diagram for a small apartment.', 'Mark public and private zones.', 'Rearrange it once to improve flow.'],
+      ck: ['What do lines between bubbles show?', ['How closely spaces relate', 'Electrical wiring', 'Wall thickness'], 0, 'Adjacency drives layout.'] },
+    { t: 'Circulation and clearances', p: [
+      'Circulation is how people move through a space. Keep main paths clear, direct and wide enough; around 36 inches is a common minimum for a walkway in homes.',
+      'Common guidelines include about 36 inches between a dining table and a wall for chairs and passage, and around 42 inches for a one-cook kitchen work aisle.',
+      'Accessible routes and doorways must meet the applicable accessibility code, which can require more space, such as turning space for wheelchairs.'],
+      tb: ['Typical clearances (guidelines)', [['Main walkway', 'About 36 in'], ['Table to wall', 'About 36 in'], ['Kitchen work aisle, one cook', 'About 42 in'], ['Accessible routes', 'Follow the applicable code'], ['Rule', 'Keep main paths direct']]],
+      todo: ['Measure walkways in your home.', 'Find one that feels tight and measure it.', 'Rearrange furniture on paper to fix it.'],
+      ck: ['About what width is a common minimum for a residential walkway?', ['18 inches', '36 inches', '72 inches'], 1, 'About 36 inches is a common guideline.'] },
+    { t: 'Furniture planning', p: [
+      'Plan furniture at scale on the floor plan before buying. Check sizes against the room and each other, including door swings and window locations.',
+      'Create conversation groupings: seats within roughly 8 to 10 feet of each other feel connected.',
+      'Anchor rooms with a focal point, such as a fireplace, window view or art wall, and arrange furniture to relate to it.'],
+      tb: ['Furniture planning', [['Plan at scale', 'Before buying'], ['Check', 'Door swings, windows, outlets'], ['Conversation distance', 'About 8–10 ft'], ['Focal point', 'Fireplace, view, art'], ['Rugs', 'Sized to anchor groupings']]],
+      todo: ['Draw your living space with furniture at scale.', 'Identify the focal point.', 'Try two alternative layouts.'],
+      ck: ['Why plan furniture at scale before buying?', ['To make sure it fits the room and circulation', 'It is required by law', 'To choose colours'], 0, 'Scale drawings prevent costly mistakes.'] },
+    { t: 'Ergonomics', p: [
+      'Ergonomics fits the space to the human body. Desk surfaces are commonly about 29 to 30 inches high; seats about 17 to 19 inches, ideally adjustable.',
+      'Monitors should sit about an arm’s length away with the top near eye level. Kitchen counters are typically about 36 inches high.',
+      'Design for the range of people who will use the space, not an average person. Adjustable furniture helps.'],
+      tb: ['Typical dimensions', [['Desk height', 'About 29–30 in'], ['Seat height', 'About 17–19 in'], ['Kitchen counter', 'About 36 in'], ['Monitor', 'Arm’s length, top near eye level'], ['Principle', 'Design for a range of users']]],
+      todo: ['Measure your desk, chair and counter heights.', 'Adjust your monitor position.', 'Note one ergonomic problem in a public space.'],
+      ck: ['About how high is a typical desk surface?', ['20 inches', '29–30 inches', '40 inches'], 1, 'Standard desks are about 29–30 inches.'] }],
+    exam: [
+    ['What is the first step of an interior project?', ['Programming', 'Buying furniture', 'Painting', 'Installing lighting'], 0],
+    ['What should be measured in an existing space?', ['Walls, windows, doors and outlets', 'Only the floor colour', 'Nothing', 'Only ceiling height'], 0],
+    ['What is a bubble diagram?', ['A sketch of spaces and relationships', 'A lighting plan', 'A paint sample', 'A budget'], 0],
+    ['Where do public zones usually go?', ['Near the entrance', 'Deepest in the plan', 'In the basement only', 'Anywhere'], 0],
+    ['What is circulation?', ['How people move through a space', 'Air conditioning only', 'Furniture cost', 'Window size'], 0],
+    ['About what width is common for a one-cook kitchen work aisle?', ['24 in', '42 in', '60 in', '80 in'], 1],
+    ['About what distance keeps a seating group conversational?', ['8–10 ft', '20–25 ft', '2 ft', '50 ft'], 0],
+    ['What is a focal point?', ['A feature that anchors the room', 'A light switch', 'A doorway', 'A fan'], 0],
+    ['About how high are typical kitchen counters?', ['28 in', '36 in', '48 in', '24 in'], 1],
+    ['Who should ergonomic design serve?', ['The range of users', 'Only an average person', 'Only the designer', 'Only tall people'], 0]] },
+
+  { id: 'colour-lighting', section: 'Interior Design', title: 'Colour and Lighting for Interiors', level: 'Core',
+    blurb: 'Shape mood and function with colour and light: palettes, light reflectance, layered lighting, colour temperature and colour rendering.',
+    lessons: [
+    { t: 'Colour palettes for rooms', p: [
+      'Interiors often follow the 60-30-10 approach: about 60% dominant colour on walls and large surfaces, 30% secondary colour in furniture and textiles, 10% accent in accessories.',
+      'Warm colours, such as reds and yellows, feel energetic and can make spaces feel cosier. Cool colours, such as blues and greens, feel calm and can make spaces feel larger.',
+      'Test paint samples on the actual walls and view them at different times of day; colour changes with light.'],
+      tb: ['Palette tools', [['60-30-10', 'Dominant, secondary, accent'], ['Warm colours', 'Energetic, cosy'], ['Cool colours', 'Calm, spacious'], ['Neutrals', 'Flexible backgrounds'], ['Test', 'Samples on the wall, all day']]],
+      todo: ['Choose a 60-30-10 palette for a bedroom.', 'Paint or tape samples on a wall.', 'Photograph them morning and evening.'],
+      ck: ['In the 60-30-10 approach, what gets 10%?', ['Walls', 'Furniture', 'Accents'], 2, 'Accents are the smallest share.'] },
+    { t: 'Light reflectance', p: [
+      'Light reflectance value, LRV, measures how much light a colour reflects, from 0 for black to about 100 for pure white. Paint makers publish LRVs.',
+      'High-LRV ceilings and walls bounce light deeper into rooms, reducing the lighting needed. Dark colours absorb light and make rooms feel smaller and more intimate.',
+      'Contrast in LRV between walls, floors and doors also helps people with low vision navigate.'],
+      tb: ['Light reflectance', [['Scale', '0 (black) to about 100 (white)'], ['High LRV', 'Reflects light, feels larger'], ['Low LRV', 'Absorbs light, feels intimate'], ['Ceilings', 'Usually high LRV'], ['Accessibility', 'LRV contrast aids navigation']]],
+      todo: ['Look up the LRV of three paint colours.', 'Choose a ceiling colour for a dark room.', 'Check contrast between a door and wall.'],
+      ck: ['What does a high LRV indicate?', ['The colour reflects a lot of light', 'The colour is very dark', 'The paint is glossy'], 0, 'High LRV colours are light.'] },
+    { t: 'Layered lighting', p: [
+      'Good lighting combines three layers. Ambient lighting provides general illumination. Task lighting brightens specific work areas, such as desks and counters. Accent lighting highlights features, such as art or texture.',
+      'Use dimmers and multiple circuits so lighting can change with activity and time of day.',
+      'Daylight is the best light source: place work areas near windows, and control glare with blinds or shades.'],
+      tb: ['Lighting layers', [['Ambient', 'General illumination'], ['Task', 'Work areas'], ['Accent', 'Features and art'], ['Controls', 'Dimmers, separate circuits'], ['Daylight', 'Use it, control glare']]],
+      todo: ['Identify the three layers in a room you like.', 'Find a room missing task lighting.', 'Plan a layered lighting scheme for a kitchen.'],
+      ck: ['Under-cabinet lights over a kitchen counter are which layer?', ['Ambient', 'Task', 'Accent'], 1, 'They light a work surface.'] },
+    { t: 'Colour temperature', p: [
+      'Colour temperature, measured in kelvin, describes how warm or cool white light appears. Around 2,700 to 3,000 K is warm and cosy; around 4,000 K is neutral; 5,000 K and above is cool and bright.',
+      'Homes often use warm light in living areas and neutral light in kitchens and workspaces. Offices and retail often use neutral to cool light.',
+      'Keep colour temperature consistent within a room; mixing warm and cool fixtures looks uneven.'],
+      tb: ['Colour temperature', [['About 2,700–3,000 K', 'Warm, cosy'], ['About 4,000 K', 'Neutral'], ['5,000 K and above', 'Cool, bright'], ['Living areas', 'Often warm'], ['Rule', 'Consistent within a room']]],
+      todo: ['Check the kelvin rating on bulbs at home.', 'Find a room with mixed colour temperatures.', 'Choose bulbs for a bedroom and a study.'],
+      ck: ['Which colour temperature feels warmest?', ['2,700 K', '4,000 K', '6,500 K'], 0, 'Lower kelvin is warmer.'] },
+    { t: 'Colour rendering', p: [
+      'The colour rendering index, CRI, measures how accurately a light source shows colours compared with a reference light, on a scale up to 100.',
+      'A CRI of 90 or higher is generally considered good for homes, retail and anywhere colour matters, such as clothing stores and art studios.',
+      'Low-CRI lights can make skin, food and fabrics look dull or off-colour, even when bright.'],
+      tb: ['Colour rendering', [['CRI scale', 'Up to 100'], ['Good', '90 or higher'], ['Where it matters', 'Retail, homes, studios'], ['Low CRI', 'Dull, off colours'], ['Brightness', 'Not the same as rendering']]],
+      todo: ['Check the CRI on two light bulbs.', 'Compare how a red object looks under each.', 'Specify CRI for a clothing store.'],
+      ck: ['What CRI is generally considered good?', ['50', '70', '90 or higher'], 2, 'Higher CRI shows colours more accurately.'] }],
+    exam: [
+    ['In the 60-30-10 approach, what usually gets 60%?', ['Walls and large surfaces', 'Accessories', 'Lamps', 'Doors only'], 0],
+    ['How do cool colours tend to make spaces feel?', ['Calm and larger', 'Hot and small', 'Loud', 'Cramped'], 0],
+    ['Why test paint at different times of day?', ['Colour changes with light', 'Paint dries differently', 'It is required', 'No reason'], 0],
+    ['What does LRV measure?', ['Light reflected by a colour', 'Paint cost', 'Bulb wattage', 'Room size'], 0],
+    ['Which lighting layer provides general illumination?', ['Ambient', 'Task', 'Accent', 'Emergency'], 0],
+    ['A spotlight on a painting is which layer?', ['Accent', 'Ambient', 'Task', 'None'], 0],
+    ['What does colour temperature describe?', ['How warm or cool white light appears', 'The heat of the bulb', 'Paint colour', 'Room temperature'], 0],
+    ['About what colour temperature is neutral?', ['2,200 K', '4,000 K', '10,000 K', '1,000 K'], 1],
+    ['What does CRI measure?', ['How accurately light shows colours', 'Brightness', 'Energy use', 'Bulb life'], 0],
+    ['Why keep colour temperature consistent within a room?', ['Mixed temperatures look uneven', 'It saves money only', 'Codes require it', 'No reason'], 0]] },
+
+  { id: 'materials-ffe', section: 'Interior Design', title: 'Materials and FF&E Specification', level: 'Core',
+    blurb: 'Choose and specify finishes and furniture: performance, durability ratings, fire and safety, sustainability, and schedules for procurement.',
+    lessons: [
+    { t: 'What FF&E means', p: [
+      'FF&E stands for furniture, fixtures and equipment: the movable items in an interior, such as chairs, tables, lighting fixtures and appliances, as distinct from the building’s permanent construction.',
+      'Finishes are the surfaces: flooring, wall coverings, paint, ceilings and countertops.',
+      'Interior designers select, specify and often procure both, coordinating with architects and contractors.'],
+      tb: ['Scope', [['Furniture', 'Seating, tables, storage'], ['Fixtures', 'Light fixtures, decorative items'], ['Equipment', 'Appliances, technology'], ['Finishes', 'Floors, walls, ceilings, counters'], ['Designer role', 'Select, specify, procure']]],
+      todo: ['List the FF&E in a room you use.', 'List its finishes.', 'Note which items look worn and why.'],
+      ck: ['What does FF&E stand for?', ['Floors, finishes and electrics', 'Furniture, fixtures and equipment', 'Fabrics, fibres and embroidery'], 1, 'It covers movable items.'] },
+    { t: 'Performance and durability', p: [
+      'Choose materials for how they will be used. A hotel lobby chair faces far more wear than a home armchair.',
+      'Upholstery abrasion resistance is often tested with the Wyzenbeek method in double rubs. Industry guidelines treat around 15,000 double rubs as suitable for general contract use and 30,000 or more as heavy duty.',
+      'Consider cleaning, stain resistance, moisture, sunlight fading and maintenance cost over the life of the space.'],
+      tb: ['Durability considerations', [['Use level', 'Residential vs. commercial'], ['Abrasion test', 'Wyzenbeek double rubs'], ['General contract guideline', 'About 15,000 double rubs'], ['Heavy duty guideline', '30,000+ double rubs'], ['Also consider', 'Cleaning, stains, fading, moisture']]],
+      todo: ['Find the double-rub rating of a fabric online.', 'Decide whether it suits a restaurant booth.', 'List three hard-wearing flooring options.'],
+      ck: ['Which rating suggests heavy-duty upholstery?', ['3,000 double rubs', '30,000+ double rubs', '300 double rubs'], 1, 'Heavy duty starts around 30,000.'] },
+    { t: 'Fire and safety', p: [
+      'Commercial interiors must meet fire codes for finishes and furnishings, such as flame spread ratings for wall finishes and flammability standards for upholstered furniture in some jurisdictions and building types.',
+      'Slip resistance matters for floors, especially in wet areas such as entrances, kitchens and bathrooms.',
+      'Check the requirements for your project’s building type and location, and keep manufacturer test documentation.'],
+      tb: ['Safety checks', [['Wall finishes', 'Flame spread ratings'], ['Upholstery', 'Flammability standards where required'], ['Floors', 'Slip resistance'], ['Wet areas', 'Entrances, kitchens, bathrooms'], ['Records', 'Keep test documentation']]],
+      todo: ['Find the flame spread rating of a wall covering.', 'Choose a slip-resistant floor for an entrance.', 'Look up a fire code requirement for restaurants.'],
+      ck: ['Where does slip resistance matter most?', ['Wet areas such as entrances and kitchens', 'Ceilings', 'Closets only'], 0, 'Moisture raises slip risk.'] },
+    { t: 'Sustainability and health', p: [
+      'Sustainable interiors favour durable, repairable products, recycled or rapidly renewable content and responsibly sourced wood, such as FSC-certified timber.',
+      'Indoor air quality improves with low-VOC paints, adhesives and finishes, which release fewer volatile organic compounds.',
+      'Reusing existing furniture is often the most sustainable choice of all.'],
+      tb: ['Sustainable choices', [['Durability', 'Lasts longer, less waste'], ['Content', 'Recycled or rapidly renewable'], ['Wood', 'FSC-certified'], ['Air quality', 'Low-VOC products'], ['Best option', 'Reuse what exists']]],
+      todo: ['Find a low-VOC paint brand.', 'Identify one piece of furniture to reuse in a redesign.', 'Look up FSC certification.'],
+      ck: ['What do low-VOC products improve?', ['Indoor air quality', 'Fire resistance', 'Acoustics'], 0, 'They release fewer volatile compounds.'] },
+    { t: 'Specifications and schedules', p: [
+      'Specifications describe exactly what to buy or install: manufacturer, product, finish, size, quantity and installation requirements.',
+      'Schedules organise them in tables, such as a finish schedule by room and an FF&E schedule with item codes, quantities, lead times and costs.',
+      'Track lead times early; custom furniture can take months. Review samples and shop drawings before ordering.'],
+      tb: ['FF&E schedule columns', [['Item code', 'e.g. CH-01'], ['Description', 'Manufacturer, product, finish'], ['Quantity', 'How many'], ['Lead time', 'Weeks to deliver'], ['Cost', 'Unit and total']]],
+      todo: ['Build an FF&E schedule for one room.', 'Add lead times for each item.', 'Calculate the total cost.'],
+      ck: ['Why track lead times early?', ['Custom items can take months', 'They never change', 'Codes require it'], 0, 'Long lead items affect the schedule.'] }],
+    exam: [
+    ['Which is FF&E rather than a finish?', ['A lounge chair', 'Floor tile', 'Paint', 'Wallpaper'], 0],
+    ['Which is a finish?', ['Flooring', 'A desk', 'A refrigerator', 'A lamp'], 0],
+    ['What does the Wyzenbeek test measure?', ['Abrasion resistance', 'Colour', 'Fire rating', 'Weight'], 0],
+    ['Roughly what double-rub count is a general contract guideline?', ['1,500', '15,000', '150,000', '150'], 1],
+    ['What does flame spread rating apply to?', ['Wall finishes', 'Lighting colour', 'Furniture prices', 'Window views'], 0],
+    ['What does FSC certification indicate?', ['Responsibly sourced wood', 'Fire safety', 'Fabric strength', 'Paint quality'], 0],
+    ['What does VOC stand for?', ['Volatile organic compounds', 'Very old chairs', 'Visual output colour', 'Vinyl over carpet'], 0],
+    ['What is often the most sustainable furniture choice?', ['Reusing what exists', 'Buying all new', 'Disposable furniture', 'Importing from far away'], 0],
+    ['What does an FF&E schedule list?', ['Items, quantities, lead times and costs', 'Staff holidays', 'Room temperatures', 'Client birthdays'], 0],
+    ['What should be reviewed before ordering?', ['Samples and shop drawings', 'Nothing', 'Only the price', 'Only colours online'], 0]] },
+
+  { id: 'music-theory', section: 'Music', title: 'Music Theory Essentials', level: 'Starter',
+    blurb: 'Read the building blocks of music: notes and the keyboard, major scales, intervals, chords and key signatures.',
+    lessons: [
+    { t: 'Notes and the keyboard', p: [
+      'Western music uses seven letter names, A to G, repeating in octaves. On a piano, white keys are the natural notes and black keys are sharps and flats.',
+      'A half step, or semitone, is the distance to the very next key. A whole step is two half steps.',
+      'Between E and F, and between B and C, there is no black key, so those pairs are a half step apart.'],
+      tb: ['Basics', [['Letter names', 'A B C D E F G'], ['Sharp (♯)', 'Raises a half step'], ['Flat (♭)', 'Lowers a half step'], ['Half step', 'Adjacent keys'], ['Natural half steps', 'E–F and B–C']]],
+      todo: ['Find middle C on a keyboard app.', 'Play every half step from C to C.', 'Identify E–F and B–C.'],
+      ck: ['How many half steps make a whole step?', ['One', 'Two', 'Three'], 1, 'A whole step is two semitones.'] },
+    { t: 'The major scale', p: [
+      'A major scale follows the pattern whole, whole, half, whole, whole, whole, half. Starting on C gives C D E F G A B C, all white keys.',
+      'Starting on G, the pattern requires F♯: G A B C D E F♯ G.',
+      'Each note of the scale has a number, or scale degree, from 1 to 7. The first degree is the tonic, the note that feels like home.'],
+      tb: ['Major scale', [['Pattern', 'W W H W W W H'], ['C major', 'C D E F G A B C'], ['G major', 'G A B C D E F♯ G', 1], ['Degree 1', 'Tonic'], ['Degree 5', 'Dominant']]],
+      todo: ['Build the D major scale using the pattern.', 'Play it on a keyboard app.', 'Name its sharps.'],
+      ck: ['Which sharp appears in G major?', ['C♯', 'F♯', 'G♯'], 1, 'G major has one sharp: F♯.'] },
+    { t: 'Intervals', p: [
+      'An interval is the distance between two notes. Count letter names inclusively: C to E is a third; C to G is a fifth.',
+      'Interval quality depends on half steps. C to E, four half steps, is a major third. C to E♭, three half steps, is a minor third. C to G, seven half steps, is a perfect fifth.',
+      'Intervals give music its character. Major thirds tend to sound bright; minor thirds sound darker.'],
+      tb: ['Common intervals from C', [['C–E♭', 'Minor third (3 half steps)'], ['C–E', 'Major third (4)'], ['C–F', 'Perfect fourth (5)'], ['C–G', 'Perfect fifth (7)'], ['C–C', 'Octave (12)']]],
+      todo: ['Play a major and a minor third and compare.', 'Find a perfect fifth from D.', 'Count half steps in an octave.'],
+      ck: ['How many half steps are in a perfect fifth?', ['5', '7', '12'], 1, 'C to G is seven half steps.'] },
+    { t: 'Chords', p: [
+      'A triad is three notes stacked in thirds. A major triad is root, major third and perfect fifth: C–E–G. A minor triad lowers the third: C–E♭–G.',
+      'Chords can be built on each scale degree and named with Roman numerals: in C major, I is C major, IV is F major and V is G major.',
+      'The progression I–IV–V–I underpins a huge amount of popular, folk and classical music.'],
+      tb: ['Triads', [['Major', 'Root, major 3rd, perfect 5th'], ['C major', 'C–E–G'], ['Minor', 'Root, minor 3rd, perfect 5th'], ['C minor', 'C–E♭–G'], ['I–IV–V in C', 'C, F, G']]],
+      todo: ['Play C major and C minor triads.', 'Play I–IV–V–I in C.', 'Build the same progression in G.'],
+      ck: ['What are the notes of a C major triad?', ['C–E♭–G', 'C–E–G', 'C–F–A'], 1, 'Root, major third, perfect fifth.'] },
+    { t: 'Key signatures', p: [
+      'A key signature at the start of a staff shows which notes are sharp or flat throughout. G major has one sharp, F♯; F major has one flat, B♭.',
+      'The circle of fifths arranges keys so each step clockwise adds one sharp, and each step anticlockwise adds one flat.',
+      'Every major key has a relative minor sharing its key signature, a minor third below: A minor shares C major’s signature.'],
+      tb: ['Key signatures', [['C major', 'No sharps or flats'], ['G major', 'One sharp (F♯)'], ['D major', 'Two sharps (F♯, C♯)'], ['F major', 'One flat (B♭)'], ['Relative minor of C', 'A minor']]],
+      todo: ['Draw the circle of fifths for six keys.', 'Find the relative minor of G major.', 'Identify the key of a piece from its signature.'],
+      ck: ['Which key shares C major’s key signature?', ['A minor', 'E minor', 'C minor'], 0, 'A minor is C major’s relative minor.'] }],
+    exam: [
+    ['Which pair of natural notes is a half step apart?', ['E and F', 'C and D', 'F and G', 'A and B'], 0],
+    ['What does a flat do?', ['Lowers a note a half step', 'Raises a whole step', 'Doubles the length', 'Mutes the note'], 0],
+    ['What is the major scale pattern?', ['W W H W W W H', 'W H W W H W W', 'H W W W H W W', 'W W W H W W H'], 0],
+    ['What are the notes of the D major scale?', ['D E F♯ G A B C♯ D', 'D E F G A B C D', 'D E♭ F G A B♭ C D', 'D E F♯ G♯ A B C D'], 0],
+    ['C to E is what interval?', ['Major third', 'Minor third', 'Perfect fifth', 'Octave'], 0],
+    ['How many half steps in an octave?', ['7', '8', '12', '10'], 2],
+    ['What makes a triad minor?', ['A minor third above the root', 'A missing fifth', 'Four notes', 'A sharp root'], 0],
+    ['In C major, what chord is V?', ['G major', 'F major', 'A minor', 'D minor'], 0],
+    ['Which key has one flat?', ['F major', 'G major', 'D major', 'C major'], 0],
+    ['Moving clockwise on the circle of fifths adds what?', ['One sharp', 'One flat', 'Two flats', 'Nothing'], 0]] },
+
+  { id: 'rhythm-reading', section: 'Music', title: 'Rhythm and Reading Music', level: 'Starter',
+    blurb: 'Read and count rhythms: the staff and clefs, note and rest values, time signatures, dotted notes, tempo and dynamics.',
+    lessons: [
+    { t: 'The staff and clefs', p: [
+      'Music is written on a staff of five lines and four spaces. A clef at the start fixes which pitches the lines represent.',
+      'In treble clef, the lines from bottom to top are E, G, B, D, F, and the spaces spell F, A, C, E. In bass clef, the lines are G, B, D, F, A and the spaces A, C, E, G.',
+      'Ledger lines extend the staff above or below. Middle C sits on a ledger line between the two clefs.'],
+      tb: ['Reading pitches', [['Treble clef lines', 'E G B D F'], ['Treble clef spaces', 'F A C E'], ['Bass clef lines', 'G B D F A'], ['Bass clef spaces', 'A C E G'], ['Middle C', 'Ledger line between clefs']]],
+      todo: ['Name ten notes on a treble clef worksheet.', 'Name ten on a bass clef.', 'Find middle C in both.'],
+      ck: ['What note is on the bottom line of the treble clef?', ['E', 'G', 'F'], 0, 'Treble lines are E G B D F.'] },
+    { t: 'Note and rest values', p: [
+      'In common time, a whole note lasts four beats, a half note two, a quarter note one, an eighth note half a beat and a sixteenth a quarter of a beat.',
+      'Each note value has a matching rest showing silence of the same length.',
+      'Count eighth notes as 1-and-2-and and sixteenths as 1-e-and-a to keep subdivisions even.'],
+      tb: ['Values in 4/4', [['Whole note', '4 beats'], ['Half note', '2 beats'], ['Quarter note', '1 beat'], ['Eighth note', '½ beat'], ['Sixteenth note', '¼ beat']]],
+      todo: ['Clap a bar of quarter notes, then eighths.', 'Write one bar mixing notes and rests.', 'Count it aloud.'],
+      ck: ['How many eighth notes fit in a bar of 4/4?', ['4', '8', '16'], 1, 'Each beat holds two eighths.'] },
+    { t: 'Time signatures', p: [
+      'A time signature has two numbers. The top shows beats per bar; the bottom shows which note gets the beat. 4/4 has four quarter-note beats; 3/4 has three, as in a waltz.',
+      'Compound meters such as 6/8 group eighth notes in threes, giving two strong beats per bar with a lilting feel.',
+      'Bar lines divide music into measures; the first beat of each bar usually carries the strongest accent.'],
+      tb: ['Time signatures', [['4/4', 'Four quarter-note beats'], ['3/4', 'Three beats; waltz'], ['2/4', 'Two beats; march'], ['6/8', 'Two groups of three eighths'], ['Strong beat', 'Usually beat one']]],
+      todo: ['Conduct a pattern in 4/4 and 3/4.', 'Clap a bar of 6/8 feeling two beats.', 'Identify the time signature of a song you know by counting.'],
+      ck: ['How many beats per bar are in 3/4?', ['Two', 'Three', 'Four'], 1, 'The top number gives beats per bar.'] },
+    { t: 'Dots and ties', p: [
+      'A dot after a note adds half its value. A dotted half note lasts three beats; a dotted quarter lasts one and a half.',
+      'A tie joins two notes of the same pitch into one longer sound, often across a bar line.',
+      'Syncopation places accents off the main beats, common in jazz, funk and many popular styles.'],
+      tb: ['Lengthening notes', [['Dotted half', '2 + 1 = 3 beats', 1], ['Dotted quarter', '1 + ½ = 1½ beats'], ['Tie', 'Joins notes of the same pitch'], ['Across bar lines', 'Use a tie'], ['Syncopation', 'Accents off the beat']]],
+      todo: ['Clap a dotted quarter followed by an eighth.', 'Write a tie across a bar line.', 'Find syncopation in a song you like.'],
+      ck: ['How long is a dotted half note in 4/4?', ['2 beats', '3 beats', '4 beats'], 1, 'A half note plus half its value.'] },
+    { t: 'Tempo and dynamics', p: [
+      'Tempo is speed, measured in beats per minute. Italian terms are common: largo is very slow, andante walking pace, allegro fast and presto very fast.',
+      'Dynamics mark loudness: pianissimo (pp) very soft, piano (p) soft, mezzo-forte (mf) moderately loud, forte (f) loud and fortissimo (ff) very loud. Crescendo means gradually louder; decrescendo means gradually softer.',
+      'Practise with a metronome to hold a steady tempo.'],
+      tb: ['Tempo and dynamics', [['Largo', 'Very slow'], ['Andante', 'Walking pace'], ['Allegro', 'Fast'], ['p / f', 'Soft / loud'], ['Crescendo', 'Gradually louder']]],
+      todo: ['Set a metronome to 60 and then 120 BPM.', 'Clap a rhythm at both tempos.', 'Mark dynamics on a short melody.'],
+      ck: ['What does forte mean?', ['Soft', 'Loud', 'Fast'], 1, 'Forte is loud.'] }],
+    exam: [
+    ['How many lines does a staff have?', ['Four', 'Five', 'Six', 'Seven'], 1],
+    ['What do treble clef spaces spell?', ['FACE', 'ACEG', 'EGBDF', 'GBDFA'], 0],
+    ['How many beats is a half note in 4/4?', ['One', 'Two', 'Three', 'Four'], 1],
+    ['How many sixteenth notes equal one quarter note?', ['Two', 'Four', 'Eight', 'Sixteen'], 1],
+    ['What does the bottom number of a time signature show?', ['Which note gets the beat', 'Beats per bar', 'Tempo', 'Key'], 0],
+    ['Which time signature suits a waltz?', ['3/4', '4/4', '2/4', '7/8'], 0],
+    ['How many beats is a dotted quarter note?', ['1', '1½', '2', '3'], 1],
+    ['What does a tie do?', ['Joins notes of the same pitch', 'Raises pitch', 'Adds a rest', 'Speeds up the tempo'], 0],
+    ['Which tempo marking is fastest?', ['Presto', 'Andante', 'Largo', 'Adagio'], 0],
+    ['What does crescendo mean?', ['Gradually louder', 'Gradually softer', 'Faster', 'Stop'], 0]] },
+
+  { id: 'practice-performance', section: 'Music', title: 'Practice and Performance', level: 'Core',
+    blurb: 'Improve faster and perform with confidence: deliberate practice, slow work and the metronome, memorisation, auditions and nerves.',
+    lessons: [
+    { t: 'Deliberate practice', p: [
+      'Deliberate practice targets specific weaknesses with focused, goal-driven work and immediate feedback, rather than playing through pieces repeatedly.',
+      'Set a clear goal for each session: play bars 17 to 24 cleanly at 80 beats per minute. Work on the hardest passages first while you are fresh.',
+      'Short, frequent sessions usually beat occasional long ones.'],
+      tb: ['Practice habits', [['Specific goal', 'Bars and tempo'], ['Hardest first', 'When fresh'], ['Feedback', 'Teacher, recording, metronome'], ['Frequency', 'Short and often'], ['Avoid', 'Mindless run-throughs']]],
+      todo: ['Write a goal for your next practice session.', 'Identify your three hardest bars.', 'Practise them first for ten minutes.'],
+      ck: ['What makes practice deliberate?', ['Focused work on specific weaknesses with feedback', 'Playing the whole piece repeatedly', 'Practising only easy sections'], 0, 'Targeted effort drives improvement.'] },
+    { t: 'Slow practice and the metronome', p: [
+      'Practise difficult passages slowly enough to play them correctly every time. Mistakes repeated at speed become habits.',
+      'Use a metronome and raise the tempo in small steps, such as 4 beats per minute, only after several clean repetitions.',
+      'Chunking breaks a passage into small sections; practise each, then join them, overlapping by a note or two.'],
+      tb: ['Building speed', [['Start', 'Slow enough to be perfect'], ['Increase', 'Small steps, e.g. 4 BPM'], ['Rule', 'Several clean repetitions first'], ['Chunking', 'Small sections, then join'], ['Overlap', 'Join with a shared note']]],
+      todo: ['Find the tempo where a passage is perfect.', 'Increase in 4 BPM steps after three clean runs.', 'Record your progress over a week.'],
+      ck: ['When should you increase the metronome tempo?', ['After several clean repetitions', 'After any attempt', 'Never'], 0, 'Accuracy comes before speed.'] },
+    { t: 'Recording and feedback', p: [
+      'Recording yourself reveals problems you cannot hear while playing: uneven rhythm, intonation, balance and rushed endings.',
+      'Listen back with the score and note specific issues. Compare with professional recordings for interpretation, not imitation.',
+      'Lessons and masterclasses give expert feedback; peers can help too.'],
+      tb: ['Feedback sources', [['Recording', 'Hear what you miss while playing'], ['Score', 'Listen with it'], ['Professional recordings', 'Ideas for interpretation'], ['Teacher', 'Expert guidance'], ['Peers', 'Fresh ears']]],
+      todo: ['Record one piece on your phone.', 'List three specific issues.', 'Practise one and re-record.'],
+      ck: ['Why record practice?', ['To hear problems missed while playing', 'To post online only', 'It replaces practice'], 0, 'Playback is honest feedback.'] },
+    { t: 'Memorisation', p: [
+      'Reliable memory combines several kinds: muscle memory from repetition, aural memory of how it sounds, visual memory of the score, and analytical memory of structure and harmony.',
+      'Muscle memory alone is fragile under pressure. Analyse the form and harmony so you know where you are at every point.',
+      'Practise starting from different places in the piece, so a slip does not force you back to the beginning.'],
+      tb: ['Types of memory', [['Muscle', 'Repetition; fragile alone'], ['Aural', 'How it sounds'], ['Visual', 'The page'], ['Analytical', 'Form and harmony'], ['Test', 'Start from anywhere']]],
+      todo: ['Label the sections of a piece you are learning.', 'Mark three starting points.', 'Practise starting from each.'],
+      ck: ['Why is muscle memory alone risky in performance?', ['It is fragile under pressure', 'It does not exist', 'It is too strong'], 0, 'Combine it with analytical memory.'] },
+    { t: 'Performing and nerves', p: [
+      'Nervousness before performing is normal. Preparation is the strongest defence: know the music well enough that you can play it on an off day.',
+      'Rehearse performing, not just practising: play for friends, record full run-throughs without stopping, and simulate the performance setting.',
+      'Before going on, use slow breathing and a short routine. During the performance, keep going after mistakes; most audiences never notice them.'],
+      tb: ['Performance habits', [['Preparation', 'Strongest defence'], ['Mock performances', 'For friends, full run-throughs'], ['Breathing', 'Slow, steady'], ['Routine', 'Same steps before each show'], ['Mistakes', 'Keep going']]],
+      todo: ['Schedule a mock performance for a friend.', 'Create a two-minute pre-performance routine.', 'Practise continuing through a deliberate mistake.'],
+      ck: ['What should you do after a mistake in performance?', ['Stop and restart', 'Keep going', 'Apologise to the audience'], 1, 'Continuity matters most.'] }],
+    exam: [
+    ['What is deliberate practice?', ['Focused work on specific weaknesses with feedback', 'Playing favourite pieces repeatedly', 'Practising only before concerts', 'Listening without playing'], 0],
+    ['When should hard passages usually be practised?', ['First, while fresh', 'Last', 'Never', 'Only in lessons'], 0],
+    ['Why practise slowly?', ['To avoid building mistakes into habit', 'To waste time', 'Because fast is impossible', 'To skip passages'], 0],
+    ['What is chunking?', ['Breaking a passage into small sections', 'Playing loudly', 'Skipping bars', 'Sight-reading'], 0],
+    ['What can a recording reveal?', ['Uneven rhythm and intonation', 'Nothing useful', 'Only volume', 'Only tempo'], 0],
+    ['How should professional recordings be used?', ['For ideas about interpretation', 'To copy exactly', 'Never', 'Instead of practice'], 0],
+    ['Which memory type involves understanding form and harmony?', ['Analytical', 'Muscle', 'Visual', 'Aural'], 0],
+    ['Why practise starting from different points?', ['So a slip does not force a restart from the beginning', 'To confuse yourself', 'It is required', 'To learn faster tempos'], 0],
+    ['What is the strongest defence against nerves?', ['Thorough preparation', 'Avoiding performances', 'Caffeine', 'Playing faster'], 0],
+    ['What is a mock performance?', ['A full run-through for listeners before the real event', 'A joke', 'A recording session', 'A rehearsal of one bar'], 0]] },
+
+  { id: 'macronutrients', section: 'Nutrition and Dietetics', title: 'Macronutrients and Energy', level: 'Starter',
+    blurb: 'The science of food energy: carbohydrates, protein, fat and fibre, what each does in the body, and how energy is measured.',
+    lessons: [
+    { t: 'Energy and calories', p: [
+      'Food energy is measured in kilocalories, usually called calories on labels. Carbohydrate and protein provide about 4 kcal per gram, fat about 9 kcal per gram and alcohol about 7.',
+      'A snack with 20 g carbohydrate, 5 g protein and 10 g fat provides about 80 + 20 + 90 = 190 kcal.',
+      'Energy needs vary widely with age, size, sex and activity. This course explains the science; individual advice belongs with a registered dietitian or doctor.'],
+      tb: ['Energy per gram', [['Carbohydrate', 'About 4 kcal'], ['Protein', 'About 4 kcal'], ['Fat', 'About 9 kcal'], ['Alcohol', 'About 7 kcal'], ['Example snack', 'About 190 kcal', 1]]],
+      todo: ['Calculate energy for 30 g carbohydrate, 10 g protein, 5 g fat.', 'Check your answer against a food label.', 'Explain why fat is energy-dense.'],
+      ck: ['About how many kcal does 10 g of fat provide?', ['40', '70', '90'], 2, '10 × 9 = 90 kcal.'] },
+    { t: 'Carbohydrates and fibre', p: [
+      'Carbohydrates are the body’s main fuel, especially for the brain and intense exercise. They range from sugars to starches.',
+      'Fibre is a carbohydrate humans cannot fully digest. Soluble fibre, as in oats and beans, can help lower cholesterol; insoluble fibre, as in whole grains and vegetables, supports digestion.',
+      'Whole grains, fruits, vegetables and legumes provide carbohydrate along with fibre, vitamins and minerals.'],
+      tb: ['Carbohydrates', [['Role', 'Main fuel'], ['Sugars', 'Simple carbohydrates'], ['Starches', 'Complex carbohydrates'], ['Soluble fibre', 'Oats, beans'], ['Insoluble fibre', 'Whole grains, vegetables']]],
+      todo: ['List five foods high in fibre.', 'Compare fibre in white and whole-wheat bread labels.', 'Name one source of soluble fibre.'],
+      ck: ['Which is a good source of soluble fibre?', ['Oats', 'Butter', 'Chicken'], 0, 'Oats contain beta-glucan, a soluble fibre.'] },
+    { t: 'Protein', p: [
+      'Protein builds and repairs tissue and makes enzymes, hormones and antibodies. Proteins are made of amino acids; nine are essential, meaning the diet must supply them.',
+      'Animal proteins and soy contain all essential amino acids. Other plant proteins can be combined across the day, such as grains with legumes.',
+      'Protein is spread across meals in most healthy eating patterns.'],
+      tb: ['Protein', [['Roles', 'Tissue, enzymes, hormones, antibodies'], ['Building blocks', 'Amino acids'], ['Essential amino acids', '9'], ['Complete sources', 'Animal foods, soy'], ['Plant combinations', 'Grains with legumes']]],
+      todo: ['List protein sources in a day of meals.', 'Find two plant proteins that complement each other.', 'Check protein grams on three labels.'],
+      ck: ['How many essential amino acids are there?', ['5', '9', '20'], 1, 'Nine must come from the diet.'] },
+    { t: 'Fats', p: [
+      'Fat provides energy, carries fat-soluble vitamins A, D, E and K, and forms cell membranes.',
+      'Unsaturated fats, found in olive oil, nuts, seeds and fish, are associated with better heart health. Saturated fats, found in butter and fatty meats, are recommended in limited amounts. Industrially produced trans fats are harmful, and their main source, partially hydrogenated oils, has been phased out of the U.S. food supply.',
+      'Omega-3 fats, found in fatty fish, flaxseed and walnuts, are a type of unsaturated fat important for heart and brain health.'],
+      tb: ['Types of fat', [['Unsaturated', 'Olive oil, nuts, fish'], ['Saturated', 'Butter, fatty meats; limit'], ['Trans (industrial)', 'Harmful; largely removed in U.S.'], ['Omega-3', 'Fatty fish, flaxseed, walnuts'], ['Carries vitamins', 'A, D, E, K']]],
+      todo: ['Identify the fats in your last three meals.', 'Find omega-3 sources you would eat.', 'Compare saturated fat on two labels.'],
+      ck: ['Which vitamins need fat to be absorbed?', ['B and C', 'A, D, E and K', 'All vitamins'], 1, 'They are fat-soluble.'] },
+    { t: 'Water and balance', p: [
+      'Water makes up a large share of body weight and regulates temperature, transports nutrients and removes waste. Needs rise with heat, exercise and illness.',
+      'Balanced eating patterns, such as those shown by MyPlate, fill about half the plate with fruits and vegetables, with grains, protein foods and dairy or alternatives making up the rest.',
+      'No single food or nutrient makes a diet healthy or unhealthy; overall patterns over time matter most.'],
+      tb: ['Balance', [['Water', 'Temperature, transport, waste removal'], ['Needs rise with', 'Heat, exercise, illness'], ['MyPlate', 'Half fruits and vegetables'], ['Other groups', 'Grains, protein, dairy or alternatives'], ['Key idea', 'Patterns over time']]],
+      todo: ['Look at MyPlate online.', 'Compare one of your meals with it.', 'Note one easy improvement.'],
+      ck: ['About what share of the plate does MyPlate give to fruits and vegetables?', ['A quarter', 'Half', 'All of it'], 1, 'Half the plate.'] }],
+    exam: [
+    ['About how many kcal per gram does protein provide?', ['4', '7', '9', '2'], 0],
+    ['About how many kcal per gram does alcohol provide?', ['4', '7', '9', '0'], 1],
+    ['20 g carbohydrate and 10 g fat provide about how many kcal?', ['80', '120', '170', '300'], 2],
+    ['What is fibre?', ['Carbohydrate humans cannot fully digest', 'A type of protein', 'A fat', 'A vitamin'], 0],
+    ['What does insoluble fibre mainly support?', ['Digestion', 'Vision', 'Hair growth', 'Hearing'], 0],
+    ['Which is a complete plant protein?', ['Soy', 'Rice alone', 'Apples', 'Lettuce'], 0],
+    ['Which fat is associated with better heart health?', ['Unsaturated', 'Industrial trans', 'All fats equally', 'None'], 0],
+    ['Which food is a source of omega-3 fats?', ['Salmon', 'White bread', 'Sugar', 'Butter'], 0],
+    ['What does MyPlate illustrate?', ['A balanced eating pattern', 'A calorie limit', 'A diet pill', 'A workout'], 0],
+    ['What matters most for a healthy diet?', ['Overall patterns over time', 'A single superfood', 'One meal', 'One nutrient'], 0]] },
+
+  { id: 'food-labels', section: 'Nutrition and Dietetics', title: 'Reading Food Labels', level: 'Starter',
+    blurb: 'Decode the Nutrition Facts label and ingredient list: serving sizes, percent Daily Value, added sugars, sodium, fibre and claims.',
+    lessons: [
+    { t: 'Serving size', p: [
+      'Everything on the U.S. Nutrition Facts label refers to one serving. Check the serving size and servings per container first.',
+      'If a bottle holds 2.5 servings and you drink it all, multiply every number by 2.5.',
+      'Some packages list values per serving and per container side by side.'],
+      tb: ['Serving maths', [['Serving', '1 cup'], ['Servings per container', '2.5'], ['Sugar per serving', '12 g'], ['Whole container', '30 g', 1], ['Rule', 'Check serving size first']]],
+      todo: ['Find a package with more than one serving.', 'Calculate totals for the whole package.', 'Compare with what you usually eat.'],
+      ck: ['A label shows 150 kcal per serving and 3 servings. How many kcal in the whole package?', ['150', '300', '450'], 2, '150 × 3 = 450.'] },
+    { t: 'Percent Daily Value', p: [
+      'Percent Daily Value, %DV, shows how much one serving contributes to a day’s recommended amount, based on a 2,000-calorie reference diet.',
+      'The FDA guide is simple: 5% DV or less is low; 20% DV or more is high.',
+      'Use %DV to compare products and to aim higher for nutrients like fibre, vitamin D, calcium, iron and potassium, and lower for saturated fat, sodium and added sugars.'],
+      tb: ['Reading %DV', [['Reference', '2,000-calorie diet'], ['Low', '5% DV or less'], ['High', '20% DV or more'], ['Aim higher', 'Fibre, vitamin D, calcium, iron, potassium'], ['Aim lower', 'Saturated fat, sodium, added sugars']]],
+      todo: ['Compare sodium %DV on two soups.', 'Find a food high in fibre by %DV.', 'Explain %DV to a friend in one sentence.'],
+      ck: ['A food has 25% DV for sodium. Is that low or high?', ['Low', 'High', 'Neither'], 1, '20% DV or more is high.'] },
+    { t: 'Added sugars and sodium', p: [
+      'The label lists total sugars and, separately, added sugars: sugars added during processing, such as table sugar, syrups and honey, as opposed to sugars naturally in fruit or milk.',
+      'The Dietary Guidelines for Americans recommend limiting added sugars to less than 10% of daily calories and keeping sodium within recommended limits.',
+      'Much sodium comes from packaged and restaurant foods rather than the salt shaker.'],
+      tb: ['Sugars and sodium', [['Total sugars', 'Natural plus added'], ['Added sugars', 'Added in processing'], ['Guideline', 'Added sugars < 10% of calories'], ['Main sodium source', 'Packaged and restaurant food'], ['Check', '%DV for both']]],
+      todo: ['Compare added sugars in plain and flavoured yoghurt.', 'Find a high-sodium packaged food.', 'Find a lower-sodium alternative.'],
+      ck: ['Which counts as added sugar?', ['Lactose naturally in milk', 'Honey added to cereal', 'Fructose in a whole apple'], 1, 'Sugars added in processing count.'] },
+    { t: 'The ingredient list', p: [
+      'Ingredients are listed in descending order by weight. The first few make up most of the product.',
+      'Sugar can appear under many names, such as cane sugar, corn syrup, dextrose and fruit juice concentrate. Several near the top suggest a high-sugar product.',
+      'Major food allergens must be declared on U.S. labels. Check a contains statement or the ingredient list.'],
+      tb: ['Ingredient list', [['Order', 'Descending by weight'], ['First ingredients', 'Make up most of the product'], ['Sugar names', 'Corn syrup, dextrose, cane sugar...'], ['Allergens', 'Must be declared'], ['Tip', 'Short, recognisable lists are easier to judge']]],
+      todo: ['Read the ingredient list of a breakfast cereal.', 'Count the sugar names.', 'Find the allergen statement.'],
+      ck: ['How are ingredients ordered on a U.S. label?', ['Alphabetically', 'By descending weight', 'Randomly'], 1, 'The heaviest ingredient comes first.'] },
+    { t: 'Front-of-package claims', p: [
+      'Claims on the front of packages are marketing as much as information. Terms such as low fat, high fibre and good source have regulated definitions, but natural is loosely defined for most foods.',
+      'A product can be low fat yet high in added sugars, or gluten-free yet heavily processed.',
+      'Always turn the package over and check the Nutrition Facts label and ingredients.'],
+      tb: ['Claims to question', [['Low fat', 'Check added sugars'], ['Natural', 'Loosely defined for most foods'], ['Gluten-free', 'Not automatically healthier'], ['Multigrain', 'Not the same as whole grain'], ['Rule', 'Read the back of the pack']]],
+      todo: ['Find three front-of-pack claims in your kitchen.', 'Check each against the label.', 'Decide whether each is helpful or misleading.'],
+      ck: ['What does multigrain mean?', ['Made with whole grains only', 'Made with more than one grain, not necessarily whole', 'Gluten-free'], 1, 'Look for whole grain specifically.'] }],
+    exam: [
+    ['What should you check first on a Nutrition Facts label?', ['Serving size', 'Vitamin C', 'Brand name', 'Price'], 0],
+    ['A serving has 8 g sugar and there are 3 servings. How much sugar in total?', ['8 g', '16 g', '24 g', '32 g'], 2],
+    ['What calorie reference does %DV use?', ['1,500', '2,000', '2,500', '3,000'], 1],
+    ['What %DV is considered low?', ['5% or less', '20% or more', '50%', '100%'], 0],
+    ['Which nutrient should you aim higher for?', ['Fibre', 'Sodium', 'Added sugars', 'Saturated fat'], 0],
+    ['What do the Dietary Guidelines recommend for added sugars?', ['Less than 10% of daily calories', 'No limit', 'More than 25%', 'Exactly 50 g'], 0],
+    ['Where does most dietary sodium come from?', ['Packaged and restaurant foods', 'The salt shaker only', 'Water', 'Fresh fruit'], 0],
+    ['Which is another name for sugar on ingredient lists?', ['Dextrose', 'Cellulose', 'Lecithin', 'Riboflavin'], 0],
+    ['What must U.S. labels declare?', ['Major food allergens', 'The farmer’s name', 'The recipe', 'Shelf placement'], 0],
+    ['How strictly is natural defined for most foods?', ['Loosely', 'Very strictly', 'It means organic', 'It means no sugar'], 0]] },
+
+  { id: 'nutrition-claims', section: 'Nutrition and Dietetics', title: 'Evaluating Nutrition Claims', level: 'Core',
+    blurb: 'Separate evidence from hype: how nutrition is studied, why headlines conflict, red flags in diet claims and finding trustworthy sources.',
+    lessons: [
+    { t: 'How nutrition is studied', p: [
+      'Most nutrition research is observational: large studies track what people eat and their health over years. They find associations but cannot prove cause, because people who eat differently also live differently.',
+      'Randomised controlled trials assign diets or supplements, providing stronger evidence of cause, but they are often short, small or hard to stick to.',
+      'Systematic reviews and meta-analyses combine many studies and usually give the most reliable picture.'],
+      tb: ['Study types', [['Observational', 'Associations, not cause'], ['Randomised trial', 'Stronger causal evidence'], ['Trial limits', 'Short, small, adherence problems'], ['Systematic review', 'Combines many studies'], ['Most reliable', 'Reviews of good studies']]],
+      todo: ['Find a nutrition news story.', 'Identify the study type behind it.', 'Decide how strong the evidence is.'],
+      ck: ['Why can observational nutrition studies not prove cause?', ['People who eat differently also differ in other ways', 'They are always wrong', 'They use animals only'], 0, 'Confounding is common.'] },
+    { t: 'Why headlines conflict', p: [
+      'Single studies get headlines, and different studies of the same food can reach different results because of different populations, amounts and methods.',
+      'Headlines often report relative risk, such as 20% higher risk, without the absolute numbers, which may be small.',
+      'Look for the overall body of evidence and expert consensus rather than reacting to each new study.'],
+      tb: ['Reading headlines', [['Single study', 'One piece of evidence'], ['Different results', 'Different methods and people'], ['Relative risk', 'Can sound large'], ['Absolute risk', 'Often small'], ['Better guide', 'Body of evidence, consensus']]],
+      todo: ['Find two conflicting headlines about one food.', 'Compare the studies behind them.', 'Find the absolute risks if reported.'],
+      ck: ['Risk rises from 1 in 1,000 to 1.2 in 1,000. How might a headline describe it?', ['A 20% increase', 'A 1,000% increase', 'No change'], 0, 'The relative change is 20%; the absolute change is tiny.'] },
+    { t: 'Red flags', p: [
+      'Be wary of claims that promise fast, dramatic results, rely on testimonials instead of studies, cut out whole food groups without medical reason, or sell a product alongside the advice.',
+      'Words such as detox, miracle and secret often signal marketing over evidence.',
+      'Dietary supplements in the U.S. do not need FDA approval for safety or effectiveness before sale, so labels can promise more than evidence supports.'],
+      tb: ['Warning signs', [['Fast, dramatic results', 'Too good to be true'], ['Testimonials only', 'No studies'], ['Banned food groups', 'Without medical reason'], ['Selling a product', 'Conflict of interest'], ['Supplements', 'Not FDA-approved before sale']]],
+      todo: ['Find a supplement advert online.', 'List its red flags.', 'Search for evidence behind one claim.'],
+      ck: ['Do U.S. dietary supplements need FDA approval for effectiveness before sale?', ['Yes', 'No', 'Only vitamins'], 1, 'They are regulated differently from drugs.'] },
+    { t: 'Trustworthy sources', p: [
+      'Reliable sources include government health agencies, the Dietary Guidelines for Americans (updated every five years by the USDA and HHS), professional bodies and peer-reviewed research.',
+      'Registered dietitian nutritionists, RDNs, have accredited degrees, supervised practice and a national exam. The title nutritionist is unregulated in many places.',
+      'Check who funds a source and whether the author has relevant qualifications.'],
+      tb: ['Where to look', [['Government', 'USDA, HHS, CDC, NIH'], ['Dietary Guidelines', 'Updated every five years'], ['Credentialed experts', 'Registered dietitian nutritionists'], ['Peer-reviewed research', 'Systematic reviews'], ['Check', 'Funding and qualifications']]],
+      todo: ['Find the current Dietary Guidelines online.', 'Look up how someone becomes an RDN.', 'Check the funding of a nutrition website you use.'],
+      ck: ['Which credential requires accredited training and a national exam?', ['Wellness coach', 'Registered dietitian nutritionist', 'Influencer'], 1, 'RDNs are credentialed professionals.'] },
+    { t: 'Putting it together', p: [
+      'When you meet a new claim, ask: Who is saying it, and what do they gain? What kind of evidence supports it? How big is the effect in absolute terms? Does it fit the wider body of evidence?',
+      'Consistent advice across decades and countries, such as eating more vegetables, fruits, whole grains and legumes, rests on stronger evidence than any single trendy food.',
+      'Individual needs differ, especially with medical conditions. Personal advice should come from a qualified professional.'],
+      tb: ['Questions for any claim', [['Who?', 'Source and incentives'], ['What evidence?', 'Study type and size'], ['How big?', 'Absolute effect'], ['Fits the evidence?', 'Consensus'], ['For you?', 'Ask a qualified professional']]],
+      todo: ['Apply the five questions to a trending diet claim.', 'Write a one-paragraph verdict.', 'Share it with a friend who believes the claim.'],
+      ck: ['Which advice rests on the strongest evidence?', ['Eating more vegetables, fruits and whole grains', 'A new superfood powder', 'A single celebrity diet'], 0, 'It is consistent across decades of research.'] }],
+    exam: [
+    ['What do observational nutrition studies show?', ['Associations', 'Proof of cause', 'Nothing', 'Only animal results'], 0],
+    ['Which study type gives the strongest evidence of cause?', ['Randomised controlled trial', 'Anecdote', 'Testimonial', 'Survey of one person'], 0],
+    ['What usually gives the most reliable overall picture?', ['Systematic reviews and meta-analyses', 'A single new study', 'A blog post', 'An advert'], 0],
+    ['Why do headlines about the same food conflict?', ['Studies differ in people, amounts and methods', 'Food changes daily', 'Scientists disagree on purpose', 'They never conflict'], 0],
+    ['What does relative risk often hide?', ['A small absolute effect', 'The study’s funding', 'The author', 'The date'], 0],
+    ['Which is a red flag in a diet claim?', ['Promises of fast, dramatic results', 'Citing systematic reviews', 'Moderation', 'Advice to see a professional'], 0],
+    ['What does the word detox often signal?', ['Marketing over evidence', 'Proven medical treatment', 'FDA approval', 'A clinical trial'], 0],
+    ['How often are the Dietary Guidelines for Americans updated?', ['Every five years', 'Every year', 'Every 20 years', 'Never'], 0],
+    ['Which title is unregulated in many places?', ['Nutritionist', 'Registered dietitian nutritionist', 'Physician', 'Pharmacist'], 0],
+    ['Who should give personal nutrition advice for a medical condition?', ['A qualified professional', 'An influencer', 'A supplement seller', 'A search engine'], 0]] }
   ];
 
   var PLANNED = [
@@ -7842,7 +9116,15 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     'Electrical Engineering': 'ee electrical electronics circuits',
     'Human Resources': 'hr people talent recruiting',
     'Pharmaceutical Sciences': 'pharmacy pharmd pharmacology pharma drugs',
-    'Urban Studies and Planning': 'urban planning city cities housing transportation'
+    'Urban Studies and Planning': 'urban planning city cities housing transportation',
+    'Kinesiology': 'exercise science kin physical therapy pt fitness sports medicine',
+    'Spanish for Professionals': 'spanish language languages foreign language espanol',
+    'Mechanical Engineering': 'me mechanical engineer thermodynamics cad',
+    'Civil Engineering': 'civil engineer construction structural geotechnical',
+    'Data Science': 'data science analytics machine learning ml ai statistics',
+    'Interior Design': 'interiors interior design decorating',
+    'Music': 'music performance theory musician',
+    'Nutrition and Dietetics': 'nutrition dietetics dietitian food science health'
   };
   function norm(t) { return String(t).toLowerCase().replace(/&/g, ' and ').replace(/[^a-z0-9]+/g, ' ').trim(); }
   function sectionList() {
@@ -7887,7 +9169,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
       cs.forEach(function (c) {
         var P = prog(c.id), n = c.lessons.filter(function (_, i) { return P.done[i]; }).length, got = certFor(c.id), open = hasAccess(c.id);
         var status = got ? '<span class="pill ok">Certificate earned</span>' : (n ? '<span class="pill">' + n + ' of ' + c.lessons.length + ' lessons done</span>' : '<span class="pill">' + esc(c.level) + '</span>');
-        html += '<div class="card">' + status + '<h3>' + esc(c.title) + '</h3><p class="muted grow">' + esc(c.blurb) + '</p><div class="row" style="justify-content: space-between"><span class="muted">30 min · ' + (open ? 'Unlocked' : '$10') + '</span><button class="btn" type="button" data-open="' + c.id + '">' + (got ? 'Review' : (n ? 'Continue' : 'Start')) + '</button></div></div>';
+        html += '<div class="card"><div class="cband" style="background: ' + tintFor(c.section) + '">' + esc(c.section) + '</div>' + status + '<h3>' + esc(c.title) + '</h3><p class="muted grow">' + esc(c.blurb) + '</p><div class="row" style="justify-content: space-between"><span class="muted">30 min · ' + (open ? 'Unlocked' : '$10') + '</span><button class="btn" type="button" data-open="' + c.id + '">' + (got ? 'Review' : (n ? 'Continue' : 'Start')) + '</button></div></div>';
       });
       ps.forEach(function (c) { html += '<div class="card fill"><span class="pill">In development</span><h3>' + esc(c.title) + '</h3><p class="muted grow">' + esc(c.blurb) + '</p></div>'; });
       html += '</div></div>';
@@ -7961,7 +9243,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
         '<form id="enroll" class="stack">' + nameField +
         '<fieldset class="plans"><legend>Choose how to pay</legend>' +
           '<label class="plan"><input type="radio" name="plan" value="course" checked><span><b>This course</b><span class="amt">$10</span><span class="muted">One payment. This course and its certificate.</span></span></label>' +
-          '<label class="plan"><input type="radio" name="plan" value="all"><span><b>Unlimited</b><span class="amt">$25 <span style="font-size: 15px; font-weight: 500">a month</span></span><span class="muted">Every course and every certificate. Cancel any time.</span></span></label>' +
+          '<label class="plan"><input type="radio" name="plan" value="all"><span><span class="row" style="gap: 8px"><b>Unlimited</b><span class="badge">Best value</span></span><span class="amt">$25 <span style="font-size: 15px; font-weight: 500">a month</span></span><span class="muted">Every course and every certificate. Cancel any time.</span></span></label>' +
         '</fieldset>' +
         '<p class="muted" style="font-size: 14px; margin: 0">All sales are final. Unlimited can be cancelled any time and stays active until the end of the month you\u2019ve paid for.</p>' +
         '<label class="agree"><input type="checkbox" id="agree" required><span>I understand my access starts right away and purchases are non-refundable, as set out in the <a href="#refunds" target="_blank">refund policy</a>.</span></label>' +
@@ -8217,6 +9499,7 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     document.querySelectorAll('[data-nav]').forEach(function (a) {
       if (a.dataset.nav === navKey) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
     });
+    if (v === 'home') renderHome();
     if (v === 'courses') renderCourses();
     if (v === 'course') renderCourse();
     if (v === 'assessment') renderExam();
@@ -8227,6 +9510,29 @@ var qrcode=function(){var t=function(t,r){var e=t,n=g[r],o=null,i=0,a=null,u=[],
     if (flash) { f.innerHTML = '<div class="fb ok">' + esc(flash) + '</div>'; f.hidden = false; flash = ''; } else { f.hidden = true; }
     window.scrollTo(0, 0);
   }
+  var HERO = {
+    student: ['Land the internship with skills you can <span class="hl">prove</span>.', '30-minute courses in what recruiters ask about, each ending with a certificate and a link anyone can check.'],
+    pro: ['Learn the next skill for your career, and <span class="hl">prove</span> it.', 'Short, practical courses for working professionals, from leading a team to reading a balance sheet, each with a certificate anyone can verify.']
+  };
+  var TINTS = ['#DCE8DC', '#F7E6B5', '#E6E2F4', '#F6DCD2', '#D6E6EE', '#EFE3D0'];
+  function tintFor(sec) { var i = sectionList().indexOf(sec); return TINTS[(i < 0 ? 0 : i) % TINTS.length]; }
+  function goMajor(sec) { pick = sec; query = sec; if (location.hash === '#courses') renderCourses(); else location.hash = 'courses'; }
+  function renderHome() {
+    var secs = sectionList(), counts = {};
+    COURSES.forEach(function (c) { counts[c.section] = (counts[c.section] || 0) + 1; });
+    $('home-stats').textContent = COURSES.length + ' courses · ' + secs.length + ' majors · 30 minutes each';
+    var pop = ['Finance: Technical Skills', 'Nursing', 'Computer Science', 'Marketing', 'Pre-Law'].filter(function (x) { return counts[x]; });
+    $('popular').innerHTML = 'Popular: ' + pop.map(function (x) { return '<button type="button" data-major-go="' + esc(x) + '">' + esc(x.replace(': Technical Skills', '')) + '</button>'; }).join(' · ');
+    $('home-tiles').innerHTML = pop.map(function (x) { return '<button type="button" class="tile" data-major-go="' + esc(x) + '" style="background: ' + tintFor(x) + '"><b>' + esc(x.replace(': Technical Skills', '')) + '</b><span>' + counts[x] + ' courses</span></button>'; }).join('') +
+      '<button type="button" class="tile all" data-major-go=""><b>All ' + secs.length + ' majors</b><span>See everything →</span></button>';
+    document.querySelectorAll('#v-home [data-major-go]').forEach(function (b) { b.addEventListener('click', function () { if (b.dataset.majorGo) goMajor(b.dataset.majorGo); else { pick = ''; query = ''; location.hash = 'courses'; } }); });
+  }
+  document.querySelectorAll('[data-who]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      document.querySelectorAll('[data-who]').forEach(function (x) { x.setAttribute('aria-pressed', String(x === b)); });
+      var h = HERO[b.dataset.who]; $('hero-h').innerHTML = h[0]; $('hero-p').textContent = h[1];
+    });
+  });
   $('home-search').addEventListener('submit', function (e) {
     e.preventDefault(); query = $('home-q').value.trim(); pick = '';
     if (location.hash === '#courses') renderCourses(); else location.hash = 'courses';
