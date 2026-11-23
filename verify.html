@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Verify a Certificate — The Aldridge Institute</title>
+<meta name="description" content="Confirm that a certificate was issued by The Aldridge Institute.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFCF6; --card:#FFFFFF; --ink:#22201C; --muted:#6E685E; --line:#ECE5D8;
+    --saffron:#E9A23B; --saffron-dark:#C9831F; --sage:#7E9C82; --sage-soft:#EEF3EE;
+    --red:#B4523F; --red-soft:#F8ECE9;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  header{display:flex;align-items:center;justify-content:space-between;max-width:980px;margin:0 auto;padding:22px 24px}
+  .brand{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;letter-spacing:.02em;text-decoration:none}
+  .brand span{color:var(--saffron-dark)}
+  header nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:22px}
+  header nav a:hover{color:var(--ink)}
+  main{max-width:640px;margin:0 auto;padding:40px 24px 80px}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-weight:600;margin:0 0 10px}
+  h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:44px;line-height:1.1;margin:0 0 12px}
+  .lede{color:var(--muted);margin:0 0 30px}
+  form{display:flex;gap:10px;flex-wrap:wrap}
+  input{flex:1 1 260px;font:inherit;font-size:16px;padding:14px 16px;border:1px solid var(--line);border-radius:12px;background:var(--card);text-transform:uppercase;letter-spacing:.06em}
+  input:focus{outline:2px solid var(--saffron);outline-offset:1px;border-color:transparent}
+  button,.btn{font:inherit;font-weight:600;font-size:15px;padding:14px 22px;border-radius:12px;border:0;background:var(--saffron);color:#2A1D08;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px}
+  button:hover,.btn:hover{background:var(--saffron-dark);color:#fff}
+  .btn.secondary{background:transparent;border:1px solid var(--line);color:var(--ink)}
+  .btn.secondary:hover{background:var(--sage-soft);color:var(--ink)}
+  .btn.linkedin{background:#0A66C2;color:#fff}
+  .btn.linkedin:hover{background:#004182}
+  #result{margin-top:34px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:30px;box-shadow:0 1px 0 rgba(0,0,0,.02),0 12px 30px -18px rgba(60,45,20,.18)}
+  .status{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;padding:6px 12px;border-radius:999px;margin-bottom:18px}
+  .status.ok{background:var(--sage-soft);color:#3F5E45}
+  .status.bad{background:var(--red-soft);color:var(--red)}
+  .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+  .name{font-family:"Cormorant Garamond",Georgia,serif;font-size:34px;font-weight:600;line-height:1.15;margin:0 0 6px}
+  .stmt{color:var(--muted);margin:0 0 22px}
+  .stmt strong{color:var(--ink);font-weight:600}
+  dl{display:grid;grid-template-columns:auto 1fr;gap:10px 22px;margin:0 0 26px;padding-top:20px;border-top:1px solid var(--line);font-size:14px}
+  dt{color:var(--muted)}
+  dd{margin:0;font-weight:500;word-break:break-word}
+  .actions{display:flex;gap:10px;flex-wrap:wrap}
+  .note{font-size:13px;color:var(--muted);margin-top:18px}
+  .toast{font-size:13px;color:#3F5E45;margin-left:4px;opacity:0;transition:opacity .2s}
+  .toast.show{opacity:1}
+  .loading{color:var(--muted)}
+  footer{max-width:980px;margin:0 auto;padding:30px 24px 40px;border-top:1px solid var(--line);font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a{color:var(--muted);text-decoration:none}
+  @media (max-width:520px){h1{font-size:36px}.name{font-size:28px}.card{padding:22px}header nav a{margin-left:14px}}
+</style>
+</head>
+<body>
+<header>
+  <a class="brand" href="/">The Aldridge <span>Institute</span></a>
+  <nav><a href="/#courses">Courses</a><a href="/#signin">Sign in</a></nav>
+</header>
+
+<main>
+  <p class="eyebrow">Certificate verification</p>
+  <h1>Verify a certificate</h1>
+  <p class="lede">Every Aldridge certificate has a unique ID. Enter it below to confirm who earned it, for which course, and when it was issued.</p>
+
+  <form id="f" autocomplete="off">
+    <input id="cid" name="id" placeholder="AI-2026-XXXXXX" aria-label="Certificate ID" maxlength="40" required>
+    <button type="submit">Verify</button>
+  </form>
+
+  <div id="result" aria-live="polite"></div>
+</main>
+
+<footer>
+  <span>&copy; <span id="yr"></span> The Aldridge Institute</span>
+  <span><a href="/#contact">Contact</a> &nbsp;·&nbsp; support@aldridgeinstitute.com</span>
+</footer>
+
+<script>
+(function(){
+  var SUPABASE_URL = "https://odvbehqhflzoljeoinxi.supabase.co";
+  var SUPABASE_KEY = "sb_publishable_S0WAnM8ZoEHFeCiD54QA3A__efoI4ZZ";
+  var ORG = "The Aldridge Institute";
+  var PAGE = "https://aldridgeinstitute.com/verify.html";
+
+  document.getElementById("yr").textContent = new Date().getFullYear();
+  var form = document.getElementById("f"), input = document.getElementById("cid"), out = document.getElementById("result");
+
+  function esc(s){return String(s == null ? "" : s).replace(/[&<>"']/g,function(c){return {"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c];});}
+  function clean(id){return String(id||"").trim().toUpperCase().replace(/\s+/g,"");}
+
+  function linkedInUrl(c, d, link){
+    var p = new URLSearchParams({
+      startTask: "CERTIFICATION_NAME",
+      name: c.course_title,
+      organizationName: ORG,
+      issueYear: String(d.getFullYear()),
+      issueMonth: String(d.getMonth() + 1),
+      certUrl: link,
+      certId: c.id
+    });
+    return "https://www.linkedin.com/profile/add?" + p.toString();
+  }
+
+  function render(c){
+    var d = new Date(c.issued_at);
+    var date = d.toLocaleDateString("en-US",{year:"numeric",month:"long",day:"numeric"});
+    var link = PAGE + "?id=" + encodeURIComponent(c.id);
+    document.title = c.name + " — " + c.course_title + " | The Aldridge Institute";
+    out.innerHTML =
+      '<div class="card">' +
+        '<span class="status ok"><span class="dot"></span>Verified certificate</span>' +
+        '<p class="name">' + esc(c.name) + '</p>' +
+        '<p class="stmt">has completed a course on <strong>' + esc(c.course_title) + '</strong> and passed its assessment.</p>' +
+        '<dl>' +
+          '<dt>Certificate ID</dt><dd>' + esc(c.id) + '</dd>' +
+          '<dt>Issued</dt><dd>' + esc(date) + '</dd>' +
+          '<dt>Issued by</dt><dd>' + esc(ORG) + '</dd>' +
+        '</dl>' +
+        '<div class="actions">' +
+          '<a class="btn linkedin" target="_blank" rel="noopener" href="' + esc(linkedInUrl(c, d, link)) + '">Add to LinkedIn</a>' +
+          '<button type="button" class="btn secondary" id="copy">Copy verification link</button>' +
+          '<span class="toast" id="toast">Link copied</span>' +
+        '</div>' +
+        '<p class="note">This page is the official record. Share this link anywhere you list the certificate.</p>' +
+      '</div>';
+    document.getElementById("copy").onclick = function(){
+      var t = document.getElementById("toast");
+      var done = function(){t.classList.add("show"); setTimeout(function(){t.classList.remove("show");},1800);};
+      if (navigator.clipboard) navigator.clipboard.writeText(link).then(done, function(){prompt("Copy this link:", link);});
+      else prompt("Copy this link:", link);
+    };
+  }
+
+  function notFound(id){
+    out.innerHTML =
+      '<div class="card">' +
+        '<span class="status bad"><span class="dot"></span>No match</span>' +
+        '<p class="stmt" style="margin-bottom:0">We couldn’t find a certificate with the ID <strong>' + esc(id) + '</strong>. Check the ID for typos. IDs look like AI-2026-XXXXXX. If you believe this is an error, contact support@aldridgeinstitute.com.</p>' +
+      '</div>';
+  }
+
+  function verify(id){
+    id = clean(id);
+    if (!id) return;
+    input.value = id;
+    try { history.replaceState(null, "", "?id=" + encodeURIComponent(id)); } catch(e){}
+    out.innerHTML = '<p class="loading">Checking our records…</p>';
+    fetch(SUPABASE_URL + "/rest/v1/rpc/verify_certificate", {
+      method: "POST",
+      headers: {"Content-Type":"application/json","apikey":SUPABASE_KEY},
+      body: JSON.stringify({cert_id: id})
+    }).then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); })
+      .then(function(rows){ if (rows && rows.length) render(rows[0]); else notFound(id); })
+      .catch(function(){
+        out.innerHTML = '<div class="card"><span class="status bad"><span class="dot"></span>Something went wrong</span><p class="stmt" style="margin-bottom:0">We couldn’t reach our records just now. Please try again in a moment.</p></div>';
+      });
+  }
+
+  form.addEventListener("submit", function(e){ e.preventDefault(); verify(input.value); });
+  var q = new URLSearchParams(location.search).get("id") || new URLSearchParams(location.hash.split("?")[1] || "").get("id");
+  if (q) verify(q);
+})();
+</script>
+</body>
+</html>
