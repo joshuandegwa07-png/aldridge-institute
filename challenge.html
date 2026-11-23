@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Founding Member Challenge — The Aldridge Institute</title>
+<meta name="description" content="Every Aldridge course is free through December 31. Earn certificates, become a Founding Member, and win prizes.">
+<meta property="og:title" content="The Founding Member Challenge — The Aldridge Institute">
+<meta property="og:description" content="Every course is free through Dec 31. Earn 3 certificates and get free Unlimited through spring 2027.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FFFCF6; --card:#FFFFFF; --ink:#22201C; --muted:#6E685E; --line:#ECE5D8;
+    --saffron:#E9A23B; --saffron-dark:#C9831F; --saffron-soft:#FDF3E2;
+    --sage:#7E9C82; --sage-soft:#EEF3EE;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+  header{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+  .brand{font-family:"Cormorant Garamond",Georgia,serif;font-size:24px;font-weight:600;letter-spacing:.02em;text-decoration:none}
+  .brand span{color:var(--saffron-dark)}
+  header nav a{font-size:14px;color:var(--muted);text-decoration:none;margin-left:22px}
+  header nav a:hover{color:var(--ink)}
+  .ribbon{background:var(--ink);color:#FFF6E6;text-align:center;font-size:14px;padding:10px 16px}
+  .ribbon strong{color:var(--saffron)}
+  .hero{padding:64px 0 48px;text-align:center}
+  .eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--sage);font-weight:600;margin:0 0 14px}
+  h1{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:60px;line-height:1.04;margin:0 auto 18px;max-width:800px}
+  h1 em{font-style:normal;color:var(--saffron-dark)}
+  .lede{color:var(--muted);font-size:18px;max-width:620px;margin:0 auto 30px}
+  .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+  .btn{font:inherit;font-weight:600;font-size:15px;padding:14px 24px;border-radius:12px;border:0;background:var(--saffron);color:#2A1D08;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center}
+  .btn:hover{background:var(--saffron-dark);color:#fff}
+  .btn.ghost{background:transparent;border:1px solid var(--line);color:var(--ink)}
+  .btn.ghost:hover{background:var(--sage-soft)}
+  .deadline{margin-top:22px;font-size:14px;color:var(--muted)}
+  .deadline b{color:var(--ink)}
+  section{padding:56px 0;border-top:1px solid var(--line)}
+  h2{font-family:"Cormorant Garamond",Georgia,serif;font-weight:600;font-size:40px;line-height:1.1;margin:0 0 10px}
+  .sub{color:var(--muted);margin:0 0 32px;max-width:640px}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;counter-reset:s}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:26px}
+  .step::before{counter-increment:s;content:counter(s);display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--saffron-soft);color:var(--saffron-dark);font-weight:600;margin-bottom:14px}
+  .step h3{margin:0 0 6px;font-size:17px}
+  .step p{margin:0;color:var(--muted);font-size:15px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:28px;box-shadow:0 12px 30px -22px rgba(60,45,20,.25)}
+  .card.feature{background:linear-gradient(160deg,#FFF8EA,#FFFFFF 60%);border-color:#F2DDB5}
+  .tag{display:inline-block;font-size:12px;font-weight:600;letter-spacing:.04em;padding:5px 10px;border-radius:999px;background:var(--sage-soft);color:#3F5E45;margin-bottom:14px}
+  .tag.gold{background:var(--saffron-soft);color:#8A5A12}
+  .card h3{font-family:"Cormorant Garamond",Georgia,serif;font-size:26px;font-weight:600;line-height:1.15;margin:0 0 8px}
+  .card p{margin:0;color:var(--muted);font-size:15px}
+  .card p + p{margin-top:10px}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .linkedin{background:#0A66C2;color:#fff}
+  .linkedin:hover{background:#004182}
+  ul.clean{margin:12px 0 0;padding-left:18px;color:var(--muted);font-size:15px}
+  ul.clean li{margin:4px 0}
+  .rules{font-size:13px;color:var(--muted);background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;margin-top:22px}
+  .rules h4{margin:0 0 8px;font-size:13px;color:var(--ink);letter-spacing:.04em;text-transform:uppercase}
+  .rules ol{margin:0;padding-left:18px}
+  .rules li{margin:3px 0}
+  details{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin-bottom:10px}
+  summary{cursor:pointer;font-weight:600}
+  details p{color:var(--muted);margin:10px 0 0}
+  .final{text-align:center;padding:64px 0 72px}
+  footer{border-top:1px solid var(--line);padding:28px 0 40px;font-size:13px;color:var(--muted);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+  footer a{color:var(--muted);text-decoration:none}
+  @media (max-width:860px){.steps,.grid,.two{grid-template-columns:1fr}h1{font-size:44px}h2{font-size:34px}}
+  @media (max-width:520px){h1{font-size:38px}header nav a{margin-left:14px}.hero{padding:44px 0 36px}}
+</style>
+</head>
+<body>
+<div class="ribbon">Every course is <strong>free</strong> through December 31. No card needed.</div>
+<div class="wrap">
+<header>
+  <a class="brand" href="/">The Aldridge <span>Institute</span></a>
+  <nav><a href="/#courses">Courses</a><a href="/verify.html">Verify</a><a href="/#signin">Sign in</a></nav>
+</header>
+
+<div class="hero">
+  <p class="eyebrow">Limited pilot &middot; December 2026</p>
+  <h1>The Founding Member <em>Challenge</em></h1>
+  <p class="lede">Short, guided courses built for internship recruiting, free for everyone this month. Earn three certificates before the year ends and you become one of Aldridge&rsquo;s first Founding Members.</p>
+  <div class="cta">
+    <a class="btn" href="/#signin">Create your free account</a>
+    <a class="btn ghost" href="/#courses">Browse courses</a>
+  </div>
+  <p class="deadline">Challenge ends <b>December 31, 2026 at 11:59 PM ET</b></p>
+</div>
+</div>
+
+<section>
+<div class="wrap">
+  <h2>How it works</h2>
+  <p class="sub">Each course takes about 30 minutes and ends with a short assessment. Score 8 out of 10 or better and you earn a certificate with its own verification link.</p>
+  <div class="steps">
+    <div class="step"><h3>Sign up free</h3><p>Create an account. Every course in every major is unlocked through December 31.</p></div>
+    <div class="step"><h3>Earn certificates</h3><p>Pick courses in your major, or explore a new field. Each certificate you earn counts toward the challenge.</p></div>
+    <div class="step"><h3>Collect your rewards</h3><p>Hit three certificates for Founding Member status. Every certificate is also a raffle entry.</p></div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <h2>What you get</h2>
+  <p class="sub">Rewards for showing up early.</p>
+  <div class="grid">
+    <div class="card feature">
+      <span class="tag gold">3 certificates</span>
+      <h3>Founding Member status</h3>
+      <p>Finish three courses by December 31 and get free Unlimited access through the end of May 2027, covering the whole spring recruiting season.</p>
+    </div>
+    <div class="card">
+      <span class="tag">1 certificate</span>
+      <h3>Early access: the Finance Recruiting Guide</h3>
+      <p>Real interview questions from a recent finance recruiting cycle, organized by firm type. Certificate holders get it before anyone else.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Every certificate</span>
+      <h3>Year-end raffle</h3>
+      <p>Each certificate you earn by December 31 is one entry into a drawing for six $25 gift cards. More certificates, more chances.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <div class="two">
+    <div class="card">
+      <span class="tag">Show it off</span>
+      <h3>Put it on LinkedIn</h3>
+      <p>Every certificate comes with an <b>Add to LinkedIn</b> button and a public verification link, so recruiters can confirm it&rsquo;s real in one click.</p>
+      <p>Post your certificate and tag The Aldridge Institute. We&rsquo;ll feature some of our favorite posts.</p>
+    </div>
+    <div class="card">
+      <span class="tag">Rep your org</span>
+      <h3>The org &amp; major challenge</h3>
+      <p>Which student organization and which major can earn the most certificates by December 31? Winners get recognized on this page in January.</p>
+      <p>To count toward your org, send us your certificate IDs, your major and your org through the <a href="/#contact">contact form</a>.</p>
+    </div>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <h2>Help us build it, get 3 months free</h2>
+  <p class="sub">This is a pilot, and honest feedback is what we&rsquo;re after. Tell us what worked, what didn&rsquo;t and what you&rsquo;d change. Good or bad, every response counts.</p>
+  <div class="card" style="max-width:720px">
+    <p>After you finish a course, send us a short note through the <a href="/#contact">contact form</a> with the subject <b>&ldquo;Pilot feedback&rdquo;</b>. Answer these five questions:</p>
+    <ul class="clean">
+      <li>Which course did you take?</li>
+      <li>On a scale of 1&ndash;5, how useful was it?</li>
+      <li>What was most useful?</li>
+      <li>What should we fix or add?</li>
+      <li>Would you pay $10 for a course like this? Why or why not?</li>
+    </ul>
+    <p style="margin-top:14px">Use the same email as your Aldridge account. Every pilot tester who sends feedback by December 31 gets <b>three months of free Unlimited</b> starting January 1. The reward doesn&rsquo;t depend on what you say.</p>
+  </div>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <h2>Questions</h2>
+  <details><summary>Is it really free?</summary><p>Yes. Every course and certificate is free through December 31, 2026, with no card required. After that, courses return to normal pricing, except for Founding Members and pilot testers, who keep free access as described above.</p></details>
+  <details><summary>How do recruiters know a certificate is real?</summary><p>Every certificate has a unique ID and a public verification page on aldridgeinstitute.com. Anyone can confirm who earned it, which course it covers, and when it was issued.</p></details>
+  <details><summary>How long does a course take?</summary><p>About 30 minutes, including the assessment. You get 5 attempts per course per day.</p></details>
+  <details><summary>Who can join?</summary><p>Anyone. Aldridge is built for college students recruiting for internships and for working professionals building new skills.</p></details>
+</div>
+</section>
+
+<section>
+<div class="wrap">
+  <h2>Raffle rules</h2>
+  <div class="rules" style="margin-top:0">
+    <ol>
+      <li><b>No purchase necessary.</b> Entry is free. A purchase does not improve your chances of winning.</li>
+      <li><b>Sponsor:</b> The Aldridge Institute (aldridgeinstitute.com).</li>
+      <li><b>Eligibility:</b> Open to individuals 18 or older. Void where prohibited.</li>
+      <li><b>Entry period:</b> Now through December 31, 2026, 11:59 PM ET.</li>
+      <li><b>How to enter:</b> Each Aldridge certificate earned during the entry period counts as one entry.</li>
+      <li><b>Prizes:</b> Six (6) $25 gift cards. One prize per person.</li>
+      <li><b>Drawing:</b> Winners will be drawn at random from all eligible entries on or about January 2, 2027, and notified at the email address on their Aldridge account. Winners must respond within 7 days, or an alternate winner will be drawn.</li>
+      <li><b>Questions:</b> support@aldridgeinstitute.com</li>
+    </ol>
+  </div>
+</div>
+</section>
+
+<div class="wrap final">
+  <h2>Start your first course tonight</h2>
+  <p class="sub" style="margin:0 auto 26px">Thirty minutes. One certificate. Two more and you&rsquo;re a Founding Member.</p>
+  <div class="cta"><a class="btn" href="/#signin">Create your free account</a></div>
+</div>
+
+<div class="wrap">
+<footer>
+  <span>&copy; 2026 The Aldridge Institute</span>
+  <span><a href="/verify.html">Verify a certificate</a> &nbsp;&middot;&nbsp; <a href="/#contact">Contact</a> &nbsp;&middot;&nbsp; support@aldridgeinstitute.com</span>
+</footer>
+</div>
+</body>
+</html>
